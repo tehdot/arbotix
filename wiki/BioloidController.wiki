@@ -186,7 +186,7 @@ void loop(){
 = Hacking = 
 You can change the speed of the interpolation engine, by changing the BIOLOID_FRAME_LENGTH in !BioloidController.h. 
 
-If using more than 18 servos, you will need to change AX12_MAX_SERVOS in ax12.h to increase the size of the pose buffers. 
+If using more than 18 servos, you will need to change AX12_MAX_SERVOS in ax12.h to increase the size of the pose buffers. Alternatively, if memory is running tight, and you are using less than 18 servos, you can change this to reduce the size of the pose buffers. 
 
 = To Do =
 While the library provides basic functionality, it is not quite done yet. Things still in progress:
