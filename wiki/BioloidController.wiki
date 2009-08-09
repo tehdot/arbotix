@@ -1,0 +1,117 @@
+#summary A simple library for controlling Bioloid servos with an arbotiX/Sanguino
+
+= Introduction =
+The Bioloid library is an easy way to interact with Bioloid servos. 
+
+= Setup =
+???
+
+= Getting Started =
+
+
+
+
+
+{{{
+#include <ax12.h>
+#include <BioloidController.h
+
+BioloidController bioloid = BioloidController(1000000);
+int i;
+
+void setup(){
+    i = 0;
+}
+
+void loop(){
+    SetPosition(1,i);
+    i = (i++)%1024;
+}
+}}}
+
+= Using Poses =
+Manipulating individual servos is nice, but when we have multi-servo legged robots, it can be slow and repetitive. A common solution is to use poses and to play the poses out to have the robot walk. If we have gathered our poses using PyPose, we will have exported a pose file that looks like: 
+{{{
+#ifndef DROID_POSES
+#define DROID_POSES
+
+#include <avr/pgmspace.h>
+
+PROGMEM prog_uint16_t liftLeft[] = {0x0C, 612, 620, 450, 381};
+PROGMEM prog_uint16_t plantRight[] = {0x0C, 612, 620, 508, 516};
+PROGMEM prog_uint16_t swingRight[] = {0x0C, 612, 620, 710, 593};
+PROGMEM prog_uint16_t swingLeft[] = {0x0C, 413, 410, 450, 390};
+PROGMEM prog_uint16_t stand[] = {0x0C, 512, 512, 512, 512};
+PROGMEM prog_uint16_t plantLeft[] = {0x0C, 418, 411, 503, 516};
+PROGMEM prog_uint16_t liftRight[] = {0x0C, 523, 520, 712, 592};
+
+#endif
+}}}
+
+We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus SyncWrite (which is much faster than setting the position of each servo individually). 
+
+{{{
+#include <ax12.h>
+#include <BioloidController.h>
+#include "poses.h"  // pose file generated from PyPose
+
+// we always need to create an instance of the bioloid control
+BioloidController bioloid = BioloidController(1000000);
+
+// stand up
+void setup(){
+    bioloid.loadPose(stand); // load a pose from FLASH into buffer
+    bioloid.writeSyncPose(); // write the buffer to the servos
+}
+
+void loop(){}
+}}}
+An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The Bioloid library allows this to be done very easily:
+
+{{{
+#include <ax12.h>
+#include <BioloidController.h>
+#include "poses.h"  // pose file generated from PyPose
+
+BioloidController bioloid = BioloidController(1000000);
+
+#define frames 6
+int idx = 0;
+
+// stand up slowly
+void setup(){    
+    bioloid.loadPose(plantLeft);   // load the pose from FLASH, into the nextPose buffer
+    bioloid.readPose();            // read in current servo positions to the curPose buffer
+    bioloid.interpolateSetup(500); // setup for interpolation from current->next over 1/2 a second
+    while(bioloid.interpolating > 0){  // do this while we have not reached our new pose
+        bioloid.interpolateStep();     // move servos, if necessary. 
+        delay(3);
+    }
+}
+
+// walk
+void loop(){
+    // if stopped, which pose do we go to next?
+    if(bioloid.interpolating == 0){
+        idx++;
+        if(idx > 18) while(1);   // this demo goes 3 cycles, then stops
+        if(idx % frames == 0){
+            bioloid.loadPose(plantLeft);
+        }else if(idx % frames == 1){
+            bioloid.loadPose(liftRight);   
+        }else if(idx % frames == 2){
+            bioloid.loadPose(swingRight);   
+        }else if(idx % frames == 3){
+            bioloid.loadPose(plantRight);   
+        }else if(idx % frames == 4){
+            bioloid.loadPose(liftLeft);
+        }else if(idx % frames == 5){
+            bioloid.loadPose(swingLeft);
+        }
+        bioloid.interpolateSetup(1000);   
+    }
+    
+    // update joints
+    bioloid.interpolateStep();
+}
+}}}
