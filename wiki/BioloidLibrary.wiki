@@ -50,6 +50,22 @@ PROGMEM prog_uint16_t liftRight[] = {0x0C, 523, 520, 712, 592};
 
 We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus SyncWrite (which is much faster than setting the position of each servo individually). 
 
+{{{
+#include <ax12.h>
+#include <BioloidController.h>
+#include "poses.h"  // pose file generated from PyPose
+
+// we always need to create an instance of the bioloid control
+BioloidController bioloid = BioloidController(1000000);
+
+// stand up
+void setup(){
+    bioloid.loadPose(stand); // load a pose from FLASH into buffer
+    bioloid.writeSyncPose(); // write the buffer to the servos
+}
+
+void loop(){}
+}}}
 An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The Bioloid library allows this to be done very easily:
 
 {{{
