@@ -44,9 +44,7 @@ poseX: 92, 104, 92, 800
 While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
   * Easy method for capturing min/max servo positions.
   * Undo a capture (recover pose values).
-  * Better error checking, and recovery.
   * Drop-down selection of serial ports.
-  * Play poses live. 
-  * Universal Gait Generator. 
-  * Parameterized Pose Engine. 
-  * Direct pass-thru driver for USBDynamixel.
+  * Play poses live.  
+  * Parameterized Pose Capture Engine. 
+  * Direct pass-thru driver for USBDynamixel, ability to select which driver to use.
