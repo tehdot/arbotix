@@ -1,21 +1,33 @@
 #summary Basic Pose and Capture Software
 
 = Introduction =
-
-PyPose is a basic pose and capture program, written in Python. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the Bioloid Library.
+PyPose is a very basic pose and capture program, written in Python using TkInter. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the Bioloid Library.
 
 = Setup =
-
 PyPose requires Python 2.5 and PySerial. No other dependencies should be needed. 
 
 = Getting Started = 
-
 Before we can get started, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose". It provides a pass through from the arbotiX to the Bioloid bus. 
+
+Next, we can start PyPose. We need to connect to the arbotiX in one of two ways: through an FTDI cable, or more likely through an XBEE connection. <Add Details>. Be sure to note which serial port you are using (under Windows, something like "COM4", or under Linux, something like "/dev/ttyUSB1"). 
+
+Now start PyPose. You can open a port by clicking on *config|port* in the menu, and entering a port name in the dialog box that will pop up. 
+
+= Creating a New Robot =
+Before we actually capture a pose, we need to tell PyPose a little bit about our robot. When you click on *Robot|New* in the menu, a dialog box will prompt you for the robot's name, and the number of servos used in the robot. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12._ We are now ready to begin actually talking with our robot.
+
+= Capturing a Pose =
+Once you have created a robot, PyPose will adjust to show the correct number of sliding servo adjustment bars. The box to the right of the adjustment bars displays the names of poses we have captured, since we haven't captured any, it will be blank. Below the pose list, we have two buttons: _add_ and _remove_. Click on _add_ and enter a name for your pose. I typically create a pose named "stand", for the default standing position of my bot. 
+
+Now, be sure to click on the pose name in the pose list, then click _capture_, some messages will scroll by, and then the servo adjustment bars will be set to the current servo positions. You can adjust some if needed, and then click _set_ to send the on-screen positions back out to the servos. In order to pose the servos again, click _relax_ to release the servos and make them limp again.
+
+_Note: Be careful when clicking_ capture _, as it will overwrite any data attached to the pose currently selected in the pose list._ 
 
 = To Do =
 While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
   * Easy method for capturing min/max servo positions.
   * Undo a capture (recover pose values).
   * Better error checking, and recovery.
+  * Drop-down selection of serial ports.
   * Play poses live. 
   * Universal Gait Generator. 
