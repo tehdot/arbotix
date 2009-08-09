@@ -127,10 +127,60 @@ void loop(){
 }}}
 The interpolation engine is very simple. It writes a new frame out to the servos at about 30Hz. If your loop code gets really long, this could become problematic. Eventually, we will have an interpolation engine that is interrupt driven, so that the movement is more guaranteed to be smooth.
 
+An item I did not discuss above, was bioloid.readPose(), this queries each servo, and loads their positions into the _curpose_ buffer. This is most useful for standing up gently, as shown above. bioloid.loadPose("pose_name") always loads into the _nextpose_ buffer, and interpolation always happens from _curpose_ to _nextpose_.
+
 = Walking with Fewer Poses =
-Issy used only 2 poses for walking. This was accomplished by basically parameterizing the length of the step. Eventually, PyPose and the BioloidController library will automatically support the creation of these parameterizations, but that is still in progress. Here is a sample of Issy's code, showing only the walking part:
+Issy used only 3 poses for walking, one for normal standing position, and 2 for picking up each of our pairs of legs, but could do an unlimited number of step sizes. This was accomplished by basically parameterizing the length of the step. Eventually, PyPose and the BioloidController library will automatically support the creation of these parameterizations, but that is still in progress. Here is a sample of Issy's code, showing only the walking part in the loop:
+{{{
+void loop(){
+    // we read in serial port data here, to control Issy via the XBEE radio....
 
-
+    // update walking gait parameters
+    if(bioloid.interpolating == 0){
+        // rstep and lstep are the size of the step for each side of Issy, having one side take longer steps, allows us to turn easily. Their values are set in our serial loop (not shown above). 
+        if((rstep != 0) || (lstep != 0)){    // do nothing if we are stopped
+        if(walkMode == 0){
+            bioloid.loadPose(walk0);  // lift 2 feet
+            bioloid.nextpose[4] = bioloid.nextpose[4] - rstep;  // apply step sizes
+            bioloid.nextpose[5] = bioloid.nextpose[5] - lstep;
+            bioloid.nextpose[10] = bioloid.nextpose[10] + rstep;
+            bioloid.nextpose[11] = bioloid.nextpose[11] + lstep;
+            walkMode = 1;
+            bioloid.interpolateSetup(75); // need some time to step nicely
+        }else if(walkMode == 1){
+            bioloid.loadPose(walkend); // put feet down
+            bioloid.nextpose[4] = bioloid.pose[4]; // but keep them at the correct step place
+            bioloid.nextpose[5] = bioloid.pose[5];
+            bioloid.nextpose[10] = bioloid.pose[10];
+            bioloid.nextpose[11] = bioloid.pose[11];
+            walkMode = 2;
+            bioloid.interpolateSetup(30); // putting feet down takes less time than stepping.    
+        }else if(walkMode == 2){
+            bioloid.loadPose(walk1); // lift the other 2 feet
+            bioloid.nextpose[4] = bioloid.nextpose[4] + rstep; // and apply step sizes
+            bioloid.nextpose[5] = bioloid.nextpose[5] + lstep;
+            bioloid.nextpose[10] = bioloid.nextpose[10] - rstep;
+            bioloid.nextpose[11] = bioloid.nextpose[11] - lstep;
+            walkMode = 3;
+            bioloid.interpolateSetup(75);   
+        }else{
+            bioloid.loadPose(walkend); // put our two feet down 
+            bioloid.nextpose[4] = bioloid.pose[4];
+            bioloid.nextpose[5] = bioloid.pose[5];
+            bioloid.nextpose[10] = bioloid.pose[10];
+            bioloid.nextpose[11] = bioloid.pose[11];
+            walkMode = 0;
+            bioloid.interpolateSetup(30);   
+        }
+        }else{
+            // stopped! put feet down!
+        }   
+    }
+    
+    // update joints
+    bioloid.interpolateStep();
+}
+}}}
 
 = Hacking = 
 You can change the speed of the interpolation engine, by changing the BIOLOID_FRAME_LENGTH in !BioloidController.h. 
