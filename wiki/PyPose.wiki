@@ -21,7 +21,10 @@ Once you have created a robot, PyPose will adjust to show the correct number of 
 
 Now, be sure to click on the pose name in the pose list, then click _capture_, some messages will scroll by, and then the servo adjustment bars will be set to the current servo positions. You can adjust some if needed, and then click _set_ to send the on-screen positions back out to the servos. In order to pose the servos again, click _relax_ to release the servos and make them limp again.
 
-_Note: Be careful when clicking_ capture _, as it will overwrite any data attached to the pose currently selected in the pose list._ 
+_Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list._ 
+
+= Exporting to the AVR = 
+Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidLibrary. 
 
 = To Do =
 While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
