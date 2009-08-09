@@ -1,7 +1,7 @@
 #summary A simple library for controlling Bioloid servos with an arbotiX/Sanguino
 
 = Introduction =
-The Bioloid library is an easy way to interact with Bioloid servos. 
+The BioloidController library is an easy way to interact with Bioloid servos. 
 
 = Setup =
 ???
@@ -66,7 +66,7 @@ void setup(){
 
 void loop(){}
 }}}
-An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The Bioloid library allows this to be done very easily:
+An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The BioloidController library allows this to be done very easily:
 
 {{{
 #include <ax12.h>
