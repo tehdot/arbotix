@@ -75,10 +75,10 @@ void setup(){
 
 // walk
 void loop(){
-    // update parameters
+    // if stopped, which pose do we go to next?
     if(bioloid.interpolating == 0){
         idx++;
-        if(idx > 18) while(1);   
+        if(idx > 18) while(1);   // this demo goes 3 cycles, then stops
         if(idx % frames == 0){
             bioloid.loadPose(plantLeft);
         }else if(idx % frames == 1){
