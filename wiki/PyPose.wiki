@@ -28,6 +28,14 @@ _Note: Be careful when clicking_ capture, _as it will overwrite any data attache
 = Exporting to the AVR = 
 Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidLibrary. 
 
+= Hacking =
+Robot pose files are plain text. The format is quite simple, the first line is the robot name and servo count, separated by a colon. Each line after that should be a pose name, colon, and then the servo values. 
+{{{
+myNewRobot:4
+pose1: 512, 512, 512, 512 
+poseX: 92, 104, 92, 800
+}}}
+
 = To Do =
 While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
   * Easy method for capturing min/max servo positions.
@@ -36,3 +44,4 @@ While PyPose provides basic functionality, it is not quite done yet. There is a 
   * Drop-down selection of serial ports.
   * Play poses live. 
   * Universal Gait Generator. 
+  * Parameterized Pose Engine. 
