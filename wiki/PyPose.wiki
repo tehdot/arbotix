@@ -45,4 +45,4 @@ While PyPose provides basic functionality, it is not quite done yet. There is a 
   * Play poses live. 
   * Universal Gait Generator. 
   * Parameterized Pose Engine. 
-  * Direct pass-thru driver for !USBDynamixel.
+  * Direct pass-thru driver for USBDynamixel.
