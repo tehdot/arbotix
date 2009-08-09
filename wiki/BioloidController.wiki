@@ -125,3 +125,7 @@ void loop(){
     bioloid.interpolateStep();
 }
 }}}
+The interpolation engine is very simple. It writes a new frame out to the servos at about 30Hz. If your loop code gets really long, this could become problematic. Eventually, we will have an interpolation engine that is interrupt driven, so that the movement is more guaranteed to be smooth.
+
+= Hacking = 
+You can change the speed of the interpolation engine, by changing the BIOLOID_FRAME_LENGTH in !BioloidController.h. 
