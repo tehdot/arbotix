@@ -1,0 +1,15 @@
+#summary A simple library for controlling Bioloid servos with an arbotiX/Sanguino
+
+= Introduction =
+The Bioloid library is an easy way to interact with Bioloid servos. 
+
+= Setup =
+???
+
+= Getting Started =
+
+
+= Servo Interaction Details =
+
+= Pose Engine Details =
+
