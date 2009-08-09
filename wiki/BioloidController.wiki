@@ -33,8 +33,15 @@ void loop(){
 }
 }}}
 
-There are a number of similar helper functions:
-  * 
+Helper function macros include:
+  * SetPosition(servo_id, position) - set the position of the servos. 
+  * TorqueOn(servo_id) - turns on the torque
+  * Relax(servo_id) - turns off the torque, allows hand-posing the servos.
+
+However, you can access the full set of registers using:
+  * ax12GetRegister(servo_id, regstart, length) - read a register value back, length should currently be either 1 or 2, _regstart_ should be the name/memory location of the register. All these definitions are included in ax12.h, such as AX_GOAL_POSITION_L.
+  * ax12SetRegister(servo_id, regstart, data) - write the value of a single register within a servo. As above, _regstart_ should be the name/memory location of the register, data is the byte to be written.
+  * ax12SetRegister2(servo_id, regstart, data) - write the value of a 2-byte register. 
 
 = Using Poses =
 Manipulating individual servos is nice, but when we have multi-servo legged robots, it can be slow and repetitive. A common solution is to use poses and to play the poses out to have the robot walk. If we have gathered our poses using PyPose, we will have exported a pose file that looks like: 
