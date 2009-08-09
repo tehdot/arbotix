@@ -1,7 +1,7 @@
 #summary Introduction to arbotiX software.
 
 = Introduction =
-
+<img src="http://vanadium.wdfiles.com/local--resized-images/arbotix/arbotix.jpg/small.jpg" align="right">
 The arbotiX robocontroller is an advanced control solution for small-to-medium size robots. It incorporates a powerful AVR microcontroller, XBEE wireless radio, dual motor drivers, and 3-pin servo-style headers for IO.
 
 The arbotiX robocontroller is specifically designed to control robots built using Bioloid servos, although it is also a very high-end solution for powerful rovers. It is not intended to be a drop-in replacement for a CM-5, rather it is intended as a high level development tool for building more sophisticated robots.
