@@ -11,10 +11,7 @@ The BioloidController library is an easy way to interact with Bioloid servos.
     # put the _bioloid_ files in _arduino/hardware/libraries/!BioloidController/_
 
 = Getting Started =
-
-
-
-
+AX-12 servos are different from regular hobby servos. They connect to a serial bus, and each has an ID number. Rather than receiving a PWM signal, we write to onboard memory locations through our serial protocol. The lowest-level of the BioloidController library is simple functions to read/write register locations on the AX-12. We have also provided a number of special definitions to make the most common operations a simple function call:
 {{{
 #include <ax12.h>
 #include <BioloidController.h
@@ -69,6 +66,8 @@ void setup(){
 
 void loop(){}
 }}}
+
+= Interpolation Engine =
 An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The BioloidController library allows this to be done very easily:
 
 {{{
