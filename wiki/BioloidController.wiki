@@ -56,7 +56,7 @@ PROGMEM prog_uint16_t liftRight[] = {0x0C, 523, 520, 712, 592};
 }}}
 Were droid was the name of our robot (PyPose automatically converts it to upper case during export), and liftLeft, plantRight, etc are the pose names. We will typically save our pose file as poses.h, in the directory where our sketch is located. This pose file is the example from our video of making the _walking droid_ work with an arbotiX.
 
-We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus SyncWrite (which is much faster than setting the position of each servo individually). 
+We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus !SyncWrite (which is much faster than setting the position of each servo individually). 
 
 {{{
 #include <ax12.h>
@@ -137,7 +137,8 @@ void loop(){
 
     // update walking gait parameters
     if(bioloid.interpolating == 0){
-        // rstep and lstep are the size of the step for each side of Issy, having one side take longer steps, allows us to turn easily. Their values are set in our serial loop (not shown above). 
+        // rstep and lstep are the size of the step for each side of Issy, having one side take longer steps, allows us to turn easily. 
+        //Their values are set in our serial loop (not shown above). 
         if((rstep != 0) || (lstep != 0)){    // do nothing if we are stopped
         if(walkMode == 0){
             bioloid.loadPose(walk0);  // lift 2 feet
