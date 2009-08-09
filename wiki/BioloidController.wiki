@@ -4,11 +4,11 @@
 The BioloidController library is an easy way to interact with Bioloid servos. 
 
 = Setup =
-  # install the arduino framework (under mac/linux this entails installing avr-gcc/avrdude as well)
-  # download and copy the sanguino framework into your arduino folder   
-  # now we need to install this bioloid framework, and patch the sanguino installation, since the default serial handling is not fast enough for our 1Mbps bus. 
-    # copy all files from sanguino-patch/ into arduino/hardware/cores/sanguino/ 
-    # put the bioloid files in arduino/hardware/libraries/BioloidController/
+  # install the Arduino framework (under mac/linux this entails installing avr-gcc/avr-libc/avrdude as well)
+  # download and copy the Sanguino framework into your Arduino folder, following the instructions included with the Sanguino framework.   
+  # now we need to install this Bioloid framework, and patch the Sanguino installation, since the default serial handling is not fast enough for our 1Mbps bus: 
+    # copy all files from _sanguino-patch/_ into _arduino/hardware/cores/sanguino/_ 
+    # put the _bioloid_ files in _arduino/hardware/libraries/BioloidController/_
 
 = Getting Started =
 
