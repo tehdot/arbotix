@@ -1,7 +1,9 @@
 #summary A simple library for controlling Bioloid servos with an arbotiX
 
 = Introduction =
-The BioloidController library is an easy way to interact with Bioloid servos. 
+The BioloidController library is an easy way to interact with Bioloid servos. It consists of several files:
+  * ax12.h & ax12.cpp - implement the low-level serial communications code for communicating with the Bioloid bus. 
+  * !BioloidController.h & !BioloidController.cpp - implement higher level functions, like loading a pose from FLASH memory, or manipulating poses. 
 
 = Setup =
   # install the Arduino framework (under mac/linux this entails installing avr-gcc/avr-libc/avrdude as well)
@@ -11,23 +13,28 @@ The BioloidController library is an easy way to interact with Bioloid servos.
     # put the _libraries/bioloid_ files in _arduino/hardware/libraries/!BioloidController/_
 
 = Getting Started =
-AX-12 servos are different from regular hobby servos. They connect to a serial bus, and each has an ID number. Rather than receiving a PWM signal, we write to onboard memory locations through our serial protocol. The lowest-level of the BioloidController library is simple functions to read/write register locations on the AX-12. We have also provided a number of special definitions to make the most common operations a simple function call:
+AX-12 servos are different from regular hobby servos. They connect to a serial bus, and each has an ID number. Rather than receiving a PWM signal, we write to onboard memory locations through our serial protocol. For more information about AX-12 servos, see either this [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/controlling-ax-12-servos-3275/ tutorial on TRC], or take a look at the [http://www.trossenrobotics.com/images/productdownloads/AX-12_Manual(English).pdf AX-12 datasheet]. 
+
+The lowest-level of the BioloidController library is composed of simple functions to read/write register locations on the AX-12. We have also provided a number of special definitions to make the most common operations a simple function call:
 {{{
+// need to include header files, you can do this in the Arduino IDE, by selecting Sketch|Import Library|Bioloid.
 #include <ax12.h>
-#include <BioloidController.h
+#include <BioloidController.h>
 
-BioloidController bioloid = BioloidController(1000000);
 int i;
-
 void setup(){
     i = 0;
 }
 
 void loop(){
+    // set AX-12 servo with ID=1, to position i, where 0=<i<1024
     SetPosition(1,i);
     i = (i++)%1024;
 }
 }}}
+
+There are a number of similar helper functions:
+  * 
 
 = Using Poses =
 Manipulating individual servos is nice, but when we have multi-servo legged robots, it can be slow and repetitive. A common solution is to use poses and to play the poses out to have the robot walk. If we have gathered our poses using PyPose, we will have exported a pose file that looks like: 
@@ -55,7 +62,7 @@ We can now load these poses from FLASH memory, and send them out to the servos u
 #include <BioloidController.h>
 #include "poses.h"  // pose file generated from PyPose
 
-// we always need to create an instance of the bioloid control
+// we always need to create an instance of the bioloid control, usually with baud = 1Mbps.
 BioloidController bioloid = BioloidController(1000000);
 
 // stand up
