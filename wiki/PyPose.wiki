@@ -1,0 +1,21 @@
+#summary Basic Pose and Capture Software
+
+= Introduction =
+
+PyPose is a basic pose and capture program, written in Python. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the Bioloid Library.
+
+= Setup =
+
+PyPose requires Python 2.5 and PySerial. No other dependencies should be needed. 
+
+= Getting Started = 
+
+Before we can get started, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose". It provides a pass through from the arbotiX to the Bioloid bus. 
+
+= To Do =
+While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
+  * Easy method for capturing min/max servo positions.
+  * Undo a capture (recover pose values).
+  * Better error checking, and recovery.
+  * Play poses live. 
+  * Universal Gait Generator. 
