@@ -34,8 +34,8 @@ void loop(){
 }}}
 
 Helper function macros include:
-  * SetPosition(servo_id, position) - set the position of the servos. 
-  * TorqueOn(servo_id) - turns on the torque
+  * !SetPosition(servo_id, position) - set the position of the servos. 
+  * !TorqueOn(servo_id) - turns on the torque
   * Relax(servo_id) - turns off the torque, allows hand-posing the servos.
 
 However, you can access the full set of registers using:
