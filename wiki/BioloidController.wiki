@@ -127,5 +127,16 @@ void loop(){
 }}}
 The interpolation engine is very simple. It writes a new frame out to the servos at about 30Hz. If your loop code gets really long, this could become problematic. Eventually, we will have an interpolation engine that is interrupt driven, so that the movement is more guaranteed to be smooth.
 
+= Walking with Fewer Poses =
+Issy used only 2 poses for walking. This was accomplished by basically parameterizing the length of the step. Eventually, PyPose and the BioloidController library will automatically support the creation of these parameterizations, but that is still in progress. Here is a sample of Issy's code, showing only the walking part:
+
+
+
 = Hacking = 
 You can change the speed of the interpolation engine, by changing the BIOLOID_FRAME_LENGTH in !BioloidController.h. 
+
+= To Do =
+While the library provides basic functionality, it is not quite done yet. Things still in progress:
+ * An interrupt driven interpolation option, based off the system clock
+ * Parameterized poses and Universal Gait Engine.
+ 
