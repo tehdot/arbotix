@@ -26,6 +26,7 @@ Now, be sure to click on the pose name in the pose list, then click _capture_, s
 _Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list._ 
 
 If for some reason a servo does not respond, there may be a delay in the pose capture. A message box will eventually be displayed, telling which servos were unreadable. Check your connections if this happens:
+
 <img src="http://arbotix.googlecode.com/svn/wiki/errors.png">
 
 = Exporting to the AVR = 
