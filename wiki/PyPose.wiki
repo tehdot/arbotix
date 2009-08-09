@@ -1,7 +1,7 @@
 #summary Basic Pose and Capture Software
 
 = Introduction =
-PyPose is a very basic pose and capture program, written in Python using !TkInter. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the BioloidLibrary.
+PyPose is a very basic pose and capture program, written in Python using !TkInter. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the BioloidController library.
 
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
 
@@ -26,7 +26,7 @@ Now, be sure to click on the pose name in the pose list, then click _capture_, s
 _Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list._ 
 
 = Exporting to the AVR = 
-Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidLibrary. 
+Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
 
 = Hacking =
 Robot pose files are plain text. The format is quite simple, the first line is the robot name and servo count, separated by a colon. Each line after that should be a pose name, colon, and then the servo values. 
