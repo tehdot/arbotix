@@ -54,20 +54,21 @@ PROGMEM prog_uint16_t liftRight[] = {0x0C, 523, 520, 712, 592};
 
 #endif
 }}}
+Were droid was the name of our robot (PyPose automatically converts it to upper case during export), and liftLeft, plantRight, etc are the pose names. We will typically save our pose file as poses.h, in the directory where our sketch is located. This pose file is the example from our video of making the _walking droid_ work with an arbotiX.
 
 We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus SyncWrite (which is much faster than setting the position of each servo individually). 
 
 {{{
 #include <ax12.h>
 #include <BioloidController.h>
-#include "poses.h"  // pose file generated from PyPose
+#include "poses.h"  // pose file generated from PyPose, currently in this sketch's directory
 
 // we always need to create an instance of the bioloid control, usually with baud = 1Mbps.
 BioloidController bioloid = BioloidController(1000000);
 
 // stand up
 void setup(){
-    bioloid.loadPose(stand); // load a pose from FLASH into buffer
+    bioloid.loadPose(stand); // load a pose (named "stand") from FLASH into buffer
     bioloid.writeSyncPose(); // write the buffer to the servos
 }
 
@@ -75,7 +76,7 @@ void loop(){}
 }}}
 
 = Interpolation Engine =
-An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The BioloidController library allows this to be done very easily:
+The above example probably made our _walking droid_ jump up in the air, maybe even falling over, since our servos move so fast. An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The BioloidController library allows this to be done very easily:
 
 {{{
 #include <ax12.h>
@@ -100,7 +101,7 @@ void setup(){
 
 // walk
 void loop(){
-    // if stopped, which pose do we go to next?
+    // if finished interpolating, which pose do we go to next?
     if(bioloid.interpolating == 0){
         idx++;
         if(idx > 18) while(1);   // this demo goes 3 cycles, then stops
@@ -120,7 +121,7 @@ void loop(){
         bioloid.interpolateSetup(1000);   
     }
     
-    // update joints
+    // update joints, this should be called faster than 30Hz, which is our interpolating frame length. 
     bioloid.interpolateStep();
 }
 }}}
