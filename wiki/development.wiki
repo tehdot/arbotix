@@ -2,7 +2,10 @@
 
 = Beta 1 Release - 8/8/09 =
  * new libraries: bioloid, sharpIR
- * functional PyPose
+ * PyPose functionality:
+    # create robot files, capture poses
+    # export to AVR
+    # code and sketch to interact with arbotiX
 
 = Beta 2 Release - Late August? =
  * new libraries: motors, encoders
@@ -10,15 +13,16 @@
     # servo min/max capture as part of robot creation
     # undo a capture (restore pose) 
     # clone pose 
+    # play poses live
     # parameterization for Universal Gait Engine
+ * bioloid library improvements:
+    # Universal Gait Engine
 
 = Release 1.0 - Early September =
  * new libraries: none
  * PyPose improvements:
-    # play poses live
     # drop-down selection of serial ports 
     # USBDynamixel driver
 
 = Release 2.0 =
  * interrupt driven interpolation and gait engine
-
