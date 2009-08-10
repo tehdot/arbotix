@@ -1,0 +1,24 @@
+#summary Development Timeline
+
+= Beta 1 Release - 8/8/09 =
+ * new libraries: bioloid, sharpIR
+ * functional PyPose
+
+= Beta 2 Release - Late August? =
+ * new libraries: motors, encoders
+ * PyPose improvements:
+    # servo min/max capture as part of robot creation
+    # undo a capture (restore pose) 
+    # clone pose 
+    # parameterization for Universal Gait Engine
+
+= Release 1.0 - Early September =
+ * new libraries: none
+ * PyPose improvements:
+    # play poses live
+    # drop-down selection of serial ports 
+    # USBDynamixel driver
+
+= Release 2.0 =
+ * interrupt driven interpolation and gait engine
+
