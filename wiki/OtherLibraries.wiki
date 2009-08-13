@@ -9,7 +9,7 @@ This library implements a dual motor driver using Timer2, it can be used to cont
 This library allows easy usage of a number of Sharp IR ranging sensors. 
 
 = Srf05 =
-This library allows easy usage of an SRF-05 sonar ranger, in single-pin mode. The SRF-05 uses a pulse out to give distance, this library will read the pulse, and then return the distance in centimeters to the nearest object. 
+This library allows easy usage of an SRF-05 sonar ranger, in single-pin mode. The SRF-05 does no on-board conversion of the pulse width to length, that is the primary purpose of this library. _getData()_ sends out a ping, reads the return pulse, and then returns the distance in centimeters to the nearest object. _Note: getData() should not be called faster than ~20-30Hz, to allow for ring-down time on the sonar._
 
 {{{
 #include <Srf05.h>
