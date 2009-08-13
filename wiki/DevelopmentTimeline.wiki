@@ -1,20 +1,20 @@
 #summary Development Timeline
 
 = Beta 1 Release - Released 8/8/09 =
- * new libraries: bioloid, sharpIR - DONE
+ * new libraries: bioloid, sharpIR - _DONE_
  * PyPose functionality:
-    # create robot files, capture poses - DONE
-    # export to AVR - DONE
-    # code and sketch to interact with arbotiX - DONE
- * new examples: droid, pypose - DONE
+    # create robot files, capture poses - _DONE_
+    # export to AVR - _DONE_
+    # code and sketch to interact with arbotiX - _DONE_
+ * new examples: droid, pypose - _DONE_
 
 = Beta 2 Release - Mid-August =
- * new libraries: Motors2 - DONE
- * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid - DONE
+ * new libraries: Motors2 - _DONE_
+ * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid - _DONE_
  * PyPose improvements:
     # servo min/max capture as part of robot creation
     # undo a capture (restore pose) 
- * new examples: issy - DONE
+ * new examples: issy - _DONE_
 
 = Beta 3 Release - Late August = 
  * PyPose improvements
