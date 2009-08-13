@@ -8,17 +8,20 @@
     # code and sketch to interact with arbotiX
  * new examples: droid, pypose
 
-= Beta 2 Release - Late August? =
+= Beta 2 Release - Mid-August =
  * new libraries: Motors2
  * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid
  * PyPose improvements:
     # servo min/max capture as part of robot creation
     # undo a capture (restore pose) 
+ * new examples: issy
+
+= Beta 3 Release - Late August = 
+ * PyPose improvements
     # play poses live
     # parameterization for Universal Gait Engine
  * bioloid library improvements:
     # Universal Gait Engine
- * new examples: issy
 
 = Release 1.0 - Early September =
  * new libraries: Encoders
