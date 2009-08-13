@@ -3,7 +3,7 @@
 = Beta 1 Release - Released 8/8/09 =
  * new libraries: bioloid, sharpIR - _done_
  * PyPose functionality:
-    # create robot files, capture poses - _done_
+    # create robot files, capture poses - <font color=#F00>_done_</font>
     # export to AVR - _done_
     # code and sketch to interact with arbotiX - _done_
  * new examples: droid, pypose - _done_
