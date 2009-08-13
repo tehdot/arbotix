@@ -11,5 +11,22 @@ This library allows easy usage of a number of Sharp IR ranging sensors.
 = Srf05 =
 This library allows easy usage of an SRF-05 sonar ranger, in single-pin mode. The SRF-05 uses a pulse out to give distance, this library will read the pulse, and then return the distance in centimeters to the nearest object. 
 
+{{{
+#include <Srf05.h>
+
+// attach an SRF-05 to digital pin 5. Be sure that it is setup for single pin mode.
+Srf05 mySonar = Srf05(5);  
+
+void setup(){
+    Serial.begin(38400);
+}
+
+// print distance in CM, every second. 
+void loop(){  
+    Serial.println(mySonar.getData());
+    delay(1000);
+}
+}}}
+
 = Encoders = 
 <font color="#FF0000">_Coming Soon</font>
