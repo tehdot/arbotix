@@ -195,6 +195,14 @@ You can change the speed of the interpolation engine, by changing the BIOLOID_FR
 
 If using more than 18 servos, you will need to change AX12_MAX_SERVOS in ax12.h to increase the size of the pose buffers. Alternatively, if memory is running tight, and you are using less than 18 servos, you can change this to reduce the size of the pose buffers. 
 
+Pose header files are very simple. We are using the program memory storage utilities of AVR-Libc in order to store the poses in the FLASH, rather than occupying RAM. Each pose is an array of integers, to put this array in program memory it is of type _PROGMEM prog_uint16_t_. The first element in the array is the servo count. The servo count can be 1-255, in the example below, Issy has 12 servos:
+{{{
+PROGMEM prog_uint16_t stand[ ] = {0x0C,512,512,482,542,662,362,512,512,542,482,362,662}; 
+}}}
+Each number after the servo count is the position of the servo, starting with ID number 1. Positions are 0-1023, the same as what an AX-12 can actually take on. 
+
+_Note: The upper byte of the servo count is reserved for special values that may be used later to define special new types of poses_. 
+
 = To Do =
 While the library provides basic functionality, it is not quite done yet. Things still in progress:
  * An interrupt driven interpolation option, based off the system clock
