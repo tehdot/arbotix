@@ -11,4 +11,5 @@ This library allows easy usage of a number of Sharp IR ranging sensors.
 = Srf05 =
 This library allows easy usage of an SRF-05 sonar ranger, in single-pin mode. The SRF-05 uses a pulse out to give distance, this library will read the pulse, and then return the distance in centimeters to the nearest object. 
 
-= <font color="#FF0000">_Coming Soon</font> - Encoders_ =
+= Encoders = 
+<font color="#FF0000">_Coming Soon</font>
