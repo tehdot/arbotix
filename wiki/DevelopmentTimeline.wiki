@@ -6,6 +6,7 @@
     # create robot files, capture poses
     # export to AVR
     # code and sketch to interact with arbotiX
+ * new examples: droid, pypose
 
 = Beta 2 Release - Late August? =
  * new libraries: motors, encoders
@@ -17,6 +18,7 @@
     # parameterization for Universal Gait Engine
  * bioloid library improvements:
     # Universal Gait Engine
+ * new examples: issy
 
 = Release 1.0 - Early September =
  * new libraries: none
