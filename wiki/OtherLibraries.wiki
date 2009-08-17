@@ -1,7 +1,5 @@
 #summary Other software libraries for the arbotiX
 
-_Page Under Construction_
-
 = Motors2 =
 This library implements a dual motor driver using Timer2, it can be used to control the onboard motor driver on the arbotiX. It has several functions:
   * *set(l_pwm,r_pwm)* - set the left and right motor speeds at the same time.
