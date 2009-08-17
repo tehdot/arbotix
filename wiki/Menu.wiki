@@ -1,13 +1,17 @@
-#summary One-sentence summary of this page.
+=arbotiX=
 
-= Introduction =
+Software and Libraries
+  * [BioloidController Bioloid Library]
+  * [PyPose PyPose and Capture]
+  * [OtherLibraries#Motors2 Motors Library]
+  * [OtherLibraries#SharpIR Sensor Libraries]
 
-Add your content here.
+Examples
+  * issy
+  * droid
+  * pypose
 
+Developers
+  * [DevelopmentTimeline Timeline]
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+more info: http://www.vanadiumlabs.com/arbotix
