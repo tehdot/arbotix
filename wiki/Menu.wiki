@@ -1,20 +1,15 @@
 =arbotiX=
 
 ==Software and Libraries==
-[BioloidController Bioloid Library]
-
-[PyPose PyPose and Capture]
-
-[OtherLibraries#Motors2 Motors Library]
-
+[BioloidController Bioloid Library]<br>
+[PyPose PyPose and Capture]<br>
+[OtherLibraries#Motors2 Motors Library]<br>
 [OtherLibraries#SharpIR Sensor Libraries]
 
 ==Examples==
-issy
-
-droid
-
-pypose
+issy<br>
+droid<br>
+pypose<br>
 
 ==Developers==
 [DevelopmentTimeline Timeline]
