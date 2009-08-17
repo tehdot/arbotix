@@ -3,7 +3,7 @@
 [BioloidController Bioloid Library]<br>
 [PyPose PyPose and Capture]<br>
 [OtherLibraries#Motors2 Motors Library]<br>
-[OtherLibraries#SharpIR Sensor Libraries]
+[OtherLibraries#SharpIR Sensor Libraries]<br>
 <br>
 <b>Examples</b><br>
 issy<br>
