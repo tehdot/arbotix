@@ -10,7 +10,7 @@ issy<br>
 droid<br>
 pypose<br>
 <br>
-</b>Developers</b><br>
+<b>Developers</b><br>
 [DevelopmentTimeline Timeline]
 
 more info: http://www.vanadiumlabs.com/arbotix
