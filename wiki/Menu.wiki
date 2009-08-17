@@ -2,13 +2,18 @@
 
 ==Software and Libraries==
 [BioloidController Bioloid Library]
+
 [PyPose PyPose and Capture]
+
 [OtherLibraries#Motors2 Motors Library]
+
 [OtherLibraries#SharpIR Sensor Libraries]
 
 ==Examples==
 issy
+
 droid
+
 pypose
 
 ==Developers==
