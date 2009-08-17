@@ -5,8 +5,35 @@ _Page Under Construction_
 = Motors2 =
 This library implements a dual motor driver using Timer2, it can be used to control the onboard motor driver on the arbotiX.
 
+= Serial =
+The default _Serial_ library that comes with Arduino environment will work with either the FTDI cable or the XBEE radio on the arbotiX _(remember, don't connect both the FTDI and the XBEE at the same time)._ We suggest using 38400 as the baud rate, since all of our demos use that.   
+
 = SharpIR =
-This library allows easy usage of a number of Sharp IR ranging sensors. 
+This library allows easy usage of a number of Sharp IR ranging sensors. Each IR ranger uses on analog pin. The library function _getData()_ converts the analog voltage into a distance in centimeters. 
+
+When creating a our SharpIR object, we need to pass both the type of sensor connected, and which analog pin it is connected to. The analog pins are numbered 0-7. The valid types are: 
+  * GP2D12 - The original analog IR ranger in the Sharp family of sensors. Mid range sensor, 4"-32" range. Use this for sensors marked as GP2D12 or GP2Y0A21YK (which is a newer ROHS version).
+  * GP2D120 - Short range sensor, 1.5"-12" range.
+  * GP2Y0A02YK - Long range sensor, 8"-60" range. 
+
+It is important to select the correct sensors type, or the conversion will be incorrect and you will receive incorrect and useless range data. 
+
+{{{
+#include <SharpIR.h>
+
+// To create an object, we need to pass both the type, and the analog pin being used
+SharpIR myIR = SharpIR(GP2D120,0);
+
+void setup(){
+    Serial.begin(38400);
+}
+
+// print distance in CM, every second
+void loop(){		
+    Serial.println(myIR.getData());
+    delay(1000);	
+}
+
 
 = Srf05 =
 This library allows easy usage of an SRF-05 sonar ranger, in single-pin mode. The SRF-05 does no on-board conversion of the pulse width to length, that is the primary purpose of this library. _getData()_ sends out a ping, reads the return pulse, and then returns the distance in centimeters to the nearest object. _Note: getData() should not be called faster than ~20-30Hz, to allow for ring-down time on the sonar._
