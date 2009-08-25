@@ -61,7 +61,7 @@ PROGMEM prog_uint16_t liftRight[] = {0x0C, 523, 520, 712, 592};
 
 #endif
 }}}
-Were droid was the name of our robot (PyPose automatically converts it to upper case during export), and liftLeft, plantRight, etc are the pose names. We will typically save our pose file as poses.h, in the directory where our sketch is located. This pose file is the example from our video of making the _walking droid_ work with an arbotiX.
+Where _droid_ was the name of our robot (PyPose automatically converts it to upper case during export), and liftLeft, plantRight, etc are the pose names. We will typically save our pose file as poses.h, in the directory where our sketch is located. This pose file is the example from our video of making the _walking droid_ work with an arbotiX.
 
 We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus !SyncWrite (which is much faster than setting the position of each servo individually). 
 
