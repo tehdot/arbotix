@@ -30,6 +30,6 @@ There are two ways to download code onto the arbotiX: either with an FTDI cable 
  * *To use an ISP* such as the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] you will have to adjust a few parameters, as Arduino uploads using the bootloader by default: http://www.arduino.cc/en/Hacking/Programmer 
 
 = Wireless Downloading =
-_Note: wireless bootloading may be dangerous, if you experience RF-interference something may go wrong. We do not recommend doing this unless you have an ISP to restore the bootloader._
-
 With a bootloader on the arbotiX, you can do wireless downloading. The arbotiX bootloader runs at a 38400 baud rate, so your XBEE radios need to be set to 38400 for wireless downloading. You'll also have to manually push the RESET button. A tutorial on getting around the reset button push is here: http://www.ladyada.net/make/xbee/arduino.html 
+
+_Note: wireless bootloading may be dangerous, if you experience RF-interference something may go wrong. We do not recommend doing this unless you have an ISP to restore the bootloader._
