@@ -3,5 +3,15 @@
 = Overview =
 We need a few pieces of software to get the most out of the arbotiX:
  * *Arduino Software* - for creating code for our controller. We'll also need several libraries and add-ons.
- * *PyPose* - A simple pose and capture program for the arbotiX.
+ * *!PyPose* - A simple pose and capture program for the arbotiX.
+
+= Arduino Setup =
+ Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software.
+The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big brother of the [http://www.arduino.cc Arduino]. You'll need to install the base Arduino software, the Sanguino code, and our arbotiX libraries:
+ # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Guide/HomePage
+ # Download and copy the Sanguino framework into your Arduino folder, following the instructions included with the Sanguino framework: http://sanguino.cc/useit
+ # Lastly, we need to install the arbotiX libraries, and patch the Sanguino installation, since the default serial handling is not fast enough for our bioloid bus. You can download the libraries from the Downloads tab (or via SVN for bleeding edge source) then:
+    # copy all files from _sanguino-patch/_ into _arduino/hardware/cores/sanguino/_ 
+    # put all the directories found in _libraries_ in _arduino/hardware/libraries/_
+
 
