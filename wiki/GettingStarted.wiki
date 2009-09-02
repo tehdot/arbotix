@@ -1,4 +1,4 @@
-#summary How to set stuff up
+#summary how to set stuff up
 
 = Overview =
 This page details the basic software and hardware setup. We need a few pieces of software to get the most out of the arbotiX:
