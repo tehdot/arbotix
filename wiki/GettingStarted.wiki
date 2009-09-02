@@ -1,13 +1,7 @@
-#summary Getting started with the arbotiX
+#summary How to set stuff up
 
-= Introduction =
+= Overview =
+We need a few pieces of software to get the most out of the arbotiX:
+ * *Arduino Software* - for creating code for our controller. We'll also need several libraries and add-ons.
+ * *PyPose* - A simple pose and capture program for the arbotiX.
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
