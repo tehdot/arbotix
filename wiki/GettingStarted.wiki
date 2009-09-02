@@ -1,11 +1,11 @@
 #summary How to set stuff up
 
 = Overview =
-We need a few pieces of software to get the most out of the arbotiX:
+This page details the basic software and hardware setup. We need a few pieces of software to get the most out of the arbotiX:
  * *Arduino Software* - for creating code for our controller. We'll also need several libraries and add-ons.
  * *!PyPose* - A simple pose and capture program for the arbotiX.
 
-= Arduino Setup =
+= Arduino Software Setup =
 {{{
 Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. -- arduino.cc
 }}}
@@ -15,3 +15,12 @@ The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
  # Lastly, we need to install the arbotiX libraries, and patch the Sanguino installation, since the default serial handling is not fast enough for our bioloid bus. You can download the libraries from the Downloads tab (or via SVN for bleeding edge source) then:
     # copy all files from _sanguino-patch/_ into _arduino/hardware/cores/sanguino/_ 
     # put all the directories found in _libraries_ in _arduino/hardware/libraries/_
+
+= PyPose Setup =
+!PyPose is a very basic pose and capture program, written in Python using TkInter. We of course will have to install Python, PySerial to access serial ports, and then PyPose itself.
+ # Download and install Python 2.5: http://www.python.org/download/releases/2.5.4/
+ # Download and install PySerial: http://pyserial.sourceforge.net/
+ # Put the PyPose software in an easy to use location
+If using Ubuntu, you can install item 1 and 2 of the above with: //sudo apt-get install python python-serial python-tk//.
+
+ 
