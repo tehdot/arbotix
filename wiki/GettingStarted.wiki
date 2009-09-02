@@ -1,6 +1,5 @@
 #summary how to set stuff up
 
-= Overview =
 This page details the basic software and hardware setup. We need a few pieces of software to get the most out of the arbotiX:
  * *Arduino Software* - for creating code for our controller. We'll also need several libraries and add-ons.
  * *!PyPose* - A simple pose and capture program for the arbotiX.
@@ -30,10 +29,10 @@ There are two ways to download code onto the arbotiX: either with an FTDI cable 
 ==== Using an FTDI Cable ====
 While the black FTDI cable can be used with the Arduino environment, getting the auto-reset to work is a slight pain. The cable uses RTS rather than DTR for the reset signal. Here's how to fix it under Linux/MAC: http://www.arduino.cc/playground/Hacking/FTDIAutoReset
 
-=== Using an AVR In-System Programmer ===
+==== Using an AVR In-System Programmer ====
 http://www.arduino.cc/en/Hacking/Programmer
 
-=== Using the USBTinyISP ===
+==== Using the USBTinyISP ====
 The [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] should work with the Arduino environment out of the box.
 
 ==== Wireless Downloading ====
