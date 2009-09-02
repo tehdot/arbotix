@@ -23,4 +23,16 @@ The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
  # Put the PyPose software in an easy to use location
 If using Ubuntu, you can install item 1 and 2 of the above with: _sudo apt-get install python python-serial python-tk_.
 
+= Downloading Code =
+There are two ways to download code onto the arbotiX: either with an FTDI cable or an In-System Programmer. The [http://www.sparkfun.com/commerce/product_info.php?products_id=9115 Sparkfun FTDI breakout board] will work with the Arduino environment out of the box. 
+
+== Using an FTDI Cable ==
+While the black FTDI cable can be used with the Arduino environment, getting the auto-reset to work is a slight pain. The cable uses RTS rather than DTR for the reset signal. Here's how to fix it under Linux/MAC: http://www.arduino.cc/playground/Hacking/FTDIAutoReset
+
+== Using an AVR In-System Programmer ==
+http://www.arduino.cc/en/Hacking/Programmer
+
+== Using the USBTINYISP ==
+The USBTINYISP should work with the Arduino environment out of the box.
+
  
