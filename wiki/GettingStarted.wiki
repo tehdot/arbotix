@@ -6,7 +6,9 @@ We need a few pieces of software to get the most out of the arbotiX:
  * *!PyPose* - A simple pose and capture program for the arbotiX.
 
 = Arduino Setup =
-{{{Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software.}}}
+{{{
+Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software.
+}}}
 The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big brother of the [http://www.arduino.cc Arduino]. You'll need to install the base Arduino software, the Sanguino code, and our arbotiX libraries:
  # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Guide/HomePage
  # Download and copy the Sanguino framework into your Arduino folder, following the instructions included with the Sanguino framework: http://sanguino.cc/useit
