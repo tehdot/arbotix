@@ -21,6 +21,6 @@ The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
  # Download and install Python 2.5: http://www.python.org/download/releases/2.5.4/
  # Download and install !PySerial: http://pyserial.sourceforge.net/
  # Put the PyPose software in an easy to use location
-If using Ubuntu, you can install item 1 and 2 of the above with: //sudo apt-get install python python-serial python-tk//.
+If using Ubuntu, you can install item 1 and 2 of the above with: _sudo apt-get install python python-serial python-tk_.
 
  
