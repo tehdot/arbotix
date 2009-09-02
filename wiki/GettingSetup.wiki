@@ -26,7 +26,7 @@ If using Ubuntu, you can install item 1 and 2 of the above with: _sudo apt-get i
 = Downloading Code =
 There are two ways to download code onto the arbotiX: either with an FTDI cable or an In-System Programmer, although there are a number of different versions of each available:
  * *The FTDI breakout board* available from [http://www.sparkfun.com/commerce/product_info.php?products_id=9115 Sparkfun] will work with the Arduino environment out of the box. 
- * *The FTDI Cable* can be used with the Arduino environment, getting the auto-reset to work is a slight pain. The cable uses RTS rather than DTR for the reset signal. Here's how to fix it under Linux/MAC: http://www.arduino.cc/playground/Hacking/FTDIAutoReset
+ * *[http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=768-1028-ND The FTDI Cable]* can be used with the Arduino environment, getting the auto-reset to work is a slight pain. The cable uses RTS rather than DTR for the reset signal. Here's how to fix it under Linux/MAC: http://www.arduino.cc/playground/Hacking/FTDIAutoReset
  * *To use an ISP* such as the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] you will have to adjust a few parameters, as Arduino uploads using the bootloader by default: http://www.arduino.cc/en/Hacking/Programmer 
 
 = Wireless Downloading =
