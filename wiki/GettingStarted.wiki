@@ -33,6 +33,6 @@ While the black FTDI cable can be used with the Arduino environment, getting the
 http://www.arduino.cc/en/Hacking/Programmer
 
 === Using the USBTinyISP ===
-The USBTinyISP should work with the Arduino environment out of the box.
+The [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] should work with the Arduino environment out of the box.
 
  
