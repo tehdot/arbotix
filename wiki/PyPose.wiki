@@ -5,9 +5,6 @@ PyPose is a very basic pose and capture program, written in Python using !TkInte
 
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
 
-= Setup =
-PyPose requires Python 2.5 and !PySerial. Under newer Ubuntu operating systems, TKinter is not included, therefore you'll also need to install the package _python-tk_. No other dependencies should be needed. 
-
 = Getting Started = 
 Before we can get started, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose". It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose.
 
