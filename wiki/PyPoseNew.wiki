@@ -9,6 +9,11 @@ We need to add several things to the Install Page:
 = Introduction =
 PyPose is a very basic pose and capture program, written in Python using !WxPython. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the BioloidController library. 
 
+PyPose is actually comprised of a communication protocol to talk with the arbotiX, and several tools:
+ * The Pose Editor
+ * The Sequence Editor
+ * The Nearly Universal Kinematics Engine (NUKE)
+
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
 
 = Getting Started = 
