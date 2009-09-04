@@ -1,0 +1,49 @@
+#summary basic pose and capture software
+
+= Introduction =
+PyPose is a very basic pose and capture program, written in Python using !TkInter. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the BioloidController library. 
+
+<img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
+
+= Getting Started = 
+Before we can get started, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose". It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose.
+
+Next, we can start PyPose. We need to connect to the arbotiX in one of two ways: through an FTDI cable, or more likely through an XBEE connection. <Add Details>. Be sure to note which serial port you are using (under Windows, something like "COM4", or under Linux, something like "/dev/ttyUSB1"). 
+
+Now start PyPose. You can open a port by clicking on *config|port* in the menu, and entering a port name in the dialog box that will pop up. The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
+
+= Creating a New Robot =
+Before we actually capture a pose, we need to tell PyPose a little bit about our robot. When you click on *Robot|New* in the menu, a dialog box will prompt you for the robot's name, and the number of servos used in the robot. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12._ We are now ready to begin actually talking with our robot. You can repeatedly save and open robot files.
+
+= Capturing a Pose =
+Once you have created a robot, PyPose will adjust to show the correct number of sliding servo adjustment bars. The box to the right of the adjustment bars displays the names of poses we have captured, since we haven't captured any, it will be blank. Below the pose list, we have two buttons: _add_ and _remove_. Click on _add_ and enter a name for your pose. I typically create a pose named "stand", for the default standing position of my bot. 
+
+Now, be sure to click on the pose name in the pose list, then click _capture_, some messages will scroll by, and then the servo adjustment bars will be set to the current servo positions. You can adjust some if needed, and then click _set_ to send the on-screen positions back out to the servos. In order to pose the servos again, click _relax_ to release the servos and make them limp again.
+
+_Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list._ 
+
+If for some reason a servo does not respond, there may be a delay in the pose capture. A message box will eventually be displayed, telling which servos were unreadable. Check your connections if this happens:
+
+<img src="http://arbotix.googlecode.com/svn/wiki/errors.png">
+
+= Exporting to the AVR = 
+Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
+
+= Hacking =
+Robot pose files are plain text. The format is quite simple, the first line is the robot name and servo count, separated by a colon. Each line after that should be a pose name, colon, and then the servo values. 
+{{{
+myNewRobot:4
+pose1: 512, 512, 512, 512 
+poseX: 92, 104, 92, 800
+}}}
+
+The communications protocol used by PyPose and the sketch on your arbotiX is essentially the same as the Bioloid bus itself. We have, however, defined additional registers, and an ID of 253 will command the arbotiX to act on these special registers. Much of this functionality is not complete, but will eventually allow live playback of poses, etc. 
+
+= To Do =
+While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
+  * Easy method for capturing min/max servo positions.
+  * Undo a capture (recover pose values).
+  * Drop-down selection of serial ports.
+  * Play poses live.  
+  * Parameterized Pose Capture Engine. 
+  * Direct pass-thru driver for USBDynamixel, ability to select which driver to use.
