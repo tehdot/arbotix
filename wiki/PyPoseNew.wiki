@@ -1,6 +1,6 @@
 #summary basic pose and capture software
 
-<font color="#FF0000">This Page Describes PyPose V0.91, which is a complete re-write</font>
+<font color="#FF0000">This Page Describes PyPose V0.91, which is a complete re-write using WxPython, and is currently under major development.</font>
 
 = Introduction =
 PyPose is a very basic pose and capture program, written in Python using !TkInter. It connects through a serial port to your arbotiX robocontroller, to capture robot poses.After you have done pose and capture, it can automatically create a C header file with the poses ready to load with the BioloidController library. 
