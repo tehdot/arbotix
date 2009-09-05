@@ -15,7 +15,9 @@ As has often been said, there is more than one way to solve any problem. Motion 
 
 The logical improvement is to _parameterize_ the poses. This is a very common approach, and one that PyPose supports. By adding or subtracting the value of a dynamic parameter we can vary the response of our poses and motion sequences far more than before. 
 
-Of course, the holy grail of motion control is to have a fast Inverse Kinematics engine. Using inverse kinematics, we can compute how to place the foot of a robot into any position it can physically occupy. The _Nearly Universal Kinematics Engine_, or NUKE, is a highly templated IK solution for quadrupeds and hexapods. After answering a series of questions about the construction of the robot, we can automatically build an IK engine for the robot. Why then would we even offer poses and sequences? NUKE still has a limited number of configurations it can handle, if you are building something like a biped you will _have_ to use poses. 
+Of course, the holy grail of motion control is to have a fast Inverse Kinematics engine. Using inverse kinematics, we can compute how to place the foot of a robot into any position it can physically occupy. The _Nearly Universal Kinematics Engine_, or NUKE, is a highly templated IK solution for quadrupeds and hexapods. After answering a series of questions about the construction of the robot, we can automatically build an IK engine for the robot. Why then would we even offer poses and sequences? 
+ * NUKE still has a limited number of configurations it can handle, if you are building something like a biped you will _have_ to use poses.  
+ * IK can be slow. If you have other important code to run, you may not be able to run a full IK engine. 
 
 Regardless of the method of motion creation, PyPose exports your work directly into C code that can be loaded onto the arbotiX using the Arduino IDE.
 
