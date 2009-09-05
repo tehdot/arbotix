@@ -46,12 +46,15 @@ If for some reason a servo does not respond, there may be a delay in the pose ca
 
 = Creating Sequences =
 
+
 = Parametric Poses = 
+
 
 = Exporting to the AVR = 
 Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
 
 = NUKE = 
+NUKE is currently under development.
 
 = Hacking =
 Robot pose files are plain text. The format is quite simple, the first line is the robot name and servo count, separated by a colon. Each line after that should be a pose name, colon, and then the servo values. 
