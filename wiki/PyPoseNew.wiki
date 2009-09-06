@@ -57,10 +57,10 @@ If for some reason a servo does not respond, there may be a delay in the pose ca
 <img src="http://arbotix.googlecode.com/svn/wiki/capture.png">
 
 = The Sequence Editor =
-
+To Be Completed...
 
 = Parametric Poses = 
-
+To Be Completed...
 
 = Exporting to the AVR = 
 Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
