@@ -22,7 +22,7 @@ As has often been said, there is more than one way to solve any problem. Motion 
  * Poses are not dynamic: given a limited number of poses, you have a limited number of positions the body can go to.  
  * Sequence creation can become quite repetitive if you desire a higher degree of control of the robot.
 
-The logical improvement is to _parameterize_ the poses. This is a very common approach, and one that PyPose supports. By adding or subtracting the value of a dynamic parameter we can vary the response of our poses and motion sequences far more than before. 
+The logical improvement is to _parameterize_ the poses. . By adding or subtracting the value of a dynamic parameter we can vary the response of our poses and motion sequences far more than before. This can easily be done in software after you export. 
 
 Of course, the holy grail of motion control is to have a fast Inverse Kinematics engine. Using inverse kinematics, we can compute how to place the foot of a robot into any position it can physically occupy. The _Nearly Universal Kinematics Engine_, or NUKE, is a highly templated IK solution for quadrupeds and hexapods. After answering a series of questions about the construction of the robot, we can automatically build an IK engine for the robot. Why then would we even offer poses and sequences? 
  * NUKE still has a limited number of configurations it can handle, if you are building something like a biped you will _have_ to use poses.  
@@ -73,9 +73,9 @@ If for some reason a servo does not respond, there may be a delay in the pose ca
 <font color="#FF0000">Describe main parts of editor: creating a new sequence, adding transitions to a sequence, changing values of those transitions, run&halt</font>
 To Be Completed...
 
-= Parametric Poses = 
-<font color="#FF0000">How to switch to parametric mode, how to add parameters to servos, creation of parametric poses, how to playback parametric poses</font>
-To Be Completed...
+= Parametric Pose Coding = 
+<font color="#FF0000">Describe here?</font>
+See [BioloidController#Walking_with_Fewer_Poses here]
 
 = Exporting to the AVR = 
 Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
