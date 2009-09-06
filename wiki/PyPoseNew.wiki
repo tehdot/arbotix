@@ -21,20 +21,32 @@ Of course, the holy grail of motion control is to have a fast Inverse Kinematics
 
 Regardless of the method of motion creation, PyPose exports your work directly into C code that can be loaded onto the arbotiX using the Arduino IDE.
 
-= Getting Started = 
-Before we can get started, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose". It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose. The sketch comes on your arbotiX when you first purchase it, but if you have ever uploaded any other sketch, you will need to put _pypose_ back onto the arbotiX to use this capture program. We need to connect to the arbotiX in one of two ways: through an FTDI cable, or more likely through an XBEE connection. <Add Details>. Be sure to note which serial port you are using (under Windows, something like "COM4", or under Linux, something like "/dev/ttyUSB1"). 
+= Hardware Setup = 
+Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose", and can be found in the examples folder of the arbotiX distribution. It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose. The sketch comes on your arbotiX when you first purchase it, but if you have ever uploaded any other sketch, you will need to put _pypose_ back onto the arbotiX to use this capture program. 
 
-Next, we can start PyPose, it should look like: 
+We need to connect to the arbotiX in one of two ways: through an FTDI cable, or more likely through an XBEE connection. <Add Details>. Be sure to note which serial port you are using (under Windows, something like "COM4", or under Linux, something like "/dev/ttyUSB1"). 
+
+= Getting Started =
+We can finally start PyPose, the initial view will look something like this: 
+
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
 
-You can open a port by clicking on *config|port* in the menu, and entering a port name in the dialog box that will pop up. The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
-<img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
+This default view is the _Pose Editor_. There is a menu bar across the top of the program at all times, and a status bar across the bottom. The left hand side of the status bar prompts you with _please create or open a robot file_. The right hand side shows our connection status, we are currently not connected.
 
 = Creating a New Robot =
-Before we actually capture a pose, we need to tell PyPose a little bit about our robot. When you click on *Robot|New* in the menu, a dialog box will prompt you for the robot's name, and the number of servos used in the robot. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12._ We are now ready to begin actually talking with our robot. You can repeatedly save and open robot files.
+The first thing we need to do, is to create a robot file. A robot file is where we will store our poses, sequences, and IK/FK configurations. Click on *robot|new* in the menu, and the following dialog will appear:
+
+<img src="http://arbotix.googlecode.com/svn/wiki/newrobot.png">
+
+Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12._ We are now ready to begin actually talking with our robot. You can repeatedly save and open robot files.
+
+= Connecting to the arbotiX =
+You can open a port by clicking on *config|port* in the menu, and entering a port name in the dialog box that will pop up. The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
+
+<img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
 
 = Capturing a Pose =
-Once you have created a robot, PyPose will adjust to show the correct number of sliding servo adjustment bars. The box to the right of the adjustment bars displays the names of poses we have captured, since we haven't captured any, it will be blank. Below the pose list, we have two buttons: _add_ and _remove_. Click on _add_ and enter a name for your pose. I typically create a pose named "stand", for the default standing position of my bot. 
+Once you have created a robot, PyPose will adjust to show the correct number of sliding servo adjustment bars. The box to the right of the adjustment bars displays the names of poses we have captured, since we haven't captured any, it will be blank. Below the pose list, we have two buttons: _add_ and _remove_. Click on _add_ and enter a name for your pose. For instance, I typically create a pose named "stand", for the default standing position of my bot. 
 
 Now, be sure to click on the pose name in the pose list, then click _capture_, some messages will scroll by, and then the servo adjustment bars will be set to the current servo positions. You can adjust some if needed, and then click _set_ to send the on-screen positions back out to the servos. In order to pose the servos again, click _relax_ to release the servos and make them limp again.
 
