@@ -1,5 +1,16 @@
 #summary Other software libraries for the arbotiX
 
+There are a number of other libraries that have been developed for the arbotiX:
+  * [OtherLibraries#Commander Commander] - library for communicating with a handheld arbotiX Commander, or a PC. 
+  * [OtherLibraries#Motors2 Motors2] - for using the onboard motor drivers
+  * [OtherLibraries#Encoders Encoders] - for using the onboard encoder headers, this is actually two libraries: EncodersAB, for traditional quadrature encoders that output A&B signals, and EncodersCD for encoders that give out _clock_ and _direction_ signals.
+
+There are also a number of libraries that can be used with any robocontroller, mainly for sensors and actuators:
+  * [OtherLibraries#SharpIR SharpIR] - for reading distance using any of the family of Sharp IR ranging sensors.
+  * [OtherLibraries#Srf05 Srf05] - for reading distance using an Srf05 sonar sensors. 
+
+And of course, the stock Arduino libraries such as _Serial_ can be used. 
+
 = Motors2 =
 This library implements a dual motor driver using Timer2, it can be used to control the onboard motor driver on the arbotiX. It has several functions:
   * *set(l_pwm,r_pwm)* - set the left and right motor speeds at the same time.
