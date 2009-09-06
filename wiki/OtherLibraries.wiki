@@ -11,6 +11,9 @@ There are also a number of libraries that can be used with any robocontroller, m
 
 And of course, the stock Arduino libraries such as _Serial_ can be used. See some hints [OtherLibraries#Arduino_Hints here].
 
+= Commander =
+<font color="#FF0000">_Coming Soon</font>
+
 = Motors2 =
 This library implements a dual motor driver using Timer2, it can be used to control the onboard motor driver on the arbotiX. It has several functions:
   * *set(l_pwm,r_pwm)* - set the left and right motor speeds at the same time.
@@ -44,6 +47,9 @@ void loop(){
     
 }
 }}} 
+
+= Encoders = 
+<font color="#FF0000">_Coming Soon</font>
 
 = SharpIR =
 This library allows easy usage of a number of Sharp IR ranging sensors. Each IR ranger uses on analog pin. The library function _getData()_ converts the analog voltage into a distance in centimeters. 
@@ -91,9 +97,6 @@ void loop(){
     delay(1000);
 }
 }}}
-
-= Encoders = 
-<font color="#FF0000">_Coming Soon</font>
 
 = Arduino Hints =
 The default _Serial_ library that comes with Arduino environment will work with either the FTDI cable or the XBEE radio on the arbotiX _(remember, don't connect both the FTDI and the XBEE at the same time)._ We suggest using 38400 as the baud rate, since all of our demos use that.  
