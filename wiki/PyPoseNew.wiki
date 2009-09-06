@@ -2,6 +2,11 @@
 
 <font color="#FF0000">This Page Describes PyPose V0.91, which is a complete re-write using WxPython, and is currently under major development.
 
+Current Status:
+ * Poses editor is DONE
+ * Sequence editor is in progress
+ * PyPose sketch needs to be updated to play sequences live
+
 We need to add several things to the Install Page:
  * installing wx-python, from ubuntu, requires: sudo apt-get install python-wxgtk2.8
  * to install from windows/macOSX, use this page: </font>
