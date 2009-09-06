@@ -7,6 +7,10 @@ Current Status:
  * Sequence editor is in progress
  * PyPose sketch needs to be updated to play sequences live
 
+Known Bugs:
+ * If a port opening fails, messages are not correct
+ * Occasionally, when opening a file, the pose editor ends up shifted...
+
 We need to add several things to the Install Page:
  * installing wx-python, from ubuntu, requires: sudo apt-get install python-wxgtk2.8
  * to install from windows/macOSX, use this page: </font>
