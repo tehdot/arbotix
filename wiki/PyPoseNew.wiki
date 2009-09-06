@@ -31,7 +31,7 @@ We can finally start PyPose, the initial view will look something like this:
 
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
 
-This default view is the _Pose Editor_. There is a menu bar across the top of the program at all times, and a status bar across the bottom. The left hand side of the status bar prompts you with _please create or open a robot file_. The right hand side shows our connection status, we are currently not connected.
+This default view is the _Pose Editor_. There is a menu bar across the top of the program at all times, and a status bar across the bottom. The left hand side of the status bar prompts you with _please create or open a robot file_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected.
 
 = Creating a New Robot =
 The first thing we need to do, is to create a robot file. A robot file is where we will store our poses, sequences, and IK/FK configurations. Click on *robot|new* in the menu, and the following dialog will appear:
@@ -45,7 +45,7 @@ You can open a port by clicking on *config|port* in the menu, and entering a por
 
 <img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
 
-= Capturing a Pose =
+= The Pose Editor =
 Once you have created a robot, PyPose will adjust to show the correct number of sliding servo adjustment bars. The box to the right of the adjustment bars displays the names of poses we have captured, since we haven't captured any, it will be blank. Below the pose list, we have two buttons: _add_ and _remove_. Click on _add_ and enter a name for your pose. For instance, I typically create a pose named "stand", for the default standing position of my bot. 
 
 Now, be sure to click on the pose name in the pose list, then click _capture_, some messages will scroll by, and then the servo adjustment bars will be set to the current servo positions. You can adjust some if needed, and then click _set_ to send the on-screen positions back out to the servos. In order to pose the servos again, click _relax_ to release the servos and make them limp again.
@@ -54,9 +54,9 @@ _Note: Be careful when clicking_ capture, _as it will overwrite any data attache
 
 If for some reason a servo does not respond, there may be a delay in the pose capture. A message box will eventually be displayed, telling which servos were unreadable. Check your connections if this happens:
 
-<img src="http://arbotix.googlecode.com/svn/wiki/errors.png">
+<img src="http://arbotix.googlecode.com/svn/wiki/capture.png">
 
-= Creating Sequences =
+= The Sequence Editor =
 
 
 = Parametric Poses = 
@@ -69,11 +69,12 @@ Selecting *Pose|Export to AVR* will allow you to save a C header file, which con
 NUKE is currently under development.
 
 = Hacking =
-Robot pose files are plain text. The format is quite simple, the first line is the robot name and servo count, separated by a colon. Each line after that should be a pose name, colon, and then the servo values. 
+Robot pose files are plain text. The format is quite simple, the first line is the robot name and servo count, separated by a colon. Each line after that should be a pose or sequence. A pose is composed of a name, colon, and then the servo values. A sequence has a name, followed by a colon, and then a list of pairs of pose names and transition times.
 {{{
 myNewRobot:4
-pose1: 512, 512, 512, 512 
-poseX: 92, 104, 92, 800
+Pose=pose1: 512, 512, 512, 512 
+Pose=poseX: 92, 104, 92, 800
+Seq=myFirstSequence: pose1|1000, poseX|500, pose1|800
 }}}
 
 The communications protocol used by PyPose and the sketch on your arbotiX is essentially the same as the Bioloid bus itself. We have, however, defined additional registers, and an ID of 253 will command the arbotiX to act on these special registers. Much of this functionality is not complete, but will eventually allow live playback of poses, etc. 
