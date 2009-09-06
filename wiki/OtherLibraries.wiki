@@ -1,4 +1,4 @@
-#summary Other software libraries for the arbotiX
+#summary Other software libraries for robocontrollers
 
 There are a number of other libraries that have been developed for the arbotiX:
   * [OtherLibraries#Commander Commander] - library for communicating with a handheld arbotiX Commander, or a PC. 
