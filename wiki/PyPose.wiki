@@ -61,6 +61,8 @@ It should disappear quite quickly, unless PyPose has trouble reading a servo. Wh
 
 Servo values can be manually edited after a capture, just move the sliding adjustment bars. The left and right arrow keys can be used to fine tune the values.
 
+<img src="http://arbotix.googlecode.com/svn/wiki/pypose2.png">
+
 _Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list. We are currently revamping the pose interface to be more data safe!_ 
 
 = The Sequence Editor =
