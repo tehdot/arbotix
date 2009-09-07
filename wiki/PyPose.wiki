@@ -6,16 +6,12 @@ PyPose V0.91a includes Pose ability, V0.91b will implement the full sequencer pl
 
 Current Status:
  * Poses editor is DONE
- * Sequence editor is in progress
- * PyPose sketch needs to be updated to play sequences live
+ * Sequence editor is in progress (PyPose sketch needs to be updated to play sequences live)
 
 Known Bugs:
  * If a port opening fails, messages are not correct
  * Occasionally, when opening a file, the pose editor ends up shifted...
-
-We need to add several things to the Install Page:
- * installing wx-python, from ubuntu, requires: sudo apt-get install python-wxgtk2.8
- * to install from windows/macOSX, use this page: </font>
+</font>
 
 = Introduction =
 One of the most important features of AX-12 servos is that we can move the servo to a particular position by hand and read the position back from the servo. This feature allows us to _pose_ the robot, and _capture_ the pose. PyPose began as a simple open-source pose and capture program, written in Python and using wxPython for a graphical package. Traditionally, roboticists might create a series of poses, and then assemble them into a _motion sequence_.
