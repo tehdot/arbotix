@@ -40,19 +40,14 @@ We can finally start PyPose, the initial view will look something like this:
 
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
 
-This default view is the _Pose Editor_. There is a menu bar across the top of the program at all times, and a status bar across the bottom. The left hand side of the status bar prompts you with _please create or open a robot file_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected.
+This default view is the _Pose Editor_. There is a menu bar across the top of the program at all times, and a status bar across the bottom of the window. The left hand side of the status bar prompts you with _please create or open a robot file_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected.
 
-= Creating a New Robot =
-The first thing we need to do, is to create a robot file. A robot file is where we will store our poses, sequences, and IK/FK configurations. Click on *robot|new* in the menu, and the following dialog will appear:
+= Creating a New Robot, Connecting to the arbotiX =
+The first thing we need to do is to create a robot file. A robot file is where we will store our poses, sequences, and IK/FK configurations. Click on *robot|new* in the menu, and the *Create New Robot* dialog will appear. Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12._ We are now ready to begin actually talking with our robot. You can repeatedly save and open robot files.
 
-<img src="http://arbotix.googlecode.com/svn/wiki/newrobot.png">
+<img src="http://arbotix.googlecode.com/svn/wiki/newrobot.png"><img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
 
-Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12._ We are now ready to begin actually talking with our robot. You can repeatedly save and open robot files.
-
-= Connecting to the arbotiX =
-You can open a port by clicking on *config|port* in the menu, and entering a port name in the dialog box that will pop up. The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
-
-<img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
+To communicate with our robot, we need open a port to our XBEE explorer, or FTDI board. You can open a port by clicking on *config|port* in the menu, and entering a port name in the dialog box that will pop up (shown above). The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
 
 = The Pose Editor =
 <font color="#FF0000">Describe parts of editor, how to create a new pose, playback, and capture</font>
