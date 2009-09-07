@@ -48,7 +48,7 @@ The first thing we need to do is to create a robot file. A robot file is where w
 <img src="http://arbotix.googlecode.com/svn/wiki/newrobot.png">
 <img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
 
-To communicate with our robot, we need open a port to our XBEE explorer, or FTDI board. You can open a port by clicking on *config|port* in the menu, and entering a port name in the dialog box that will pop up (shown above). The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
+To communicate with our robot, we need open a port to our XBEE explorer, or FTDI board. You can open a port by clicking on *config|port* in the menu, and entering a port name in the "Select Communications Port" box that will pop up (shown above). The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
 
 = The Pose Editor =
 <font color="#FF0000">Describe parts of editor, how to create a new pose, playback, and capture</font>
