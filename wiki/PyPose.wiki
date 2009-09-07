@@ -102,9 +102,6 @@ The communications protocol used by PyPose and the sketch on your arbotiX is ess
 
 = To Do =
 While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
-  * Easy method for capturing min/max servo positions.
-  * Undo a capture (recover pose values).
+  * NUKE
   * Drop-down selection of serial ports.
-  * Play poses live.  
-  * Parameterized Pose Capture Engine. 
-  * Direct pass-thru driver for USBDynamixel, ability to select which driver to use.
+  * Ability to select which driver to use (arbotix/direct)
