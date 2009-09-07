@@ -1,6 +1,6 @@
 #summary pose and capture software
 
-<font color="#FF0000">This Page Describes PyPose V0.91, which is a complete re-write using WxPython, and is currently under major development.
+<font color="#FF0000">This Page Describes PyPose V0.91, which is a complete re-write using wxPython, and is currently under major development.
 
 PyPose V0.91a includes Pose ability, V0.91b will implement the full sequencer plus a new sketch.
 
