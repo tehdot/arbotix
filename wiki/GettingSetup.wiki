@@ -22,7 +22,7 @@ The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
  # Download and install !PySerial: http://sourceforge.net/projects/pyserial/files/
  # Put the PyPose software in an easy to use location
 
-If using Ubuntu, you can install item 1-3 of the above with: _sudo apt-get install python python-serial  python-wxgtk2.8_.
+If using Ubuntu, you can install items 1-3 of the above with: _sudo apt-get install python python-serial  python-wxgtk2.8_.
 
 = Downloading Code =
 There are two ways to download code onto the arbotiX: either with an FTDI cable or an In-System Programmer, although there are a number of different versions of each available:
