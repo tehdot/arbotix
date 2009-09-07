@@ -39,6 +39,7 @@ We need to connect to the arbotiX in one of two ways: through an FTDI cable, or 
 We can finally start PyPose, the initial view will look something like this: 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose.png">
+
 _*Figure 1 - The PyPose program when first loaded, showing empty pose list and pose editor.*_
 
 This default view is the _Pose Editor_. There is a menu bar across the top of the program at all times, and a status bar across the bottom of the window. The left hand side of the status bar prompts you with _please create or open a robot file_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected.
@@ -48,6 +49,7 @@ The first thing we need to do is to create a robot file. A robot file is where w
 
 <img src="http://arbotix.googlecode.com/svn/wiki/newrobot.png">
 <img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
+
 _*Figure 2 - Create New Robot and Select Communications Port windows.*_
 
 To communicate with our robot, we need open a port to our XBEE explorer, or FTDI board. You can open a port by clicking on *config|port* in the menu, and entering a port name in the *Select Communications Port* box that will pop up (shown above). The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
@@ -58,6 +60,7 @@ Once you have created a robot, PyPose will adjust to show the correct number of 
 We also have 3 buttons underneath our servo adjustment bars: _relax_, _capture_, and _set_. *relax* shuts of the servo torque, allowing you to pose the robot into place. *set* will write the current servo adjustment bar values out to the robot's servos. *capture* allows us to read the values into the slider bars. When you click *capture*, a status indicator will appear:
 
 <img src="http://arbotix.googlecode.com/svn/wiki/capture.png">
+
 _*Figure 3 - capture status bar.*_
 
 It should disappear quite quickly, unless PyPose has trouble reading a servo. When complete, the lower left corner of the status bar will either say _"capture done!"_ to indicate success, or list a set of servos it could not query. If you have trouble, check to make sure that you have entered the correct number of servos during robot setup, and that all of your wires are tight. Old wires may have to be replaced. 
@@ -65,6 +68,7 @@ It should disappear quite quickly, unless PyPose has trouble reading a servo. Wh
 Servo values can be manually edited after a capture, just move the sliding adjustment bars. The left and right arrow keys can be used to fine tune the values.
 
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose2.png">
+
 _*Figure 4 - PyPose, after a successful capture.*_
 
 _Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list. We are currently revamping the pose interface to be more data safe!_ 
