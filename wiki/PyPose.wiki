@@ -78,6 +78,8 @@ _Note: Be careful when clicking_ capture, _as it will overwrite any data attache
 <font color="#FF0000">Describe main parts of editor: creating a new sequence, adding transitions to a sequence, changing values of those transitions, run&halt</font>
 To Be Completed...
 
+<img src="http://arbotix.googlecode.com/svn/wiki/sequence.png">
+
 = Exporting to the AVR = 
 Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
 
