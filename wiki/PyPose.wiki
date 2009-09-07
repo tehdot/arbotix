@@ -1,4 +1,4 @@
-#summary basic pose and capture software
+#summary pose and capture software
 
 <font color="#FF0000">This Page Describes PyPose V0.91, which is a complete re-write using WxPython, and is currently under major development.
 
