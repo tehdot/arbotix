@@ -16,8 +16,9 @@ The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
     # put all the directories found in _libraries_ in _arduino/hardware/libraries/_
 
 = !PyPose Setup =
-!PyPose is a very basic pose and capture program, written in Python using !TkInter. We of course will have to install Python, !PySerial to access serial ports, and then !PyPose itself.
+!PyPose is a pose and capture program, written in Python using !WxPython. We of course will have to install Python, !WxPython, !PySerial to access serial ports, and then !PyPose itself.
  # Download and install Python 2.5: http://www.python.org/download/releases/2.5.4/
+ # Download and install !wxPython: http://www.wxpython.org/download.php
  # Download and install !PySerial: http://sourceforge.net/projects/pyserial/files/
  # Put the PyPose software in an easy to use location
 
