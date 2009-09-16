@@ -30,6 +30,8 @@ There are two ways to download code onto the arbotiX: either with an FTDI cable 
  * *[http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=768-1028-ND The FTDI Cable]* can be used with the Arduino environment, getting the auto-reset to work is a slight pain. The cable uses RTS rather than DTR for the reset signal. Here's how to fix it under Linux/MAC: http://www.arduino.cc/playground/Hacking/FTDIAutoReset
  * *To use an ISP* such as the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] you will have to adjust a few parameters, as Arduino uploads using the bootloader by default: http://www.arduino.cc/en/Hacking/Programmer 
 
+_Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
+
 = Wireless Downloading =
 With a bootloader on the arbotiX, you can do wireless downloading. The arbotiX bootloader runs at a 38400 baud rate, so your XBEE radios need to be set to 38400 for wireless downloading. You'll also have to manually push the RESET button. A tutorial on getting around the reset button push is here: http://www.ladyada.net/make/xbee/arduino.html 
 
