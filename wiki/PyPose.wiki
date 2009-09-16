@@ -1,18 +1,5 @@
 #summary pose and capture software
 
-<font color="#FF0000">This Page Describes PyPose V0.91, which is a complete re-write using wxPython, and is currently under major development.
-
-PyPose V0.91a includes Pose ability, V0.91b will implement the full sequencer plus a new sketch.
-
-Current Status:
- * Poses editor is DONE
- * Sequence editor is in progress (PyPose sketch needs to be updated to play sequences live)
-
-Known Bugs:
- * If a port opening fails, messages are not correct
- * Occasionally, when opening a file, the pose editor ends up shifted...
-</font>
-
 = Introduction =
 One of the most important features of AX-12 servos is that we can move the servo to a particular position by hand and read the position back from the servo. This feature allows us to _pose_ the robot, and _capture_ the pose. PyPose began as a simple open-source pose and capture program, written in Python and using wxPython for a graphical package. Traditionally, roboticists might create a series of poses, and then assemble them into a _motion sequence_.
 
@@ -20,7 +7,7 @@ As has often been said, there is more than one way to solve any problem. Motion 
  * Poses are not dynamic: given a limited number of poses, you have a limited number of positions the body can go to.  
  * Sequence creation can become quite repetitive if you desire a higher degree of control of the robot.
 
-The logical improvement is to _parameterize_ the poses. . By adding or subtracting the value of a dynamic parameter we can vary the response of our poses and motion sequences far more than before. This can [BioloidController#Walking_with_Fewer_Poses easily be done in software] after you export. 
+The logical improvement is to _parameterize_ the poses. By adding or subtracting the value of a dynamic parameter we can vary the response of our poses and motion sequences far more than before. This can [BioloidController#Walking_with_Fewer_Poses easily be done in software] after you export. 
 
 Of course, the holy grail of motion control is to have a fast Inverse Kinematics engine. Using inverse kinematics, we can compute how to place the foot of a robot into any position it can physically occupy. The _Nearly Universal Kinematics Engine_, or NUKE, is a highly templated IK solution for quadrupeds and hexapods. After answering a series of questions about the construction of the robot, we can automatically build an IK engine for the robot. Why then would we even offer poses and sequences? 
  * NUKE still has a limited number of configurations it can handle, if you are building something like a biped you will _have_ to use poses.  
@@ -75,13 +62,16 @@ _*Figure 4 - PyPose, after a successful capture.*_
 _Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list. We are currently revamping the pose interface to be more data safe!_ 
 
 = The Sequence Editor =
-<font color="#FF0000">Describe main parts of editor: creating a new sequence, adding transitions to a sequence, changing values of those transitions, run&halt</font>
-To Be Completed...
+Selecting *tools|sequence editor* will display the sequence editor instead of the pose editor. The sequence editor, shown below in _figure 5_ contains a group of controls dedicated to editing an individual sequence and a list of sequences on the right side of the screen. Below the sequence editor are three buttons: _relax_, _run_, and _halt_. *relax* works just like it did in the pose editor. *run* and *halt* will start and stop a sequence from running _(currently not working, looking for a future release of PyPose)_. Below the list of sequences are two buttons: _add_ and _remove_ for creating and deleting sequences. 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/sequence.png">
 
+_*Figure 5 - PyPose, sequence editor tool.*_
+
+A sequence is simply a compilation of transitions. Each transition consists of a pose to transition to, and a time to take during the transition.
+
 = Exporting to the AVR = 
-Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
+Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses and sequences, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
 
 = NUKE = 
 NUKE is currently under development.
@@ -104,3 +94,8 @@ While PyPose provides basic functionality, it is not quite done yet. There is a 
   * NUKE
   * Drop-down selection of serial ports.
   * Ability to select which driver to use (arbotix/direct)
+
+<font color="#FF0000">Known Bugs:
+ * If a port opening fails, messages are not correct
+ * Occasionally, when opening a file, the pose editor ends up shifted...
+</font>
