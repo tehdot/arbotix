@@ -12,7 +12,7 @@ There are also a number of libraries that can be used with any robocontroller, m
   * Sp03 - make your robot talk with the Sp03 text-to-speech synthesizer. 
   * !SensorUtils - utility functions for converting units of measure, etc. 
 
-And of course, the stock Arduino libraries such as _Serial_ can be used. See some hints [OtherLibraries#Arduino_Hints here].
+And of course, the stock Arduino libraries such as _Serial_ and _Servo_ can be used. See some hints [OtherLibraries#Arduino_Hints here].
 
 = Commander =
 <font color="#FF0000">_Coming Soon</font>
