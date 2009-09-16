@@ -26,13 +26,12 @@
 
 <font color="#FF0000">DOCUMENTATION FOR BETA3 IS STILL IN THE WORKS!</font>
 
-= Release 1.0 - Mid-September =
+= Release 1.0 - Late-September =
  * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
  * PyPose improvements:
     # Play poses live - <font color="#FF0000">_in progress_</font>
     # Export of complete engine - <font color="#FF0000">_in progress_</font>
     # drop-down selection of serial ports and driver
-    # clone pose
 
 = Release 1.1 - Late Fall 2009=
  * first version of NUKE - the Nearly Universal Kinematics Engine
