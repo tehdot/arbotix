@@ -24,8 +24,6 @@
     # Sequence Engine - <font color="#009933">_done_</font>
  * updated examples: pypose - <font color="#009933">_done_</font>
 
-<font color="#FF0000">DOCUMENTATION FOR BETA3 IS STILL IN THE WORKS!</font>
-
 = Release 1.0 - Late-September =
  * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
  * PyPose improvements:
