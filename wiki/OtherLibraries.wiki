@@ -7,7 +7,10 @@ There are a number of other libraries that have been developed for the arbotiX:
 
 There are also a number of libraries that can be used with any robocontroller, mainly for sensors and actuators:
   * [OtherLibraries#SharpIR SharpIR] - for reading distance using any of the family of Sharp IR ranging sensors.
-  * [OtherLibraries#Srf05 Srf05] - for reading distance using an Srf05 sonar sensors. 
+  * [OtherLibraries#Srf05 Srf05] - for reading distance using an Srf05 sonar sensors.
+  * Srf08 - for reading distance using an Srf02 or Srf08 sonar sensor. 
+  * Sp03 - make your robot talk with the Sp03 text-to-speech synthesizer. 
+  * !SensorUtils - utility functions for converting units of measure, etc. 
 
 And of course, the stock Arduino libraries such as _Serial_ can be used. See some hints [OtherLibraries#Arduino_Hints here].
 
@@ -104,3 +107,5 @@ void loop(){
 
 = Arduino Hints =
 The default _Serial_ library that comes with Arduino environment will work with either the FTDI cable or the XBEE radio on the arbotiX _(remember, don't connect both the FTDI and the XBEE at the same time)._ We suggest using 38400 as the baud rate, since all of our demos use that.  
+
+The default _Servos_ library is shipped with the Sanguino installation. Please note that it is not the same servo library found in the newer Arduino 0017 release, it is still the 2-servo hardware timer version. This servo library can be used to control the two servo headers found on the arbotiX.
