@@ -24,6 +24,9 @@ The arbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
 
 If using Ubuntu, you can install items 1-3 of the above with: _sudo apt-get install python python-serial  python-wxgtk2.8_.
 
+= Connecting Power, Etc =
+Please see the downloadable arbotiX manual for connecting external devices and power to the board. 
+
 = Downloading Code =
 There are two ways to download code onto the arbotiX: either with an FTDI cable or an In-System Programmer, although there are a number of different versions of each available:
  * *The FTDI breakout board* available from [http://www.sparkfun.com/commerce/product_info.php?products_id=9115 Sparkfun] will work with the Arduino environment out of the box. 
