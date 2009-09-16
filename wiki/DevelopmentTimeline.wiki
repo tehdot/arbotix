@@ -18,7 +18,7 @@
 = Beta 3 Release - Released 9/15/09 = 
  * new libraries: Commander - <font color="#009933">_done_</font>
  * PyPose improvements: (V0.91)
-    # Completely rewritten, using wxPython instead of TkInter - <font color="#009933">_done_</font>
+    # Completely rewritten, using wxPython instead of !TkInter - <font color="#009933">_done_</font>
     # Sequence creation - <font color="#009933">_done_</font>
  * bioloid library improvements:
     # Sequence Engine - <font color="#009933">_done_</font>
