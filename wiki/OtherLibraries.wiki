@@ -16,9 +16,13 @@ And of course, the stock Arduino libraries such as _Serial_ can be used. See som
 
 = Motors2 =
 This library implements a dual motor driver using Timer2, it can be used to control the onboard motor driver on the arbotiX. It has several functions:
-  * *set(l_pwm,r_pwm)* - set the left and right motor speeds at the same time.
-  * *left(l_pwm)* - set the left motor speed.
-  * *right(r_pwm)* - set the right motor speed. 
+
+{{{
+void left(int pwm) - set the left motor speed.
+void right(int pwm) - set the right motor speed.
+void set(int lpwm, int rpwm) - set the left and right motor speeds at the same time.
+}}}
+ 
 Motor speeds are between -255 and 255. -255 is full reverse, 0 is stopped, and 255 is full speed forward. 
 
 {{{ 
