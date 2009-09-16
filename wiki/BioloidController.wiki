@@ -5,7 +5,7 @@ The BioloidController library is an easy way to interact with Bioloid servos. It
   * ax12.h & ax12.cpp - implement the low-level serial communications code for communicating with the Bioloid bus. 
   * !BioloidController.h & !BioloidController.cpp - implement higher level functions, like loading a pose from FLASH memory, or manipulating poses. 
 
-This page will walk through the basics of using the BioloidController library. At times in our code we will use *...* to truncate and cut parts of the code in order to be more readable. Full code examples can be found in the _sketches_ folder of the _arbotiX-software_ release.
+This page will walk through the basics of using the BioloidController library. At times we will use *...* to truncate parts of the code in order to be more readable and focused. Full code examples can be found in the _sketches_ folder of the _arbotiX-software_ release.
 
 = Getting Started =
 AX-12 servos are different from regular hobby servos. They connect to a serial bus, and each has an ID number. Rather than receiving a PWM signal, we write to onboard memory locations through our serial protocol. For more information about AX-12 servos, see either this [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/controlling-ax-12-servos-3275/ tutorial on TRC], or take a look at the [http://www.trossenrobotics.com/images/productdownloads/AX-12_Manual(English).pdf AX-12 datasheet]. 
