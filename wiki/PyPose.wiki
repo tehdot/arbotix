@@ -68,7 +68,7 @@ Selecting *tools|sequence editor* will display the sequence editor instead of th
 
 _*Figure 5 - PyPose, sequence editor tool.*_
 
-A sequence is simply a compilation of transitions that will be played in order (from the top of the transition box to the bottom of the box). Each transition consists of a pose to transition to, and a time to take during the transition.
+A sequence is simply a compilation of transitions that will be played in order (from the top of the transition box to the bottom of the box). Each transition consists of a pose to transition to, and a time to take during the transition. The *new* and *delete* buttons can be used to add new transitions or delete existing ones. Each new transition added to the box has a default pose of _none_ and a time of _500ms_ (1/2 of a second). The *move up* and *move down* buttons can be used to rearrange transitions. 
 
 = Exporting to the AVR = 
 Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses and sequences, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
