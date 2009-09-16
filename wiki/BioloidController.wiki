@@ -44,17 +44,18 @@ Manipulating individual servos is nice, but when we have multi-servo legged robo
 
 #include <avr/pgmspace.h>
 
-PROGMEM prog_uint16_t liftLeft[] = {0x0C, 612, 620, 450, 381};
-PROGMEM prog_uint16_t plantRight[] = {0x0C, 612, 620, 508, 516};
-PROGMEM prog_uint16_t swingRight[] = {0x0C, 612, 620, 710, 593};
-PROGMEM prog_uint16_t swingLeft[] = {0x0C, 413, 410, 450, 390};
-PROGMEM prog_uint16_t stand[] = {0x0C, 512, 512, 512, 512};
-PROGMEM prog_uint16_t plantLeft[] = {0x0C, 418, 411, 503, 516};
-PROGMEM prog_uint16_t liftRight[] = {0x0C, 523, 520, 712, 592};
+PROGMEM prog_uint16_t liftLeft[] = {4, 612, 620, 450, 380};
+PROGMEM prog_uint16_t plantRight[] = {4, 612, 620, 508, 516};
+PROGMEM prog_uint16_t swingRight[] = {4, 612, 620, 710, 593};
+PROGMEM prog_uint16_t swingLeft[] = {4, 413, 410, 450, 390};
+PROGMEM prog_uint16_t plantLeft[] = {4, 418, 411, 503, 516};
+PROGMEM prog_uint16_t liftRight[] = {4, 523, 520, 712, 592};
+
+PROGMEM transition_t forward[] = {{0,7} ,{plantLeft,250} ,{liftRight,250} ,{swingRight,250} ,{plantRight,250} ,{liftLeft,250} ,{swingLeft,250} ,{plantLeft,250} };
 
 #endif
 }}}
-Where _droid_ was the name of our robot (PyPose automatically converts it to upper case during export), and liftLeft, plantRight, etc are the pose names. We will typically save our pose file as poses.h, in the directory where our sketch is located. This pose file is the example from our video of making the _walking droid_ work with an arbotiX.
+Where _droid_ was the name of our robot (PyPose automatically converts it to upper case during export), and liftLeft, plantRight, etc are the pose names. We will typically save our pose file as poses.h, in the directory where our sketch is located. This pose file is the example from our video of making the _walking droid_ work with an arbotiX. We'll discuss the transition sequence _(forward)_ later. 
 
 We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus !SyncWrite (which is much faster than setting the position of each servo individually). 
 
@@ -99,82 +100,103 @@ void setup(){
     }
 }
 
-// walk
-void loop(){
-    // if finished interpolating, which pose do we go to next?
-    if(bioloid.interpolating == 0){
-        idx++;
-        if(idx > 18) while(1);   // this demo goes 3 cycles, then stops
-        if(idx % frames == 0){
-            bioloid.loadPose(plantLeft);
-        }else if(idx % frames == 1){
-            bioloid.loadPose(liftRight);   
-        }else if(idx % frames == 2){
-            bioloid.loadPose(swingRight);   
-        }else if(idx % frames == 3){
-            bioloid.loadPose(plantRight);   
-        }else if(idx % frames == 4){
-            bioloid.loadPose(liftLeft);
-        }else if(idx % frames == 5){
-            bioloid.loadPose(swingLeft);
-        }
-        bioloid.interpolateSetup(1000);   
-    }
-    
-    // update joints, this should be called faster than 30Hz, which is our interpolating frame length. 
-    bioloid.interpolateStep();
-}
+void loop(){}
 }}}
 The interpolation engine is very simple. It writes a new frame out to the servos at about 30Hz. If your loop code gets really long, this could become problematic. Eventually, we will have an interpolation engine that is interrupt driven, so that the movement is more guaranteed to be smooth.
 
 An item I did not discuss above, was bioloid.readPose(), this queries each servo, and loads their positions into the _curpose_ buffer. This is most useful for standing up gently, as shown above. bioloid.loadPose("pose_name") always loads into the _nextpose_ buffer, and interpolation always happens from _curpose_ to _nextpose_.
 
+= Walking with Sequences = 
+We could manually handle loading pose after pose and writing them out to the servos, or we can use a sequence. A sequence can be constructed in PyPose and is exported inside our pose file. Each sequence contains several transitions, each transition is a pose name and an interpolation time to use when transitioning to that pose. 
+
+{{{
+#include <ax12.h>
+#include <BioloidController.h>
+#include "poses.h"
+
+BioloidController bioloid = BioloidController(1000000);
+
+void setup(){
+    // stand up slowly
+    bioloid.loadPose(plantLeft);
+    bioloid.readPose();
+    bioloid.interpolateSetup(500);
+    while(bioloid.interpolating > 0){
+        bioloid.interpolateStep();
+        delay(3);
+    }
+    
+    // start our walking
+    bioloid.playSeq(forward);
+}
+
+void loop(){
+    bioloid.play();
+}
+}}}
+
+We're using the same code to "stand" up, but then we call _playSeq()_ with the name of a sequence, in our case, _forward_ which will make the robot walk forward. _playSeq()_ is somewhat like _interpolateSetup()_, it just bootstraps our system. We need to call _play()_ just as we called _interpolateStep()_. Just like _bioloid.interpolating_, we have a variable that tells us when we're done, _bioloid.playing_. 
+
 = Walking with Fewer Poses =
 Issy used only 3 poses for walking, one for normal standing position, and 2 for picking up each of our pairs of legs, but could do an unlimited number of step sizes. This was accomplished by basically parameterizing the length of the step. Eventually, PyPose and the BioloidController library will automatically support the creation of these parameterizations, but that is still in progress. Here is a sample of Issy's code, showing only the walking part in the loop:
 {{{
+// servo numbers
+#define RIGHT_FRONT     5
+#define LEFT_FRONT      6
+#define RIGHT_REAR      11
+#define LEFT_REAR       12
+#define TILT_SERVO      13
+
+...
+
 void loop(){
+
     // we read in serial port data here, to control Issy via the XBEE radio....
 
     // update walking gait parameters
     if(bioloid.interpolating == 0){
-        // rstep and lstep are the size of the step for each side of Issy, having one side take longer steps, allows us to turn easily. 
-        //Their values are set in our serial loop (not shown above). 
         if((rstep != 0) || (lstep != 0)){    // do nothing if we are stopped
         if(walkMode == 0){
-            bioloid.loadPose(walk0);  // lift 2 feet
-            bioloid.nextpose[4] = bioloid.nextpose[4] - rstep;  // apply step sizes
-            bioloid.nextpose[5] = bioloid.nextpose[5] - lstep;
-            bioloid.nextpose[10] = bioloid.nextpose[10] + rstep;
-            bioloid.nextpose[11] = bioloid.nextpose[11] + lstep;
+            bioloid.loadPose(walk0);
+            bioloid.setNextPose(RIGHT_FRONT,bioloid.getNextPose(RIGHT_FRONT) - rstep);
+            bioloid.setNextPose(LEFT_FRONT,bioloid.getNextPose(LEFT_FRONT) - lstep);
+            bioloid.setNextPose(RIGHT_REAR,bioloid.getNextPose(RIGHT_REAR) + rstep);
+            bioloid.setNextPose(LEFT_REAR,bioloid.getNextPose(LEFT_REAR) + lstep);
             walkMode = 1;
-            bioloid.interpolateSetup(75); // need some time to step nicely
+            bioloid.interpolateSetup(75);   
         }else if(walkMode == 1){
-            bioloid.loadPose(walkend); // put feet down
-            bioloid.nextpose[4] = bioloid.pose[4]; // but keep them at the correct step place
-            bioloid.nextpose[5] = bioloid.pose[5];
-            bioloid.nextpose[10] = bioloid.pose[10];
-            bioloid.nextpose[11] = bioloid.pose[11];
+            bioloid.loadPose(walkend);
+            bioloid.setNextPose(RIGHT_FRONT,bioloid.getCurPose(RIGHT_FRONT));
+            bioloid.setNextPose(LEFT_FRONT,bioloid.getCurPose(LEFT_FRONT));
+            bioloid.setNextPose(RIGHT_REAR,bioloid.getCurPose(RIGHT_REAR));
+            bioloid.setNextPose(LEFT_REAR,bioloid.getCurPose(LEFT_REAR));
             walkMode = 2;
-            bioloid.interpolateSetup(30); // putting feet down takes less time than stepping.    
+            bioloid.interpolateSetup(30);   
         }else if(walkMode == 2){
-            bioloid.loadPose(walk1); // lift the other 2 feet
-            bioloid.nextpose[4] = bioloid.nextpose[4] + rstep; // and apply step sizes
-            bioloid.nextpose[5] = bioloid.nextpose[5] + lstep;
-            bioloid.nextpose[10] = bioloid.nextpose[10] - rstep;
-            bioloid.nextpose[11] = bioloid.nextpose[11] - lstep;
+            bioloid.loadPose(walk1);
+            bioloid.setNextPose(RIGHT_FRONT,bioloid.getNextPose(RIGHT_FRONT) + rstep);
+            bioloid.setNextPose(LEFT_FRONT,bioloid.getNextPose(LEFT_FRONT) + lstep);
+            bioloid.setNextPose(RIGHT_REAR,bioloid.getNextPose(RIGHT_REAR) - rstep);
+            bioloid.setNextPose(LEFT_REAR,bioloid.getNextPose(LEFT_REAR) - lstep);
             walkMode = 3;
             bioloid.interpolateSetup(75);   
         }else{
-            bioloid.loadPose(walkend); // put our two feet down 
-            bioloid.nextpose[4] = bioloid.pose[4];
-            bioloid.nextpose[5] = bioloid.pose[5];
-            bioloid.nextpose[10] = bioloid.pose[10];
-            bioloid.nextpose[11] = bioloid.pose[11];
+            bioloid.loadPose(walkend);  
+            bioloid.setNextPose(RIGHT_FRONT,bioloid.getCurPose(RIGHT_FRONT));
+            bioloid.setNextPose(LEFT_FRONT,bioloid.getCurPose(LEFT_FRONT));
+            bioloid.setNextPose(RIGHT_REAR,bioloid.getCurPose(RIGHT_REAR));
+            bioloid.setNextPose(LEFT_REAR,bioloid.getCurPose(LEFT_REAR));
             walkMode = 0;
             bioloid.interpolateSetup(30);   
         }
         }else{
             // stopped! put feet down!
+            bioloid.loadPose(walkend);  
+            bioloid.setNextPose(RIGHT_FRONT,bioloid.getCurPose(RIGHT_FRONT));
+            bioloid.setNextPose(LEFT_FRONT,bioloid.getCurPose(LEFT_FRONT));
+            bioloid.setNextPose(RIGHT_REAR,bioloid.getCurPose(RIGHT_REAR));
+            bioloid.setNextPose(LEFT_REAR,bioloid.getCurPose(LEFT_REAR));
+            bioloid.interpolateSetup(30);   
         }   
     }
     
@@ -190,7 +212,7 @@ If using more than 18 servos, you will need to change AX12_MAX_SERVOS in ax12.h 
 
 Pose header files are very simple. We are using the program memory storage utilities of AVR-Libc in order to store the poses in the FLASH, rather than occupying RAM. Each pose is an array of integers, to put this array in program memory it is of type _PROGMEM prog_uint16_t_. The first element in the array is the servo count. The servo count can be 1-255, in the example below, Issy has 12 servos:
 {{{
-PROGMEM prog_uint16_t stand[ ] = {0x0C,512,512,482,542,662,362,512,512,542,482,362,662}; 
+PROGMEM prog_uint16_t stand[ ] = {12,512,512,482,542,662,362,512,512,542,482,362,662}; 
 }}}
 Each number after the servo count is the position of the servo, starting with ID number 1. Positions are 0-1023, the same as what an AX-12 can actually take on. 
 
