@@ -10,7 +10,7 @@ There are also a number of libraries that can be used with any robocontroller, m
   * [OtherLibraries#Srf05 Srf05] - for reading distance using an Srf05 sonar sensors.
   * Srf08 - for reading distance using an Srf02 or Srf08 sonar sensor. 
   * Sp03 - make your robot talk with the Sp03 text-to-speech synthesizer. 
-  * !SensorUtils - utility functions for converting units of measure, etc. 
+  * !SensorUtils - utility functions for converting units of measure, filtering data, etc. 
 
 And of course, the stock Arduino libraries such as _Serial_ and _Servo_ can be used. See some hints [OtherLibraries#Arduino_Hints here].
 
