@@ -2,7 +2,7 @@
 
 = Beta 1 Release - Released 8/8/09 =
  * new libraries: bioloid, sharpIR - <font color="#009933">_done_</font>
- * PyPose functionality:
+ * PyPose functionality: (V0.50)
     # create robot files, capture poses - <font color="#009933">_done_</font>
     # export to AVR - <font color="#009933">_done_</font>
     # code and sketch to interact with arbotiX - <font color="#009933">_done_</font>
@@ -11,7 +11,7 @@
 = Beta 2 Release - Released 8/27/09 =
  * new libraries: Motors2, Srf05 -<font color="#009933">_done_</font>
  * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid - <font color="#009933">_done_</font>
- * PyPose improvements:
+ * PyPose improvements: (V0.89)
     # USBDynamixel driver - <font color="#009933">_done_</font> _(note: currently not usable without editing code)_
  * new examples: issy - <font color="#009933">_done_</font>
 
@@ -25,11 +25,11 @@
  * updated examples: pypose - <font color="#009933">_done_</font>
 
 *Release 3a - 9/16/09* - Servo editors are now disabled until a pose is selected.
+*Release 3b - 9/17/09* - PyPose V0.93 - Live playback of sequences!
 
 = Release 1.0 - Late-September =
  * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
- * PyPose improvements:
-    # Play poses live - <font color="#FF0000">_in progress_</font>
+ * PyPose improvements: (V1.0)
     # drop-down selection of serial ports and driver
 
 = Release 1.1 - Late Fall 2009=
