@@ -25,6 +25,7 @@
  * updated examples: pypose - <font color="#009933">_done_</font>
 
 *Release 3a - 9/16/09* - Servo editors are now disabled until a pose is selected.
+
 *Release 3b - 9/17/09* - PyPose V0.93 - Live playback of sequences!
 
 = Release 1.0 - Late-September =
