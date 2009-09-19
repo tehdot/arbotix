@@ -62,7 +62,7 @@ _*Figure 4 - PyPose, after a successful capture.*_
 _Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list. We are currently revamping the pose interface to be more data safe!_ 
 
 = The Sequence Editor =
-Selecting *tools|sequence editor* will display the sequence editor instead of the pose editor. The sequence editor, shown below in _figure 5_ contains a group of controls dedicated to editing an individual sequence and a list of sequences on the right side of the screen. Below the sequence editor are three buttons: _relax_, _run_, and _halt_. *relax* works just like it did in the pose editor. *run* and *halt* will start and stop a sequence from running _(currently not working, looking for a future release of PyPose)_. Below the list of sequences are two buttons: _add_ and _remove_ for creating and deleting sequences. 
+Selecting *tools|sequence editor* will display the sequence editor instead of the pose editor. The sequence editor, shown below in _figure 5_ contains a group of controls dedicated to editing an individual sequence and a list of sequences on the right side of the screen. Below the sequence editor are three buttons: _relax_, _run_, and _halt_. *relax* works just like it did in the pose editor. *run* and *halt* will start and stop the sequence you are currently editing from running. The download of a sequence to the arbotiX may take a few moments. Below the list of sequences are two buttons: _add_ and _remove_ for creating and deleting sequences. 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/sequence.png">
 
