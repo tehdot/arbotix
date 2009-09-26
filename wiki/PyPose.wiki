@@ -94,8 +94,3 @@ While PyPose provides basic functionality, it is not quite done yet. There is a 
   * NUKE
   * Drop-down selection of serial ports.
   * Ability to select which driver to use (arbotix/direct)
-
-<font color="#FF0000">Known Bugs:
- * If a port opening fails, messages are not correct
- * Occasionally, when opening a file, the pose editor ends up shifted...
-</font>
