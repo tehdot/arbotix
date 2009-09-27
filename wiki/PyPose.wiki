@@ -35,10 +35,10 @@ This default view is the _Pose Editor_, one of the many tools in !PyPose. There 
 = Creating a New Robot, Connecting to the arbotiX =
 The first thing we need to do is to create a project. A project is where we will store our poses, sequences, and IK/FK configurations. Click on *project|new* in the menu, and the *Create New Project* dialog will appear. Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12, you can change the number by using the Terminal._ We are now ready to begin actually talking with our robot. You can repeatedly save and open project files.
 
-<img src="http://arbotix.googlecode.com/svn/wiki/newproject.png">
+<img src="http://arbotix.googlecode.com/svn/wiki/newproj.png">
 <img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
 
-_*Figure 2 - Create New Robot and Select Communications Port windows.*_
+_*Figure 2 - Create New Project and Select Communications Port windows.*_
 
 To communicate with our robot, we need open a port to our XBEE explorer, or FTDI board. You can open a port by clicking on *config|port* in the menu, and entering a port name in the *Select Communications Port* box that will pop up (shown above). The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
 
@@ -71,7 +71,14 @@ _*Figure 5 - PyPose, sequence editor tool.*_
 A sequence is simply a compilation of transitions that will be played in order (from the top of the transition box to the bottom of the box). Each transition consists of a pose to transition to, and a time to take during the transition denoted as _delta-T_. The *new* and *delete* buttons can be used to add new transitions or delete existing ones. Each new transition added to the box has a default pose of _none_ and a time of _500ms_ (1/2 of a second). The *move up* and *move down* buttons can be used to rearrange transitions. 
 
 = Exporting to the AVR = 
-Selecting *Pose|Export to AVR* will allow you to save a C header file, which contains all of your poses and sequences, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
+Selecting *tools|export to AVR* will allow you to save a C header file, which contains all of your poses and sequences, in a format that stores them in FLASH memory, and makes them available to the BioloidController. 
+
+= Terminal =
+The terminal is a useful tool for configuring servos. It currently implements only a subset of it's eventual commands. It can currently be used to query an ArbotiX to find out what servos are attached, or to change the ID number of a servo:
+
+<img src="http://arbotix.googlecode.com/svn/wiki/terminal.png">
+
+_*Figure 6 - PyPose Terminal, showing a sequence of edits.*_
 
 = NUKE = 
 NUKE is currently under development.
