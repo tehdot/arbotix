@@ -48,4 +48,4 @@
 = Release 1.1 - Late Fall 2009=
  * first version of NUKE - the Nearly Universal Kinematics Engine
  * interrupt driven interpolation and servo update engine
- * servo min/max capture - <font color="#FF0000">_in progress_</font>
+ * servo min/max capture
