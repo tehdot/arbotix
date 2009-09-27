@@ -13,7 +13,7 @@ Of course, the holy grail of motion control is to have a fast Inverse Kinematics
  * NUKE still has a limited number of configurations it can handle, if you are building something like a biped you will _have_ to use poses.  
  * IK can be slow. If you have other important code to run, you may not be able to run a full IK engine. 
 
-Regardless of the method of motion creation, PyPose exports your work directly into C code that can be loaded onto the arbotiX using the Arduino IDE.
+Regardless of the method of motion creation, PyPose exports your work directly into C code that can be loaded onto the arbotiX using the Arduino IDE. PyPose also has a Terminal for editing servo parameters. 
 
 <div bg="#ff0000">
 = Hardware Setup = 
@@ -28,14 +28,14 @@ We can finally start PyPose, the initial view will look something like this:
 
 _*Figure 1 - The PyPose program when first loaded, showing empty pose list and pose editor.*_
 
-This default view is the _Pose Editor_. There is a menu bar across the top of the program at all times, and a status bar across the bottom of the window. The left hand side of the status bar prompts you with _please create or open a robot file_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected. The *tools* menu is probably the most important, as it lets us switch between the _Pose Editor_, _Sequence Editor_, and _NUKE_:
+This default view is the _Pose Editor_, one of the many tools in !PyPose. There is a menu bar across the top of the program at all times, and a status bar across the bottom of the window. The left hand side of the status bar prompts you with _please create or open a project_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected. The *tools* menu is probably the most important, as it lets us switch between the _Pose Editor_, _Sequence Editor_, and other tools:
 
 <img src="http://arbotix.googlecode.com/svn/wiki/toolsmenu.png">
 
 = Creating a New Robot, Connecting to the arbotiX =
-The first thing we need to do is to create a robot file. A robot file is where we will store our poses, sequences, and IK/FK configurations. Click on *robot|new* in the menu, and the *Create New Robot* dialog will appear. Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12._ We are now ready to begin actually talking with our robot. You can repeatedly save and open robot files.
+The first thing we need to do is to create a project. A project is where we will store our poses, sequences, and IK/FK configurations. Click on *project|new* in the menu, and the *Create New Project* dialog will appear. Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12, you can change the number by using the Terminal._ We are now ready to begin actually talking with our robot. You can repeatedly save and open project files.
 
-<img src="http://arbotix.googlecode.com/svn/wiki/newrobot.png">
+<img src="http://arbotix.googlecode.com/svn/wiki/newproject.png">
 <img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
 
 _*Figure 2 - Create New Robot and Select Communications Port windows.*_
