@@ -28,6 +28,17 @@
 
 *Release 3b - 9/18/09* - PyPose V0.93 - Live playback of sequences!
 
+= Release 3c - Anticipated 9/28/09 = 
+ * updated libraries: pypose (for PyPose V0.95)
+ * PyPose Improvements: (V0.95)
+    # Fixed various issues with dialogs and borders under Windows 
+    # Reorganized tool structure
+    # Added Terminal tool
+    # Key shortcuts for most operations
+    # Change pose name dialog added
+    # Improved port management and error messages
+    # Selection of port driver (arbotix/direct)
+
 = Release 1.0 - Late-September =
  * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
  * PyPose improvements: (V1.0)
