@@ -84,7 +84,7 @@ Figure 6 shows a typical interaction with the Terminal. We need to remember to o
 The current command list is as follows:
  * li - list the servos attached to an ArbotiX. 
  * mv current_id new_id - renumber a servo
- * help \[command] - access help menu
+ * help - access help menu
 
 See DevelopmentTimeline for details on eventual feature set. 
 
