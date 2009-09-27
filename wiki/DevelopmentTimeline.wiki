@@ -31,10 +31,11 @@
 = Beta 3c Release - Anticipated 9/28/09 = 
  * updated libraries: pypose (for PyPose V0.95)
  * PyPose Improvements: (V0.95)
-    # Fixed various issues with dialogs and borders under Windows 
-    # Reorganized tool structure
-    # Added Terminal tool
-    # Key shortcuts for most operations
+    # "robot" is now "project" - <font color="#009933">_done_</font>
+    # Fixed various issues with dialogs and borders under Windows -<font color="#009933">_done_</font>
+    # Reorganized tool structure - <font color="#009933">_done_</font>
+    # Added Terminal tool - <font color="#FF0000">_in progress_</font>
+    # Key shortcuts for most operations - <font color="#009933">_in progress_</font>
     # Change pose name dialog added
     # Improved port management and error messages
     # Selection of port driver (arbotix/direct)
