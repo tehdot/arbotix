@@ -85,8 +85,10 @@ The current command list is as follows:
  * li - list the servos attached to an ArbotiX. 
  * mv current_id new_id - renumber a servo
  * help - access help menu
-
-See DevelopmentTimeline for details on eventual feature set. 
+Commands that are still under development:
+ * li baud - list, with baud rate change
+ * set param index value - set a parameter (position, speed, tuning)
+ * get param index - get a parameter (position, speed, temp, tuning)
 
 = NUKE = 
 NUKE is currently under development.
