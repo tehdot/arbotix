@@ -80,6 +80,13 @@ The terminal is a useful tool for configuring servos. It currently implements on
 
 _*Figure 6 - PyPose Terminal, showing a sequence of edits.*_
 
+The current command list is as follows:
+ * li - list the servos attached to an ArbotiX. 
+ * mv current_id new_id - renumber a servo
+ * help [command] - access help menu
+
+See DevelopmentTimeline for details on eventual feature set. 
+
 = NUKE = 
 NUKE is currently under development.
 
