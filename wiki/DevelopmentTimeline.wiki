@@ -28,13 +28,13 @@
 
 *Release 3b - 9/18/09* - PyPose V0.93 - Live playback of sequences!
 
-= Beta 3c Release - Anticipated 9/28/09 = 
+= Beta 3c Release - Released 9/28/09 = 
  * updated libraries: pypose (for PyPose V0.95) was made much faster
- * PyPose Improvements: (V0.95)
+ * PyPose Improvements: (V0.97)
     # "robot" is now "project" - <font color="#009933">_done_</font>
     # Fixed various issues with dialogs and borders under Windows - <font color="#009933">_done_</font>
     # Reorganized tool structure - <font color="#009933">_done_</font>
-    # Added Terminal tool - <font color="#FF0000">_in progress_</font>
+    # Added first pass of Terminal tool - <font color="#009933">_done_</font>
     # Key shortcuts for pose operations - <font color="#009933">_done_</font>
     # Dialog added to change pose names - <font color="#009933">_done_</font>
     # Improved port management and error messages - <font color="#009933">_done_</font>
