@@ -28,7 +28,7 @@
 
 *Release 3b - 9/18/09* - PyPose V0.93 - Live playback of sequences!
 
-= Beta 3c Release - Released 9/28/09 = 
+= Beta 4 Release - Released 9/28/09 = 
  * updated libraries: pypose (for PyPose V0.95) was made much faster
  * PyPose Improvements: (V0.97)
     # "robot" is now "project" - <font color="#009933">_done_</font>
