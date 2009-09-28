@@ -35,8 +35,8 @@
     # Fixed various issues with dialogs and borders under Windows - <font color="#009933">_done_</font>
     # Reorganized tool structure - <font color="#009933">_done_</font>
     # Added Terminal tool - <font color="#FF0000">_in progress_</font>
-    # Key shortcuts for most operations - <font color="#FF0000">_in progress_</font>
-    # Dialog added to change pose names
+    # Key shortcuts for pose operations - <font color="#009933">_done_</font>
+    # Dialog added to change pose names - <font color="#009933">_done_</font>
     # Improved port management and error messages - <font color="#009933">_done_</font>
     # Selection of serial ports (rather than having to enter them) - <font color="#009933">_done_</font>
 
