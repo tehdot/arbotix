@@ -104,10 +104,4 @@ Pose=poseX: 92, 104, 92, 800
 Seq=myFirstSequence: pose1|1000, poseX|500, pose1|800
 }}}
 
-The communications protocol used by PyPose and the sketch on your arbotiX is essentially the same as the Bioloid bus itself. We have, however, defined additional registers, and an ID of 253 will command the arbotiX to act on these special registers. Much of this functionality is not complete, but will eventually allow live playback of poses, etc. 
-
-= To Do =
-While PyPose provides basic functionality, it is not quite done yet. There is a long list of features that still need to be added:
-  * NUKE
-  * Drop-down selection of serial ports.
-  * Ability to select which driver to use (arbotix/direct)
+The communications protocol used by PyPose and the sketch on your arbotiX is essentially the same as the Bioloid bus itself. We have, however, defined additional registers, and an ID of 253 will command the arbotiX to act on these special registers, which allows things like pose and sequence upload and live playback.
