@@ -13,12 +13,12 @@ The ArbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
  # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Guide/HomePage
 
 = ArbotiX Software Setup =
-To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Download the latest _ArbotiX-Software_ release from the front page (or download from SVN), extract the zip file, and copy the following files:
- # The _cores/arbotix_ folder needs to go into _arduino-0017/hardware/cores/arbotix_
- # The _bootloaders/atmega644p_ folder needs to go into _arduino-0017/hardware/bootloaders/atmega644p_
- # All the folders in _libraries_ need to be copied into _arduino-0017/hardware/libraries_
- # Append the contents of _boards.txt_ from the distribution onto the end of _arduino-0017/hardware/boards.txt_ file to include the ArbotiX definitions.
- # You may also want to copy the folders in _sketches_, especially _pypose, into your sketchbook
+To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Download the latest *ArbotiX-Software* release from the front page (or download from SVN), extract the zip file, and copy the following files:
+ # The *cores/arbotix* folder needs to go into *arduino-0017/hardware/cores/arbotix*
+ # The *bootloaders/atmega644p* folder needs to go into *arduino-0017/hardware/bootloaders/atmega644p*
+ # All the folders in *libraries* need to be copied into *arduino-0017/hardware/libraries*
+ # Append the contents of *boards.txt* from the distribution onto the end of *arduino-0017/hardware/boards.txt* file to include the ArbotiX definitions.
+ # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook
 
 Restart the Arduino IDE, from the *Tools -> Board* menu, select *ArbotiX* board. 
 
