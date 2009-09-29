@@ -50,6 +50,8 @@
  * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
  * PyPose improvements: (V1.0)
     # Selection of port driver (arbotix/direct)
+ * Release format:
+    # Split into 2 releases: arbotix-software (includes all Arduino patches, BioloidController & Motors2 libraries, and PyPose), and robocontrollerLib (includes other libraries related to robocontrollers in general)
 
 == Release 1.1 - Late Fall 2009 ==
  * first version of NUKE - the Nearly Universal Kinematics Engine
