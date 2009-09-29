@@ -35,10 +35,23 @@ If using Ubuntu, you can install items 1-3 of the above with: _sudo apt-get inst
 Please see the downloadable ArbotiX manual for instructions and guidance in connecting external devices and power to the board. Although all boards ship with the _pypose_ sketch already installed, we recommend always upgrading to the newest version, in case changes have been made since your board was produced. 
 
 = Downloading Code =
-There are two ways to download code onto the arbotiX: either with an FTDI cable or an In-System Programmer, although there are a number of different versions of each available:
+There are two ways to download code onto the ArbotiX: either with an FTDI cable or an In-System Programmer, although there are a number of different versions of each available:
  * *The FTDI breakout board* available from [http://www.sparkfun.com/commerce/product_info.php?products_id=9115 Sparkfun] will work with the Arduino environment out of the box. 
  * *[http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=768-1028-ND The FTDI Cable]* can be used with the Arduino environment, getting the auto-reset to work is a slight pain. The cable uses RTS rather than DTR for the reset signal. Here's how to fix it under Linux/MAC: http://www.arduino.cc/playground/Hacking/FTDIAutoReset
- * *To use an ISP* such as the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] you will have to adjust a few parameters, as Arduino uploads using the bootloader by default: http://www.arduino.cc/en/Hacking/Programmer 
+ * *To use an ISP* such as the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] or an AVRISP you will have to adjust a few parameters, as Arduino uploads using the bootloader by default.
+   # The USBTinyISP is recognized by Arduino out of the box, but you need to configure *boards.txt* to use it rather than the bootloader. Inside the Arbotix-Software release, you can replace the arbotix definition you copied to *arduino/hardware/boards.txt* with the one in *boardsISP.txt*. 
+   # The AVRISP MKII, sold by Atmel, is a true USB device. It is also recognized by Arduino. You can copy the configuration from *boardsISP.txt* to your *arduino/hardware/boards.txt* but you have to change the second line to : 
+{{{
+arbotix.upload.using=avrispmkii
+}}}
+   # If you are using an ISP that acts like a virtual serial port, such as the ones from Pololu, you can use the step in #2, but you'll need to edit the definition of avrispmkii *arduino/hardware/programmers.txt* changing *usb* to *serial*: 
+{{{
+avrispmkii.name=AVRISP mkII
+avrispmkii.communication=serial
+avrispmkii.protocol=stk500v2
+}}}
+   # Under Linux, the newer Pololu ISP uses a new style of USB port, which appears as /dev/ttyACMx, which is not found by the Arduino environment. The easiest fix for this is to create a soft link from */dev/ttyS1 -> /dev/ttyACM0* assuming you have no ttyS1. 
+   # See more at http://www.arduino.cc/en/Hacking/Programmer.  
 
 _Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
 
