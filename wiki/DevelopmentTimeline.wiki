@@ -39,7 +39,7 @@
     # Dialog added to change pose names - <font color="#009933">_done_</font>
     # Improved port management and error messages - <font color="#009933">_done_</font>
     # Selection of serial ports (rather than having to enter them) - <font color="#009933">_done_</font>
-    # Includes all files we used to pull from Sanguino - <font color="#009933>_done_</font>
+    # Includes all files we used to pull from Sanguino - <font color="#009933">_done_</font>
 
 = Release 1.0 - Early-October =
  * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
