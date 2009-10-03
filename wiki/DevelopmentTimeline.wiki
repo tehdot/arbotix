@@ -1,6 +1,9 @@
 #summary Development Timeline
 
-= <font color="#FF0000">CURRENT:</font> Beta 4b release - Released 9/29/09 =
+= <font color="#FF0000">CURRENT:</font> Release Candidate 1 - Released 10/2/09 =
+ * Fixed error messages in multiple places, cleaned up portions of code
+
+= Beta 4b release - Released 9/29/09 =
  * Repaired new project dialog. 
 
 = Beta 4a Release - Released 9/28/09 = 
