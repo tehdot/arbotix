@@ -219,9 +219,4 @@ PROGMEM prog_uint16_t stand[ ] = {12,512,512,482,542,662,362,512,512,542,482,362
 Each number after the servo count is the position of the servo, starting with ID number 1. Positions are 0-1023, the same as what an AX-12 can actually take on. 
 
 _Note: The upper byte of the servo count is reserved for special values that may be used later to define special new types of poses_. 
-
-= To Do =
-While the library provides basic functionality, it is not quite done yet. Things still in progress:
- * An interrupt driven interpolation option, based off the system clock
- * Parameterized poses and Universal Gait Engine.
  
