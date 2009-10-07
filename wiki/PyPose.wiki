@@ -40,7 +40,9 @@ The first thing we need to do is to create a project. A project is where we will
 
 _*Figure 2 - Create New Project and Select Communications Port windows.*_
 
-To communicate with our robot, we need open a port to our XBEE explorer, or FTDI board. You can open a port by clicking on *config|port* in the menu, and entering a port name in the *Select Communications Port* box that will pop up (shown above). The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
+To communicate with our robot, we need open a port to our XBEE explorer, or FTDI board. You can open a port by clicking on *config|port* in the menu, and selecting a port name in the *Select Communications Port* box that will pop up (shown above). While PyPose will find most serial ports, there is a chance that it cannot automatically detect your port. If this happens, use the instructions on the _serial_ command below to open a port through the Terminal. 
+
+The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios, be sure they are paired, and set to 38400bps. A tutorial on setting up XBEE radios can be found at the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ Trossen Robotic Community].
 
 = The Pose Editor =
 Once you have created a robot, PyPose will adjust to show the correct number of sliding servo adjustment bars. The box to the right of the adjustment bars displays the names of poses we have captured, since we haven't captured any, it will be blank. Below the pose list, we have two buttons: _add_ and _remove_, for creating a new pose or deleting one. Click on _add_ and enter a name for your pose. For instance, I typically create a pose named "stand", for the default standing position of my bot. If you click on a pose in the list, it's servo values are loaded into the slider bars.
@@ -89,6 +91,7 @@ Figure 6 shows a typical interaction with the Terminal. We need to remember to o
 The current command list is as follows:
  * li - list the servos attached to an ArbotiX. 
  * mv current_id new_id - renumber a servo
+ * serial port_name - open a serial port. _ex: serial /dev/ttyUSB0_
  * help - access help menu
 Commands that are still under development:
  * li baud - list, with baud rate change
