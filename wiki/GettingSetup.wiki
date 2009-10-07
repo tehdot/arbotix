@@ -20,8 +20,6 @@ To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino
  # Append the contents of *boards.txt* from the distribution onto the end of *arduino-0017/hardware/boards.txt* file to include the ArbotiX definitions.
  # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook
 
-Restart the Arduino IDE, from the *Tools -> Board* menu, select *ArbotiX* board. 
-
 = !PyPose Setup =
 !PyPose is a pose and capture program, written in Python using wxPython. We of course will have to install Python, wxPython, !PySerial to access serial ports, and then !PyPose itself.
  # Download and install Python 2.5: http://www.python.org/download/releases/2.5.4/
@@ -54,6 +52,9 @@ avrispmkii.protocol=stk500v2
    # See more at http://www.arduino.cc/en/Hacking/Programmer.  
 
 _Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
+
+= Updating Board for First Testing = 
+Now, let's test our Arduino install. Copy the *sketches/pypose* folder into your sketchbook, and open the sketch. Restart the Arduino IDE, from the *Tools -> Board* menu, select *ArbotiX* board. Connect your board via either the ISP or FTDI cable, and download the *pypose* sketch. While we ship each board with a version of pypose installed, it may not be the latest (in fact, it almost never is, since by the time the board gets to you, we've made PyPose better!)
 
 = Wireless Downloading =
 With a bootloader on the ArbotiX, you can do wireless downloading. The arbotiX bootloader runs at a 38400 baud rate, so your XBEE radios need to be set to 38400 for wireless downloading. You'll also have to manually push the RESET button. A tutorial on getting around the reset button push is here: http://www.ladyada.net/make/xbee/arduino.html 
