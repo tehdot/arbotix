@@ -1,6 +1,16 @@
 #summary Development Timeline
 
-= <font color="#FF0000">CURRENT:</font> Release Candidate 1 - Released 10/2/09 =
+MAC USERS: If you've been following the ArbotiX/PyPose development timeline, or the issue tracker, you've probably noticed a few bugs related specifically to MacOSX. I personally test under Windows (XP, 2000) and Linux (Ubuntu), however I don't have a Mac to carry out testing. My initial beta testing pool had only 1 Mac user in it. While in theory, everything should 'just work' under MacOSX (python isn't very different from platform to platform), we've had a few issues with the serial port usage. I've just released what should be the first fully functional release for MaxOSX users, it's listed as release candidate 1b:
+
+= <font color="#FF0000">CURRENT:</font> Release Candidate 1, revision b - Released 10/17/09 = 
+ * Port detection overhauled for MacOSX users. 
+ * Port errors are actually now detected (arbotix.py pushes errors higher).
+ * Fixed blank transition error.
+
+= Release Candidate 1, revision a - Released 10/17/09 =
+ * Fixed save/load bug
+
+= Release Candidate 1 - Released 10/2/09 =
  * Fixed error messages in multiple places, cleaned up portions of code
 
 = Beta 4b release - Released 9/29/09 =
