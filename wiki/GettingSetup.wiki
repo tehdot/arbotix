@@ -28,7 +28,7 @@ To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino
 The final step of setting up the ArbotiX Software is to append the appropriate ArbotiX configuration into the *arduino-0017/hardware/boards.txt* file. This configuration depends on what hardware will be used to load code onto the ArbotiX:  
 
 === FTDI Breakout Board === 
-If using the *[http://www.trossenrobotics.com/p/FTDI-Basic-Breakout-5V.aspx Sparkfun FTDI breakout board]* we just need to copy the default settings into boards.txt. Copy the following into your boards.txt file
+If using the *[http://www.trossenrobotics.com/p/FTDI-Basic-Breakout-5V.aspx Sparkfun FTDI breakout board]* we just need to copy the default settings into boards.txt. Append the following into your boards.txt file
 {{{
 arbotix.name=ArbotiX
 arbotix.upload.protocol=stk500
@@ -76,7 +76,7 @@ avrispv2.protocol=stk500v2
 Under Linux, the newer Pololu ISP uses a new style of USB port, which appears as /dev/ttyACMx, which is not found by the Arduino environment. The easiest fix for this is to create a soft link from */dev/ttyS1 -> /dev/ttyACM0* assuming you have no ttyS1. 
 
 === USBTiny ISP===
-If using the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] we'll need to copy the following into the boards.txt file:
+If using the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] we'll need to add the following into the boards.txt file:
 {{{
 arbotix.name=ArbotiX
 arbotix.upload.using=usbtinyisp
