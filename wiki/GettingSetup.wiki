@@ -108,7 +108,11 @@ See more at http://www.arduino.cc/en/Hacking/Programmer.
 Please see the downloadable ArbotiX manual for instructions and guidance in connecting external devices and power to the board. Although all boards ship with the _pypose_ sketch already installed, we recommend always upgrading to the newest version, in case changes have been made since your board was produced. 
 
 = Upload PyPose Sketch = 
-Now, let's test our Arduino installation and programmer. Copy the *sketches/pypose* folder into your sketchbook, and open the sketch. Restart the Arduino IDE if it was already open. From the *Tools -> Board* menu, select *ArbotiX* board to make sure all went well above. Connect your board via either the ISP or FTDI cable, select the correct port, open the *pypose* sketch, and download it. While we ship each board with a version of pypose installed, it may not be the latest (in fact, it almost never is, since by the time the board gets to you, we've made PyPose better!)
+Now, let's test our Arduino installation and programmer. Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose", and can be found in the examples folder of the arbotiX distribution. It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose.
+
+Copy the *sketches/pypose* folder into your sketchbook, and open the sketch. Restart the Arduino IDE if it was already open. From the *Tools -> Board* menu, select *ArbotiX* board to make sure all went well above. Connect your board via either the ISP or FTDI cable, select the correct port, open the *pypose* sketch, and download it. While we ship each board with a version of pypose installed, it may not be the latest (in fact, it almost never is, since by the time the board gets to you, we've made PyPose better!)
+
+Any time you load your own code onto the board, it will overwrite the pypose sketch, so you'll have to upload it before using pypose again.
 
 = !PyPose Setup =
 !PyPose is a pose and capture program, written in Python using wxPython. We of course will have to install Python, wxPython, !PySerial to access serial ports, and then !PyPose itself.
@@ -122,6 +126,4 @@ If using Ubuntu, you can install items 1-3 of the above with: _sudo apt-get inst
 = Connect with PyPose =
 PyPose communicates over a serial link to the board, either through an FTDI cable or XBEEs. If using XBEEs, they must be set to 38400, and should be paired. 
 
-Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose", and can be found in the examples folder of the arbotiX distribution. It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose. The sketch comes on your arbotiX when you first purchase it, but if you have ever uploaded any other sketch, you will need to put _pypose_ back onto the arbotiX to use this capture program. 
-
-We need to connect to the arbotiX in one of two ways: through an FTDI cable, or more likely through an XBEE connection. <font color="#FF0000"><Add Details></font>. Be sure to note which serial port you are using (under Windows, something like "COM4", or under Linux, something like "/dev/ttyUSB1"). 
+Congratulations, your ArbotiX and !PyPose are setup! Now you can go to the PyPose documentation page to start interacting with your robot.
