@@ -17,9 +17,8 @@ Regardless of the method of motion creation, PyPose exports your work directly i
 
 <div bg="#ff0000">
 = Hardware Setup = 
-Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose", and can be found in the examples folder of the arbotiX distribution. It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose. The sketch comes on your arbotiX when you first purchase it, but if you have ever uploaded any other sketch, you will need to put _pypose_ back onto the arbotiX to use this capture program. 
+See the GettingSetup page
 
-We need to connect to the arbotiX in one of two ways: through an FTDI cable, or more likely through an XBEE connection. <font color="#FF0000"><Add Details></font>. Be sure to note which serial port you are using (under Windows, something like "COM4", or under Linux, something like "/dev/ttyUSB1"). 
 </div>
 = Getting Started =
 We can finally start PyPose, the initial view will look something like this: 
