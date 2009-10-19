@@ -8,8 +8,8 @@ This page is geared towards developers and power-users. For general coverage of 
    * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
    * new examples: a rover with closed loop feedback
    * PyPose Improvements: (V1.1)
-     # First version of NUKE - the Nearly Universal Kinematics Engine
-     # Servo limits capture dialog
+     # First version of NUKE - the Nearly Universal Kinematics Engine - <font color="#FF0000">_in progress_</font>
+     # Servo limits capture dialog - <font color="#FF0000">_in progress_</font>
      # Selection of port driver (arbotix/direct)
      # Delta-T during Pose Editor set
    * Release Format:
