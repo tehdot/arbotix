@@ -86,14 +86,14 @@ The servo terminal is a useful tool for configuring servos that are connected to
 
 _*Figure 6 - PyPose Terminal, showing a sequence of edits.*_
 
-Figure 6 shows a typical interaction with the Terminal. We need to remember to open the port. The user then typed _help_ to see commands, then _li_ to see the servos and found out that servos 1,2,3,4 were attached. They then changed servo 4's ID to 5. Now, when listing the servos with _li_, they got 1, 2, 3, and 5. Finally, they changed servo 5 back to ID4 and ran _li_ one final time to be sure all went good.  
+Figure 6 shows a typical interaction with the Terminal. We need to remember to open the port. The user then typed _help_ to see commands, then _ls_ to see the servos and found out that servos 1,2,3,4 were attached. They then changed servo 4's ID to 5. Now, when listing the servos with _ls_, they got 1, 2, 3, and 5. Finally, they changed servo 5 back to ID4 and ran _ls_ one final time to be sure all went good.  
 The current command list is as follows:
- * li - list the servos attached to an ArbotiX. 
+ * ls - list the servos attached to an ArbotiX. 
  * mv current_id new_id - renumber a servo
  * serial port_name - open a serial port. _ex: serial /dev/ttyUSB0_
  * help - access help menu
 Commands that are still under development:
- * li baud - list, with baud rate change
+ * ls baud - list, with baud rate change
  * set param index value - set a parameter (position, speed, tuning)
  * get param index - get a parameter (position, speed, temp, tuning)
 
