@@ -10,5 +10,6 @@ This release is the first fully functional release. There are several changes to
 Known Issues:
  # On some systems, ports may not be recognized. It is recommended to use the *serial* command inside the _Servo Terminal_.
  # The screen may not resize correctly at times, it is recommended that you switch to a different tool and then back to the desired tool if the screen does not show some controls.
+ # MacOSX testing is currently spotty. If you are a MacOSX user, please drop us an email at debug@vanadiumlabs.com so we can be in touch. (While we very much want to support all platforms, we do not have a Mac on hand for testing).
 
 _Note: Releases are numbered as X.Yz where X is a numeric major-release, Y is a numeric minor release, and z is a lowercase alphabetic release. Numeric major releases will be frequent, minor releases will denote major additions of new tools or features, alphabetic releases typically denote minor bug fixes. The entire release follows the release number of the PyPose program._
