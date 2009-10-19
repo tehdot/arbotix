@@ -100,6 +100,8 @@ Commands that are still under development:
 = NUKE = 
 NUKE is currently under development.
 
+<img src="http://arbotix.googlecode.com/svn/wiki/nuke.png">
+
 <font color="#FF0000">robot creation: # of legs, DOF, extra servos.. define mapping of servo position to ID, enter body dimensions, capture min/max of each servo, walk through +/- issues, how to interact with exported IK engine.</font>
 
 = Hacking =
