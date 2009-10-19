@@ -1,6 +1,6 @@
 #summary Development Timeline
 
-This page is geared towards developers and power-users. For general coverage of releases, see the ArbotiXReleases page.
+This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page.
 
 = Improvement and Developments Outline =
 
