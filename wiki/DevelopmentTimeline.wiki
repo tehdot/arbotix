@@ -1,76 +1,76 @@
 #summary Development Timeline
 
-MAC USERS: If you've been following the ArbotiX/PyPose development timeline, or the issue tracker, you've probably noticed a few bugs related specifically to MacOSX. I personally test under Windows (XP, 2000) and Linux (Ubuntu), however I don't have a Mac to carry out testing. My initial beta testing pool had only 1 Mac user in it. While in theory, everything should 'just work' under MacOSX (python isn't very different from platform to platform), we've had a few issues with the serial port usage. I've just released what should be the first fully functional release for MaxOSX users, it's listed as release candidate 1b:
+This page is geared towards developers and power-users. For general coverage of releases, see the ArbotiXReleases page.
 
-= <font color="#FF0000">CURRENT:</font> Release Candidate 1, revision b - Released 10/17/09 = 
- * Port detection overhauled for MacOSX users. 
- * Port errors are actually now detected (arbotix.py pushes errors higher).
- * Fixed blank transition error.
+= Improvement and Developments Outline =
 
-= Release Candidate 1, revision a - Released 10/17/09 =
- * Fixed save/load bug
+ * Release 1.1 (Late Fall)
+   * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
+   * new examples: a rover with closed loop feedback
+   * PyPose Improvements: (V1.1)
+     # First version of NUKE - the Nearly Universal Kinematics Engine
+     # Servo limits capture dialog
+     # Selection of port driver (arbotix/direct)
+     # Delta-T during Pose Editor set
+   * Release Format:
+     # Split into two releases: arbotix-software (includes all Arduino patches, BioloidController & Motors2 libraries, and PyPose), and robocontrollerLib (includes other libraries related to robocontrollers in general)
 
-= Release Candidate 1 - Released 10/2/09 =
- * Fixed error messages in multiple places, cleaned up portions of code
+= Revision History =
 
-= Beta 4b release - Released 9/29/09 =
- * Repaired new project dialog. 
+ * Version 1.0a (10-18-09, r329)
+   * Port detection overhauled for MacOSX users. 
+   * Port errors are actually now detected (arbotix.py pushes errors higher).
+   * Fixed blank transition error.
+   * Fixed timeout issues. 
 
-= Beta 4a Release - Released 9/28/09 = 
- * updated libraries: pypose (for PyPose V0.97) was made much faster
- * PyPose Improvements: (V0.97)
-    # "robot" is now "project" - <font color="#009933">_done_</font>
-    # Fixed various issues with dialogs and borders under Windows - <font color="#009933">_done_</font>
-    # Reorganized tool structure - <font color="#009933">_done_</font>
-    # Added first pass of Terminal tool - <font color="#009933">_done_</font>
-    # Key shortcuts for pose operations - <font color="#009933">_done_</font>
-    # Dialog added to change pose names - <font color="#009933">_done_</font>
-    # Improved port management and error messages - <font color="#009933">_done_</font>
-    # Selection of serial ports (rather than having to enter them) - <font color="#009933">_done_</font>
-    # Includes all files we used to pull from Sanguino - <font color="#009933">_done_</font>
- * Updated examples:
-    # droid (now includes droid.ppr)
+ * Release Candidate 1a (10/17/09)
+   * Fixed save/load bug
 
-*Release 3b - 9/18/09* - PyPose V0.93 - Live playback of sequences!
+ * Release Candidate 1 (10/2/09)
+   * Fixed error messages in multiple places, cleaned up portions of code
+   * Repaired new project dialog. 
 
-*Release 3a - 9/16/09* - Servo editors are now disabled until a pose is selected.
+ * Beta 4a Release (9/28/09) 
+   * updated libraries: pypose (for PyPose V0.97) was made much faster
+   * PyPose Improvements: (V0.97)
+     # "robot" is now "project" - <font color="#009933">_done_</font>
+     # Fixed various issues with dialogs and borders under Windows - <font color="#009933">_done_</font>
+     # Reorganized tool structure - <font color="#009933">_done_</font>
+     # Added first pass of Terminal tool - <font color="#009933">_done_</font>
+     # Key shortcuts for pose operations - <font color="#009933">_done_</font>
+     # Dialog added to change pose names - <font color="#009933">_done_</font>
+     # Improved port management and error messages - <font color="#009933">_done_</font>
+     # Selection of serial ports (rather than having to enter them) - <font color="#009933">_done_</font>
+     # Includes all files we used to pull from Sanguino - <font color="#009933">_done_</font>
+   * Updated examples:
+     # droid (now includes droid.ppr)
 
-= Beta 3 Release - Released 9/15/09 = 
- * new libraries: Commander - <font color="#009933">_done_</font>
- * PyPose improvements: (V0.91)
-    # Completely rewritten, using wxPython instead of !TkInter - <font color="#009933">_done_</font>
-    # Sequence creation - <font color="#009933">_done_</font>
- * bioloid library improvements:
-    # Sequence Engine - <font color="#009933">_done_</font>
- * updated examples: pypose - <font color="#009933">_done_</font>
+ * Release 3b (9/18/09)
+   * PyPose V0.93 - Live playback of sequences!
 
-= Beta 2 Release - Released 8/27/09 =
- * new libraries: Motors2, Srf05 -<font color="#009933">_done_</font>
- * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid - <font color="#009933">_done_</font>
- * PyPose improvements: (V0.89)
-    # USBDynamixel driver - <font color="#009933">_done_</font> _(note: currently not usable without editing code)_
- * new examples: issy - <font color="#009933">_done_</font>
+ * Release 3a (9/16/09)
+   * Servo editors are now disabled until a pose is selected.
 
-= Beta 1 Release - Released 8/8/09 =
- * new libraries: bioloid, sharpIR - <font color="#009933">_done_</font>
- * PyPose functionality: (V0.50)
-    # create robot files, capture poses - <font color="#009933">_done_</font>
-    # export to AVR - <font color="#009933">_done_</font>
-    # code and sketch to interact with arbotiX - <font color="#009933">_done_</font>
- * new examples: droid, pypose -<font color="#009933">_done_</font>
+ * Beta 3 (9/15/09) 
+   * new libraries: Commander - <font color="#009933">_done_</font>
+   * PyPose improvements: (V0.91)
+     # Completely rewritten, using wxPython instead of !TkInter - <font color="#009933">_done_</font>
+     # Sequence creation - <font color="#009933">_done_</font>
+   * bioloid library improvements:
+     # Sequence Engine - <font color="#009933">_done_</font>
+   * updated examples: pypose - <font color="#009933">_done_</font>
 
-= Planned Future Releases =
+ * Beta 2 Release (8/27/09)
+   * new libraries: Motors2, Srf05 -<font color="#009933">_done_</font>
+   * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid - <font color="#009933">_done_</font>
+   * PyPose improvements: (V0.89)
+     # USBDynamixel driver - <font color="#009933">_done_</font> _(note: currently not usable without editing code)_
+   * new examples: issy - <font color="#009933">_done_</font>
 
-== Release 1.0 - Early-October ==
- * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
- * Release format:
-    # Split into 2 releases: arbotix-software (includes all Arduino patches, BioloidController & Motors2 libraries, and PyPose), and robocontrollerLib (includes other libraries related to robocontrollers in general)
-
-== Release 1.1 - Late Fall 2009 ==
- * first version of NUKE - the Nearly Universal Kinematics Engine
- * PyPose improvements: (V1.1)
-    # Selection of port driver (arbotix/direct)
-    # Servo min/max capture
-
-== Release 1.2 - ? == 
- * interrupt driven interpolation and servo update engine
+ * Beta 1 Release (8/8/09)
+   * new libraries: bioloid, sharpIR - <font color="#009933">_done_</font>
+   * PyPose functionality: (V0.50)
+     # create robot files, capture poses - <font color="#009933">_done_</font>
+     # export to AVR - <font color="#009933">_done_</font>
+     # code and sketch to interact with arbotiX - <font color="#009933">_done_</font>
+   * new examples: droid, pypose -<font color="#009933">_done_</font>
