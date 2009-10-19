@@ -97,7 +97,7 @@ Commands that are still under development:
  * set param index value - set a parameter (position, speed, tuning)
  * get param index - get a parameter (position, speed, temp, tuning)
 
-= NUKE = 
+= NUKE - The Nearly Universal Kinematics Engine = 
 NUKE is currently under development.
 
 <img src="http://arbotix.googlecode.com/svn/wiki/nuke.png">
