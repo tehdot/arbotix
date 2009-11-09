@@ -93,6 +93,7 @@ int idx = 0;
 
 // stand up slowly
 void setup(){    
+    delay(100);                    // recommended pause
     bioloid.loadPose(plantLeft);   // load the pose from FLASH, into the nextPose buffer
     bioloid.readPose();            // read in current servo positions to the curPose buffer
     bioloid.interpolateSetup(500); // setup for interpolation from current->next over 1/2 a second
@@ -106,7 +107,7 @@ void loop(){}
 }}}
 The interpolation engine is very simple. It writes a new frame out to the servos at about 30Hz. If your loop code gets really long, this could become problematic. Eventually, we will have an interpolation engine that is interrupt driven, so that the movement is more guaranteed to be smooth.
 
-An item I did not discuss above, was bioloid.readPose(), this queries each servo, and loads their positions into the _curpose_ buffer. This is most useful for standing up gently, as shown above. bioloid.loadPose("pose_name") always loads into the _nextpose_ buffer, and interpolation always happens from _curpose_ to _nextpose_.
+An item I did not discuss above, was bioloid.readPose(), this queries each servo, and loads their positions into the _curpose_ buffer. This is most useful for standing up gently, as shown above. bioloid.loadPose("pose_name") always loads into the _nextpose_ buffer, and interpolation always happens from _curpose_ to _nextpose_. Note that is recommended to have a delay of at least 100ms after startup before a readPose(), otherwise the AX-12s may not be ready and legs may jitter. 
 
 = Walking with Sequences = 
 We could manually handle loading pose after pose and writing them out to the servos, or we can use a sequence. A sequence can be constructed in PyPose and is exported inside our pose file. Each sequence contains several transitions, each transition is a pose name and an interpolation time to use when transitioning to that pose. 
@@ -120,6 +121,7 @@ BioloidController bioloid = BioloidController(1000000);
 
 void setup(){
     // stand up slowly
+    delay(100);                    // recommended pause
     bioloid.loadPose(plantLeft);
     bioloid.readPose();
     bioloid.interpolateSetup(500);
