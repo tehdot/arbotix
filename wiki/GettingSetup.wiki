@@ -22,6 +22,7 @@ To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino
  # The *cores/arbotix* folder needs to go into *arduino-0017/hardware/cores/arbotix*
  # The *bootloaders/atmega644p* folder needs to go into *arduino-0017/hardware/bootloaders/atmega644p*
  # All the folders in *libraries* need to be copied into *arduino-0017/hardware/libraries*
+    * These are just the special libraries for the ArbotiX, you'll also want to install the [http://robocontroller.googlecode.com robocontroller] library for even more functionality.
  # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook
 
 = Programmer and Board Setup =
