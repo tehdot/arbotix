@@ -4,21 +4,20 @@ This page is geared towards developers and power-users. For general coverage of 
 
 = Improvement and Developments Outline =
 
- * Release 1.1 (Late Fall)
-   * new libraries: Encoders - <font color="#FF0000">_in progress_</font>
+ * Release 1.1 (Winter 2009)
+   * new libraries: Encoders (actually part of roboControllerLib)
    * new examples: a rover with closed loop feedback
    * PyPose Improvements: (V1.1)
      # First version of NUKE - the Nearly Universal Kinematics Engine - <font color="#FF0000">_in progress_</font>
      # Servo limits capture dialog - <font color="#FF0000">_in progress_</font>
-     # New Port Open dialog, with selection of driver. This also requires the driver model to be updated a bit.
- * Release 1.0b (Early November)
-    * PyPose Improvements:
-     # Delta-T during Pose Editor set - <font color="#009933">_done_</font>
-     # Port drivers merged, this moves us towards better support
-    * Release format:
-     # Split into two releases: arbotix-software (includes all Arduino patches, BioloidController & Motors2 libraries, and PyPose), and robocontrollerLib (includes other libraries related to robocontrollers in general)
+     # New Port Open dialog, with selection of driver.
 
 = Revision History =
+
+ * Version 1.0b (11-14-09, r351)
+   * Port drivers merged
+   * Delta-T added to Pose Editor "set" command
+   * Many libraries moved to [http://robocontroller.googlecode.com RoboControllerLib]
 
  * Version 1.0a (10-18-09, r329)
    * Port detection overhauled for MacOSX users. 
