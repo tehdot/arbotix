@@ -25,7 +25,7 @@ To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino
     * These are just the special libraries for the ArbotiX, you'll also want to install the [http://robocontroller.googlecode.com robocontroller] library for even more functionality.
  # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook
 
-_Note to MacOSX Users: as of Arduino 0017, the release is distributed as an application, to access the folders control-click Arduino.app and select > show package contents. The corresponding files and folders are in the hierarchy. See also, video on front page of http://sanguino.cc_
+_Note to MacOSX Users: as of Arduino 0017, the release is distributed as an application, to access the folders control-click Arduino.app and select > show package contents. The corresponding files and folders are in the hierarchy. See also, video on front page of http://sanguino.cc _
 
 = Programmer and Board Setup =
 The final step of setting up the ArbotiX Software is to append the appropriate ArbotiX configuration into the *arduino-0017/hardware/boards.txt* file. This configuration depends on what hardware will be used to load code onto the ArbotiX:  
