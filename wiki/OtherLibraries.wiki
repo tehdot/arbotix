@@ -1,21 +1,16 @@
 #summary Other software libraries for robocontrollers
 
-There are a number of other libraries that have been developed for the arbotiX:
-  * [OtherLibraries#Commander Commander] - library for communicating with a handheld arbotiX Commander, or a PC. 
+There are several other libraries that have been developed specifically for the arbotiX:
   * [OtherLibraries#Motors2 Motors2] - for using the onboard motor drivers
-  * [OtherLibraries#Encoders Encoders] - for using the onboard encoder headers, this is actually two libraries: EncodersAB, for traditional quadrature encoders that output A&B signals, and EncodersCD for encoders that give out _clock_ and _direction_ signals.
 
-There are also a number of libraries that can be used with any robocontroller, mainly for sensors and actuators:
-  * [OtherLibraries#SharpIR SharpIR] - for reading distance using any of the family of Sharp IR ranging sensors.
-  * [OtherLibraries#Srf05 Srf05] - for reading distance using an Srf05 sonar sensors.
-  * Srf08 - for reading distance using an Srf02 or Srf08 sonar sensor. 
-  * Sp03 - make your robot talk with the Sp03 text-to-speech synthesizer. 
-  * !SensorUtils - utility functions for converting units of measure, filtering data, etc. 
+Additionally, the arbotiX can use the libraries found in the [http://robocontroller.googlecode.com robocontroller] package.
+  * Commander - library for communicating with a handheld arbotiX Commander, or a PC. 
+  * Encoders - for using the onboard encoder headers, this is actually two libraries: EncodersAB, for traditional quadrature encoders that output A&B signals, and EncodersCD for encoders that give out _clock_ and _direction_ signals.
+  * SharpIR - for reading distance using any of the family of Sharp IR ranging sensors.
+  * Srf05 - for reading distance using an Srf05 sonar sensors.
+  * Srf08 - for reading distance using an Srf02 or Srf08 sonar sensor.  
 
 And of course, the stock Arduino libraries such as _Serial_ and _Servo_ can be used. See some hints [OtherLibraries#Arduino_Hints here].
-
-= Commander =
-<font color="#FF0000">_Coming Soon</font>
 
 = Motors2 =
 This library implements a dual motor driver using Timer2, it can be used to control the onboard motor driver on the arbotiX. It has several functions:
@@ -54,56 +49,6 @@ void loop(){
     
 }
 }}} 
-
-= Encoders = 
-<font color="#FF0000">_Coming Soon</font>
-
-= SharpIR =
-This library allows easy usage of a number of Sharp IR ranging sensors. Each IR ranger uses on analog pin. The library function _getData()_ converts the analog voltage into a distance in centimeters. 
-
-When creating a our SharpIR object, we need to pass both the type of sensor connected, and which analog pin it is connected to. The analog pins are numbered 0-7. The valid types are: 
-  * *GP2D12* - The original analog IR ranger in the Sharp family of sensors. Mid range sensor, 4"-32" range. Use this for sensors marked as GP2D12 or GP2Y0A21YK (which is a newer ROHS version).
-  * *GP2D120* - Short range sensor, 1.5"-12" range.
-  * *GP2Y0A02YK* - Long range sensor, 8"-60" range. 
-
-It is important to select the correct sensors type, or the conversion will be incorrect and you will receive incorrect and useless range data. 
-
-{{{
-#include <SharpIR.h>
-
-// To create an object, we need to pass both the type, and the analog pin being used
-SharpIR myIR = SharpIR(GP2D120,0);
-
-void setup(){
-    Serial.begin(38400);
-}
-
-// print distance in CM, every second
-void loop(){		
-    Serial.println(myIR.getData());
-    delay(1000);	
-}
-}}}
-
-= Srf05 =
-This library allows easy usage of an SRF-05 sonar ranger, in single-pin mode. The SRF-05 does no on-board conversion of the pulse width to length, that is the primary purpose of this library. _getData()_ sends out a ping, reads the return pulse, and then returns the distance in centimeters to the nearest object. _Note: getData() should not be called faster than ~20-30Hz, to allow for ring-down time on the sonar._
-
-{{{
-#include <Srf05.h>
-
-// attach an SRF-05 to digital pin 5. Be sure that it is setup for single pin mode.
-Srf05 mySonar = Srf05(5);  
-
-void setup(){
-    Serial.begin(38400);
-}
-
-// print distance in CM, every second. 
-void loop(){  
-    Serial.println(mySonar.getData());
-    delay(1000);
-}
-}}}
 
 = Arduino Hints =
 The default _Serial_ library that comes with Arduino environment will work with either the FTDI cable or the XBEE radio on the arbotiX _(remember, don't connect both the FTDI and the XBEE at the same time)._ We suggest using 38400 as the baud rate, since all of our demos use that.  
