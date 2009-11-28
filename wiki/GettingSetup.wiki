@@ -127,6 +127,6 @@ Any time you load your own code onto the board, it will overwrite the pypose ske
 If using Ubuntu, you can install items 1-3 of the above with: _sudo apt-get install python python-serial  python-wxgtk2.8_. 
 
 = Connect with PyPose =
-PyPose communicates over a serial link to the board, either through an FTDI cable or XBEEs. If using XBEEs, they must be set to 38400, and should be paired. 
+PyPose communicates over a serial link to the board, either through an FTDI cable or XBEEs. If using XBEEs, they must be set to 38400, and should be paired. See the [http://forums.trossenrobotics.com/tutorials/how-to-diy-128/xbee-basics-3259/ XBEE tutorial] on TRC for details: 
 
 Congratulations, your ArbotiX and !PyPose are setup! Now you can go to the PyPose documentation page to start interacting with your robot.
