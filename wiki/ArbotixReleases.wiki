@@ -4,8 +4,14 @@ ArbotiX software, especially PyPose, is continuously under development. The unde
 
 This page is geared towards end users. The DevelopmentTimeline page has more details for programmers who want to keep up on internal details of PyPose. 
 
+= Version 1.0c - November 29, 2009 = 
+This release fixes a major issue found with the speed control during pose transition in the Pose Editor (when a port changed, the window did not update, and SET could fail).
+
+Known Issues:
+ # The screen may not resize correctly at times, it is recommended that you switch to a different tool and then back to the desired tool if the screen does not show some controls.
+
 = Version 1.0b - November 14, 2009 = 
-This release implements speed control during pose transition in the Pose Editor, as well as numerous, but nearly unseen, changes in the port drivers. We've unified the port architecture, which will allow for much easier interfacing with a USBDynamixel or other direct pass through (although, the port dialog still needs an overhaul). 
+This release implements speed control during pose transition in the Pose Editor, as well as numerous, but nearly unseen, changes in the port drivers. We've unified the port architecture, which will allow for much easier interfacing with a USBDynamixel or other direct pass through (although, the port dialog still needs an overhaul).
 
 We've also broken off many of the libraries previously included into a new distribution [http://robocontroller.googlecode.com the RoboController library]. Notably, our sensor libraries, such as SharpIR, Srf05, etc, have moved to !RoboControllerLib as they are more general (BioloidController and Motors2, as well special mega644 safe library versions like Wire and Servo, are still included). This dual-distribution system will make it easier to release more frequent updates to the libraries themselves. 
 
