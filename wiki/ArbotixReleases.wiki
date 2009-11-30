@@ -5,7 +5,7 @@ ArbotiX software, especially PyPose, is continuously under development. The unde
 This page is geared towards end users. The DevelopmentTimeline page has more details for programmers who want to keep up on internal details of PyPose. 
 
 = Version 1.0c - November 29, 2009 = 
-This release fixes a major issue found with the speed control during pose transition in the Pose Editor (when a port changed, the window did not update, and SET could fail).
+This release fixes a major issue found with the speed control during pose transition in the Pose Editor (when a port changed, the window did not update, and SET could fail). There are no changes to the arbotiX core, if upgrading from 1.0b, you'll only need to replace your PyPose files. 
 
 Known Issues:
  # The screen may not resize correctly at times, it is recommended that you switch to a different tool and then back to the desired tool if the screen does not show some controls.
