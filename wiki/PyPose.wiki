@@ -109,6 +109,8 @@ The Nearly Universal Kinematics Engine (NUKE) will generate IK and Gait engines 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/nuke.png">
 
+_*Figure 7 - Beta of NUKE editor.*_
+
 Be sure to create a robot model, and specify the number of servos before working with NUKE. Then select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of robot IK configuration and number of legs. 
 
 After selecting the type of IK and number of legs, you'll want to input the lengths of the robot's major features. Clicking on *Help* will bring up a dialog showing you what to measure, some of the measurements are dependent on the type of IK selected. The next step is to select the servo mapping (which ID corresponds to which servo in the robot). 
