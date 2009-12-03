@@ -2,6 +2,11 @@
 
 This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page.
 
+For versions 1.1 and beyond, we will use a 3 distribution method:
+ * software-core-X
+ * software-pypose-X
+ * software-robocontroller-X
+
 = Improvement and Developments Outline =
 
  * Release 1.1 (Winter 2009)
