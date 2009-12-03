@@ -19,6 +19,9 @@ For versions 1.1 and beyond, we will use a 3 distribution method:
 
 = Revision History =
 
+ * Version 1.0c (11-29-09, r365)
+   * Fixed issues with Delta-T under Pose Editor
+
  * Version 1.0b (11-14-09, r351)
    * Port drivers merged
    * Delta-T added to Pose Editor "set" command
