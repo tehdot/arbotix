@@ -2,29 +2,103 @@
 
 = Overview of the IK Solution and Gait Engine =
 
-NUKE generates a full inverse kinematics solution and a gait engine for your robot. However, you may want to tune it by hand. Before you can tune a system though, you'll need to know how it works
+NUKE generates a full inverse kinematics solution and a gait engine for your robot. However, you may want to tune it by hand. Before you can tune a system though, you'll need to know how it works.
 
-The most important function is the _doIK()_ function, which ties everything from NUKE together. _doIK()_ generates an IK solution for each leg's servos, taking into account the default positions (created in _setupIK()_), gait requests, and the bodyIK parameters such as body yaw or pitch. 
+NUKE exports 4 files: 
+ * _nuke.h_ - header file for IK and gait engine
+ * _nuke.cpp_ - contains the IK engine
+ * _gaits.h_ - contains the gait engine
+ * _something.pde_ - your sketch, this is where you'll put the robot's task-related code.
 
-= Geometric Stability =
+The main loop of your program, in _something.pde_ will look like this:
+{{{
+void loop(){
+  // put your task code here
+  // make sure it doesn't take too long to execute each cycle
 
-NUKE generates a geometrically stable gait, that is, the _Center-of-Gravity_ of the robot is always within the _Support Polygon_ created by the feet that remain on the ground. 
+  if(bioloid.interpolating == 0){
+    // last step is done, do the next
+    doIK();
+    bioloid.interpolateSetup(tranTime);
+  }
+  bioloid.interpolateStep();
+}}}
 
-The _Stability Margin_ is the shortest length from the COG to the support polygon as projected along the direction of gravity. What the heck does that mean? On an incline, your stability margin is less than on flat ground. Frequently, the stability margin may be difficult or impossible to determine, and so approximations are often used. 
+Your code will interact with the gait engine using several global variables, which can be set at any time, from anywhere in your code:
+ * _travelX_ - the forward speed to walk at, in millimeters/second. Forward is positive.
+ * _travelY_ - the sideways speed to walk at, in millimeters/second. Right is positive.
+ * _travelRotZ_ - the speed to turn at, in radians/second. 
+
+The body IK engine also relies on several other variables: 
+ * _bodyPosX_, _bodyPosY_ - offset of the center of body in the air, in millimeters.
+ * _bodyRotX_, _bodyRotY_, _bodyRotZ_ - rotation of body about axis, in radians.
+
+The most important function is clearly _doIK()_ which ties everything from NUKE together. _doIK()_ generates an IK solution for each leg's servos, taking into account the default positions (created in _setupIK()_), gait requests, and the bodyIK parameters such as body yaw or pitch. You shouldn't need to alter the _doIK()_, _bodyIK()_ or _legIK()_. Most of the optimization that end users can do is in _setupIK()_ and the gait generators. 
+
+= Basic Gaits =
+
+Gaits are cyclic. We can see that as a robot moves forward, it moves legs in some cyclic order. NUKE uses a gait generator function to create these movements. By passing in the leg ID and the _step_ variable, the gait generator creates a set of offsets (X,Y,Z,rotation about Z) for the given leg at that step. The _step_ variable counts from 0 to the number of steps in the currently selected gait -- this number is known as the _stepsInCycle_. For each cycle, every leg will move the desired distance (set by the travel variables).  
+
+A basic gait generator looks like this:
+{{{
+ik_req_t DefaultGaitGen(int leg){
+
+}
+}}}
 
 By default, NUKE generates _continuous gaits_. Continuous gaits are such that the body moves in the desired direction at a continuous rate. A discontinuous gait is one that moves the body only when all feet are on the ground. When a gait is not stable enough, especially over terrain, switching to a discontinuous gait may be of help. 
 
+= Default Stance, Length of Stride as an Optimization Factor = 
+
+NUKE computes the _Configuration Space_ of your robot's legs. The configuration space is the region of space where the legs can actually touch without any servo going out of range. From this, it can find what the default stance should be in order to maximize stride. 
+
+= Geometric Stability =
+
+NUKE can generate a geometrically stable gait, that is, the _Center-of-Gravity_ of the robot is always within the _Support Polygon_ created by the feet that remain on the ground. 
+
+The _Stability Margin_ is the shortest length from the COG to the support polygon as projected along the direction of gravity. What the heck does that mean? On an incline, your stability margin is less than on flat ground. Frequently, the stability margin may be difficult or impossible to determine, and so approximations are often used. 
+
 <font color="#FF0000"> TODO: add images of stability margin/etc </font>
 
-= Length of Stride as an Optimization Factor = 
+Future versions of NUKE may also allow optimizations for maximal stability margin rather than stride length, however, at this point you would have to hand optimize for this. 
 
-NUKE computes the _Configuration Space_ of your robot's legs. The configuration space is the region of space where the legs can actually touch without any servo going out of range. From this, it can find what the default end effector positions should be in order to maximize stride. Future versions of NUKE will also allow optimizations for maximal stability margin, or other parameters, however, at this point you would have to hand optimize for this. 
+= Gaits Included =
+
+A number of gaits are included, which can be selected using the _SelectGait()_ function
+
+ * _Ripple_ gaits move only one leg at a time:
+   * RIPPLE - the simplest, default gait. 4 steps per cycle (6 for a hexapod), as one leg is lifted, the other comes down. Can generally be quite fast.
+   * SMOOTH_RIPPLE - 8 steps per cycle (12 for a hexapod). Each leg is raised, and lowered, in order. Likely slower, but more accurate than RIPPLE.
+   * RIPPLE_LEFT - 4 steps per cycle ripple gait, but leg order is optimized for left turns.
+   * RIPPLE_RIGHT - 4 steps per cycle ripple gait, but leg order is optimized for right turns. 
+   * ROMPLE - 12 steps per cycle (18 for hexapods), advanced leg path, shaped like an inverted U, good for uneven terrain. 
+ * _Amble_ gaits move two alternate legs at a time (For quadrupeds only):
+   * AMBLE - 4 steps per cycle, each pair of legs is raised and moved forward in one step, then dropped in the next step. 
+ * _Tripod_ gaits move three legs at a time (For hexapods only):
+   * TRIPOD - 4 steps per cycle, like an AMBLE, but using 3 legs in a group. 
+ * _Geometric_ gaits are the most stable for quadrupeds, but may be slower (For quadrupeds only):
+   * RIPPLE_GEO - a geometrically confined ripple, 8 steps per cycle. 
 
 = Creating New Gait Generators = 
 
-= Updating the !SelectGait() Function =
+There are two steps to creating a new gait. First, you must create a new gait generator, and then add the gait to the !SelectGait function.
 
-After creating your new gait, you need to add the ability to select the gait. 
+<font color="#FF0000"> TODO: add discussion of creating Gait Generators </font>
+
+After creating your new gait, you need to add the ability to select the gait. To add a new gait to your !SelectGait function, you'll typically add to the end of the long set of _if/else_ statements:
+{{{
+    ...
+    }else if(GaitType == MY_NEW_GAIT){
+        gaitGen = &MyGaitGenerator;
+        gaitLegNo[RIGHT_FRONT] = 0;
+        gaitLegNo[LEFT_FRONT] = 2;
+        gaitLegNo[RIGHT_REAR] = 4;
+        gaitLegNo[LEFT_REAR] = 6;
+        pushSteps = 6;
+        stepsInCycle = 8;
+    }
+}}}
+Your code must define the number of steps in a cycle, the leg order, and the number of push cycles (how many cycles the legs are on the ground for). 
 
 = Other Hacking =
 
