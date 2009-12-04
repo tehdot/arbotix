@@ -12,10 +12,21 @@ For versions 1.1 and beyond, we will use a 3 distribution method:
  * Release 1.1 (Winter 2009)
    * new libraries: Encoders (actually part of roboControllerLib)
    * new examples: a rover with closed loop feedback
+   * AX-S1 support macros
    * PyPose Improvements: (V1.1)
      # First version of NUKE - the Nearly Universal Kinematics Engine - <font color="#FF0000">_in progress_</font>
-     # Servo limits capture dialog - <font color="#FF0000">_in progress_</font>
-     # New Port Open dialog, with selection of driver.
+       # Supports Lizard 3DOF, 4/6 legs - <font color="#009933">_done_</font>
+       # Basic gaits and tools, stance generator
+     # Servo limits capture dialog - <font color="#009933">_done_</font>
+
+  * PyPose V1.2 (Early 2010)
+    * Support for Mammal 3DOF
+    * Gait builder/visualizer, geometric gait support
+    * New Port Open dialog, with selection of driver
+    * Servo Terminal complete
+
+  * PyPose V1.3 (?)
+    * RRT-based pose generation for mid-DOF (4,5,6) bipeds. 
 
 = Revision History =
 
