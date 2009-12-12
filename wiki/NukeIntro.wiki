@@ -1,0 +1,33 @@
+#summary Introduction to NUKE
+
+= NUKE - The Nearly Universal Kinematics Engine = 
+
+<font color="#FF0000"> NUKE is currently only available in V1.1 Beta releases. </font>
+
+The Nearly Universal Kinematics Engine (NUKE) will generate IK and Gait engines for most popular configurations of quadrupeds and hexapods. 
+
+<img src="http://arbotix.googlecode.com/svn/wiki/nuke.png">
+
+_*Figure 7 - Beta of NUKE editor.*_
+
+Be sure to create a robot model, and specify the number of servos before working with NUKE. Then select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of robot IK configuration and number of legs. 
+
+After selecting the type of IK and number of legs, you'll want to input the lengths of the robot's major features. Clicking on *Help* will bring up a dialog showing you what to measure, some of the measurements are dependent on the type of IK selected. The next step is to select the servo mapping (which ID corresponds to which servo in the robot). 
+
+We're now setup to capture the really important values. The first thing to capture is the minimum and maximum values of each servo, the points where the servo would collide with the body. Click the button for *Capture Min/Max* and PyPose will ask you to step through and move each servo to it's extremes. PyPose automatically will configure which end is a minimum and which is a maximum. *Be careful* with this step, make sure that you don't rotate the servo past it's 0-300 degree range, or your minimum and maximum values will be wrong. 
+
+The next step is to capture the neutral position. This will vary a bit depending on the type of IK you are using, but when you click on *Capture Neutrals* a dialog will be presented with a picture showing where your robot's legs should be placed. This pose will be saved as _ik_neutral_, and can be edited inside the Pose Editor if needed. 
+
+The last step in initial setup is the sign test. We need to make sure our IK engine moves legs in the correct direction. Clicking *Do Sign Test* will send us through a series of questions like "Did my left front leg move forward?". It helps if your bot is free to move (either hold it carefully, or have a stand for it). 
+
+== Gait Configuration ==
+
+<font color="#FF0000"> TODO: setup the gait engine and default foot placements </font>
+
+<font color="#FF0000"> TODO: testing the gait engine </font>
+
+== Export and Interaction ==
+
+<font color="#FF0000"> TODO: how to export your sketch </font>
+
+<font color="#FF0000"> TODO: how to interact with the engine </font>
