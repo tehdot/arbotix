@@ -27,7 +27,6 @@ For versions 1.1 and beyond, we will use a 3 distribution method:
     * Servo Terminal complete
 
   * PyPose V1.3 (?)
-    * RRT-based pose generation for mid-DOF (4,5,6) bipeds. 
 
 = Revision History =
 
