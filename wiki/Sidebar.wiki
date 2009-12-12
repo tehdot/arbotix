@@ -9,8 +9,8 @@
 === Software ===
  * [GettingSetup Get Started]
  * PyPose
-   # NUKE: Introduction
-   # NUKE: Gait Tuning
+   # [NukeIntro NUKE: Introduction]
+   # [NukeTuning NUKE: Gait Tuning]
  * BioloidController
  * OtherLibraries
    * Motors2
