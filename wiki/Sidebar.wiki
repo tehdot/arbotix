@@ -17,5 +17,10 @@
 
 === Examples === 
  * !IssyDunnYet
+ * Droid
  * Ranging Sensors
  * I2C Sensors
+ * !DiffDrive
+
+== Other ==
+ * [DevelopmentTimeline Developer's Notes]
