@@ -34,7 +34,7 @@ Each sample program is an Arduino sketch, held in it's own directory within the 
 
 </table>
 
-* denotes examples coming soon.
+A * denotes examples coming soon.
 _note: eventually, most of these examples will have their own page describing the example._
 
 == Licensing ==
