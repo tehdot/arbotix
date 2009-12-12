@@ -1,0 +1,28 @@
+#summary Entry page for wiki
+
+<img src="http://vanadium.wdfiles.com/local--resized-images/arbotix/arbotix.jpg/small.jpg" align="left"> 
+
+The arbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, specifically those that use Bioloid servos. 
+
+You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]
+
+Link to forum discussions???
+
+= Introduction =
+
+= Software =
+A number of software programs have been designed to make working with your arbotiX quite easy: 
+    * BioloidController - this is a Bioloid bus library for use with the Arduino/Sanguino environment. It allows easy manipulation of poses, the storage of poses in FLASH, and full interaction with AX-12 servos.
+    * PyPose - this is the stock pose & capture software. Written in Python, uses pySerial to communicate with an arbotiX board running the pypose sketch. After you have done pose and capture, !PyPose can automatically create a C header file with the poses ready to load with the Bioloid Library. 
+    * OtherLibraries - there are several other, smaller, libraries that have been made to make using the arbotiX extremely easy. 
+
+= Examples =
+Each example is an Arduino sketch, held in it's own directory within the _Sketches_ directory of the release. Current examples include: 
+    * _!IssyDunnYet_ - the arbotiX was originally designed for !IssyDunnYet, the 2009 Gold Medalist in Mech Warfare. We've updated Issy's code to fix several bugs and to use the newer BioloidController library. The sketch directory also contains !PyMech which is the Python-based console for controlling Issy. 
+    * _droid_ is an example of how to use this software with the Walking Droid found in the Bioloid Beginner kit. A video should be posted shortly. 
+    * _pypose_ is the pass through program for interacting with PyPose.
+
+_note: eventually, each of these examples will have their own page describing the example._
+
+== Licensing ==
+All of the arbotiX libraries, robocontroller libraries, and Arduino extensions are licensed under the GNU Lesser General Public License v2.1. PyPose, and any other desktop software included (such as !PyMech), is released under the GNU General Public License v2.  
