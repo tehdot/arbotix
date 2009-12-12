@@ -1,6 +1,6 @@
 <h1>ArbotiX !RoboController</h1>
 
-<p><img src="http://vanadium.wdfiles.com/local--resized-images/arbotix/arbotix.jpg/small.jpg" /></p> 
+<p><img src="http://www.trossenrobotics.com/store/i/is.aspx?path=/images/PImages/arbotix.jpg" /></p> 
 
 The arbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, specifically those that use Bioloid servos. 
 
