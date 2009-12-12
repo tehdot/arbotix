@@ -3,7 +3,7 @@
 [home Home]
 
 === Hardware ===
- * [HardwareSetup Power and Connections]
+ * [http://arbotix.googlecode.com/files/arbotix-manual-draft2.pdf Manual](PDF)
  * 
 
 === Software ===
