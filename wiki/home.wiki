@@ -1,6 +1,6 @@
-<h1>ArbotiX RoboController</h1>
+<h1>ArbotiX !RoboController</h1>
 
-<p><img src="http://vanadium.wdfiles.com/local--resized-images/arbotix/arbotix.jpg/small.jpg" align="left" /></p> 
+<p><img src="http://vanadium.wdfiles.com/local--resized-images/arbotix/arbotix.jpg/small.jpg" /></p> 
 
 The arbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, specifically those that use Bioloid servos. 
 
@@ -8,15 +8,21 @@ You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot
 
 Link to forum discussions???
 
-= Introduction =
+== News ==
 
-= Software =
+ * 11-30-09 - We're preparing for a beta release of PyPose 1.1 with NUKE! The first beta release should be out by mid-December. In preparation, a number of our wiki documents are being updated.
+ * 11-29-09 - PyPose V1.0c has been released. It includes several patches to the delta-T function under the Pose Editor. 
+
+== Hardware Specifications ==
+The ArbotiX sports an 16Mhz ATMEGA644P, with 64k of flash ROM, and 4k of RAM. It has 2 serial ports, 1 dedicated to Bioloid servo controller, the other to the XBEE radio. A total of 32 I/O, 8 of which can function as analog inputs with servo style 3-pin headers (gnd, vcc, signal) on all 8 analog inputs, and 8 of the digital IO. The ArbotiX has dual 1A motor drivers, with combined motor/encoder header. ArbotiX is 2.8”x2.8” with mounting holes designed to match many Bioloid configurations.
+
+== Software ==
 A number of software programs have been designed to make working with your arbotiX quite easy: 
     * BioloidController - this is a Bioloid bus library for use with the Arduino/Sanguino environment. It allows easy manipulation of poses, the storage of poses in FLASH, and full interaction with AX-12 servos.
     * PyPose - this is the stock pose & capture software. Written in Python, uses pySerial to communicate with an arbotiX board running the pypose sketch. After you have done pose and capture, !PyPose can automatically create a C header file with the poses ready to load with the Bioloid Library. 
     * OtherLibraries - there are several other, smaller, libraries that have been made to make using the arbotiX extremely easy. 
 
-= Examples =
+== Examples ==
 Each example is an Arduino sketch, held in it's own directory within the _Sketches_ directory of the release. Current examples include: 
     * _!IssyDunnYet_ - the arbotiX was originally designed for !IssyDunnYet, the 2009 Gold Medalist in Mech Warfare. We've updated Issy's code to fix several bugs and to use the newer BioloidController library. The sketch directory also contains !PyMech which is the Python-based console for controlling Issy. 
     * _droid_ is an example of how to use this software with the Walking Droid found in the Bioloid Beginner kit. A video should be posted shortly. 
