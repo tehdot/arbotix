@@ -70,7 +70,7 @@ There are several keyboard accelerators for the !PyPose Pose Editor:
  * Ctrl-R - relax servos
 
 = The Sequence Editor =
-Selecting *tools|sequence editor* will display the sequence editor instead of the pose editor. The sequence editor, shown below in _figure 5_ contains a group of controls dedicated to editing an individual sequence and a list of sequences on the right side of the screen. Below the sequence editor are three buttons: _relax_, _run_, and _halt_. *relax* works just like it did in the pose editor. *run* and *halt* will start and stop the sequence you are currently editing from running. The download of a sequence to the arbotiX may take a few moments. Below the list of sequences are two buttons: _add_ and _remove_ for creating and deleting sequences. 
+Selecting *tools|sequence editor* will display the sequence editor instead of the pose editor. The sequence editor, shown below in _figure 5_ contains a group of controls dedicated to editing an individual sequence and a list of sequences on the right side of the screen. Below the sequence editor are four buttons: _relax_, _run_, _loop_, and _halt_. *relax* works just like it did in the pose editor. *run*, *loop* and *halt* will start and stop the sequence you are currently editing from running. *run* runs the sequence through one iteration or until a *halt* is received, *loop* will cause the sequence to run until a *halt* command is received. The download of a sequence to the arbotiX may take a few moments. Below the list of sequences are two buttons: _add_ and _remove_ for creating and deleting sequences. 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/sequence.png">
 
