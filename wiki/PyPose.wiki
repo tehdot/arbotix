@@ -1,7 +1,5 @@
 #summary pose and capture software
 
-<font color="#FF0000"> This document is under revision, in preparation for a beta release of the NUKE editor tool. </font>
-
 = Introduction =
 One of the most important features of AX-12 servos is that we can move the servo to a particular position by hand and read the position back from the servo. This feature allows us to _pose_ the robot, and _capture_ the pose. PyPose began as a simple open-source pose and capture program, written in Python and using wxPython for a graphical package. Traditionally, roboticists might create a series of poses, and then assemble them into a _motion sequence_.
 
@@ -29,12 +27,12 @@ We can finally start PyPose, the initial view will look something like this:
 
 _*Figure 1 - The PyPose program when first loaded, showing empty pose list and pose editor.*_
 
-This default view is the _Pose Editor_, one of the many tools in !PyPose. There is a menu bar across the top of the program at all times, and a status bar across the bottom of the window. The left hand side of the status bar prompts you with _please create or open a project_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected. The *tools* menu is probably the most important, as it lets us switch between the _Pose Editor_, _Sequence Editor_, and other tools:
+This default view is the _Pose Editor_, one of the many tools in !PyPose. There is a menu bar across the top of the program at all times, and a status bar across the bottom of the window. The left hand side of the status bar prompts you with _please create or open a project_. The right hand side of the status bar shows our connection status, telling us that we are currently not connected to a robot. The *tools* menu is probably the most important, as it lets us switch between the _Pose Editor_, _Sequence Editor_, _NUKE_, and other tools:
 
 <img src="http://arbotix.googlecode.com/svn/wiki/toolsmenu.png">
 
 = Creating a New Robot, Connecting to the arbotiX =
-The first thing we need to do is to create a project. A project is where we will store our poses, sequences, and IK/FK configurations. Click on *project|new* in the menu, and the *Create New Project* dialog will appear. Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12, you can change the number by using the Terminal._ We are now ready to begin actually talking with our robot. You can repeatedly save and open project files.
+The first thing we need to do is to create a project. A project is where we will store our poses, sequences, and IK/FK configurations. Click on *project|new* in the menu, and the *Create New Project* dialog will appear. Enter the name of your robot, and the number of servos used. _Note: currently, servos must be number sequentially, if you have 12 servos, they must be ID1 to ID12, you can change the ID of a servo using the Servo Terminal._ We are now ready to begin actually talking with our robot. You can repeatedly save and open project files.
 
 <img src="http://arbotix.googlecode.com/svn/wiki/newproj.png">
 <img src="http://arbotix.googlecode.com/svn/wiki/serial.png">
@@ -48,7 +46,9 @@ The default baud rate for the arbotiX is 38400bps, if you are using XBEE radios,
 = The Pose Editor =
 Once you have created a robot, PyPose will adjust to show the correct number of sliding servo adjustment bars. The box to the right of the adjustment bars displays the names of poses we have captured, since we haven't captured any, it will be blank. Below the pose list, we have two buttons: _add_ and _remove_, for creating a new pose or deleting one. Click on _add_ and enter a name for your pose. For instance, I typically create a pose named "stand", for the default standing position of my bot. If you click on a pose in the list, it's servo values are loaded into the slider bars.
 
-We also have 3 buttons underneath our servo adjustment bars: _relax_, _capture_, and _set_. *relax* shuts of the servo torque, allowing you to pose the robot into place. *set* will write the current servo adjustment bar values out to the robot's servos. *capture* allows us to read the values into the slider bars. When you click *capture*, a status indicator will appear:
+We also have 4 buttons underneath our servo adjustment bars: _delta-T_, _relax_, _capture_, and _set_. *relax* shuts of the servo torque, allowing you to pose the robot into place. *set* will write the current servo adjustment bar values out to the robot's servos. If during a *set* operation, the servos were to move too fast, the robot or operator could be injured. The *delta-T* button brings up a dialog to select how long transitions take. This time defaults to 500ms, or half a second. 
+
+*capture* allows us to read the values into the slider bars. When you click *capture*, a status indicator will appear:
 
 <img src="http://arbotix.googlecode.com/svn/wiki/capture.png">
 
@@ -56,15 +56,13 @@ _*Figure 3 - capture status bar.*_
 
 It should disappear quite quickly, unless PyPose has trouble reading a servo. When complete, the lower left corner of the status bar will either say _"capture done!"_ to indicate success, or list a set of servos it could not query. If you have trouble, check to make sure that you have entered the correct number of servos during robot setup, and that all of your wires are tight. Old wires may have to be replaced. 
 
-Servo values can be manually edited after a capture, just move the sliding adjustment bars. The left and right arrow keys can be used to fine tune the values.
+Servo values can be manually edited after a capture, just move the sliding adjustment bars. The left and right arrow keys can be used to fine tune the values. Using the _shift_ key and the left and right arrows you can jump large amounts. 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/pypose2.png">
 
 _*Figure 4 - PyPose, after a successful capture.*_
 
 _Note: Be careful when clicking_ capture, _as it will overwrite any data attached to the pose currently selected in the pose list. We are currently revamping the pose interface to be more data safe!_ 
-
-<font color="#FF0000"> TODO: add instructions for delta-T settings on Pose Editor </font>
 
 There are several keyboard accelerators for the !PyPose Pose Editor:
  * Ctrl-A - advance to a new pose, this creates a default name for a new pose and then selects the pose. 
