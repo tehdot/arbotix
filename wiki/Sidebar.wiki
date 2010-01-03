@@ -8,11 +8,11 @@
 
 === Software ===
  * [GettingSetup Get Started]
+ * BioloidController
  * !PyPose
    # [PyPose PyPose: Introduction]
    # [NukeIntro NUKE: Introduction]
    # [NukeTuning NUKE: Gait Tuning]
- * BioloidController
  * OtherLibraries
    * Motors2
 
