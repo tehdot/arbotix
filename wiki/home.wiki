@@ -1,8 +1,8 @@
 <h1>ArbotiX !RoboController</h1>
 
-<p><img src="http://www.trossenrobotics.com/store/i/is.aspx?path=/images/PImages/arbotix.jpg" /></p> 
+<img src="http://www.trossenrobotics.com/store/i/is.aspx?path=/images/PImages/arbotix.jpg" align="right"/>
 
-The arbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, specifically those that use Bioloid servos. 
+The arbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, especially walkers that use Bioloid AX-12 servos. 
 
 You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]
 
@@ -28,8 +28,8 @@ Each sample program is an Arduino sketch, held in it's own directory within the 
 <table border="1" cellpadding="5" >
 <tr><td>!IssyDunnYet</td><td>the ArbotiX was originally designed for !IssyDunnYet, the 2009 Gold Medalist in Mech Warfare. We've updated Issy's code to fix several bugs and to use the newer BioloidController library. The sketch directory also contains !PyMech which is the Python-based console for controlling Issy. </td></tr>
 <tr><td>Droid</td><td>is an example of how to use this software with the Walking Droid found in the Bioloid Beginner kit. A video should be posted shortly. </td></tr>
-<tr><td>I2C Sonar*</td><td>How to use an SRF-02 sonar with the ArbotiX.</td></tr>
-<tr><td>!DiffDrive*</td><td>How to use the motor and encoder headers of the ArbotiX to implement closed loop control of a differential drive robot.</td></tr>
+<tr><td>I2C Sonar `*`</td><td>How to use an SRF-02 sonar with the ArbotiX.</td></tr>
+<tr><td>!DiffDrive `*`</td><td>How to use the motor and encoder headers of the ArbotiX to implement closed loop control of a differential drive robot.</td></tr>
 <tr><td>pypose</td><td>is the pass through program for interacting with PyPose</td></tr>
 
 </table>
