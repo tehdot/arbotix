@@ -8,7 +8,8 @@
 
 === Software ===
  * [GettingSetup Get Started]
- * PyPose
+ * !PyPose
+   # [PyPose PyPose: Introduction]
    # [NukeIntro NUKE: Introduction]
    # [NukeTuning NUKE: Gait Tuning]
  * BioloidController
