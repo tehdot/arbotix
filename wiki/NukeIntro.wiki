@@ -4,25 +4,25 @@
 
 <font color="#FF0000"> NUKE is currently only available in V1.1 Beta releases. </font>
 
-The Nearly Universal Kinematics Engine (NUKE) will generate IK and Gait engines for most popular configurations of quadrupeds and hexapods. NUKE generates a complete, turn-key, sketch for your ArbotiX powered robot, that accomplishes the basic needs of walking robots. 
+The Nearly Universal Kinematics Engine (NUKE) is an easy to use PyPose tool that creates a customized Inverse Kinematics solution and gait engine for your ArbotiX-powered robot. It works for most popular configurations of quadrupeds and hexapods. 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/nuke.png">
 
-_*Figure 1 - Beta of NUKE editor.*_
+_*Figure 1 - NUKE editor.*_
 
-Be sure to create a robot model, and specify the number of servos before working with NUKE. This is done exactly the same way as it was in PyPose when you were just using poses and sequences. Then select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of robot IK configuration and number of legs. 
+Be sure to create a robot project, and specify the number of servos before working with NUKE. This can be done exactly the same way as it was in PyPose when you were just using poses and sequences. Next, select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of IK configuration and number of legs on your robot. 
 
-After selecting the type of IK and number of legs, you'll want to input the lengths of the robot's major features. An image to the side of the parameters shows what to measure. <wiki:comment>Clicking on *Help* will bring up a dialog showing you what to measure, some of the measurements are dependent on the type of IK selected.</wiki:comment> The next step is to select the servo mapping (which ID corresponds to which servo in the robot). 
+After selecting the type of IK and number of legs, you'll want to input the lengths of the robot's body and leg segments on the left side of the editor. Images to the side of the parameters  shows what to measure. <wiki:comment>Clicking on *Help* will bring up a dialog showing you what to measure, some of the measurements are dependent on the type of IK selected.</wiki:comment> The next step is to select the servo mapping (which servo ID corresponds to which servo in the robot) on the right side of the editor. 
 
-We're now setup to capture the really important values. The first thing to capture is the minimum and maximum values of each servo, the points where the servo would collide with the body. Click the button for *Capture Min/Max* and PyPose will ask you to step through and move each servo to it's extremes. PyPose automatically will configure which end is a minimum and which is a maximum. *Be careful* with this step, make sure that you don't rotate the servo past it's 0-300 degree range, or your minimum and maximum values will be wrong. 
+We're now setup to capture the really important values. The first thing to capture is the minimum and maximum values of each servo, the points where the servo would collide with the body. Click the button for *Capture Limits* and PyPose will ask you to step through and move each servo to it's extremes. PyPose automatically will configure which end is a minimum and which is a maximum. *Be careful* with this step, make sure that you don't rotate the servo past it's 0-300 degree range, or your minimum and maximum values will be wrong. 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/neutral.png">
 
 _*Figure 2 - Neutral capture dialog for 3DOF lizard-style legs.*_
 
-The next step is to capture the neutral position. This will vary a bit depending on the type of IK you are using, but when you click on *Capture Neutrals* a dialog will be presented with a picture showing where your robot's legs should be placed. This pose will be saved as _ik_neutral_, and can be edited inside the Pose Editor if needed. 
+The next step is to capture the neutral position. This will vary a bit depending on the type of IK you are using, but when you click on *Capture Neutral* a dialog will be presented with a picture showing where your robot's legs should be placed. This pose will be saved as _ik_neutral_, and can be edited inside the Pose Editor if needed. 
 
-The last step in initial setup is the sign test. We need to make sure our IK engine moves legs in the correct direction. Clicking *Do Sign Test* will send us through a series of questions like "Did my left front leg move forward?". It helps if your bot is free to move (either hold it carefully, or have a stand for it). 
+The last step in initial setup is the sign test. We need to make sure our IK engine moves legs in the correct direction depending on how our servos are attached. Clicking *Do Sign Test* will send us through a series of questions like "Did my left front leg move forward?". Make sure your bot is free to move (either hold it carefully, or have a stand for it). 
 
 == Gait Configuration ==
 
@@ -31,10 +31,41 @@ At this time, no gait configuration is needed. NUKE automatically picks a defaul
 <wiki:comment><font color="#FF0000"> TODO: setup the gait engine and default foot placements </font>
 <font color="#FF0000"> TODO: testing the gait engine </font></wiki:comment>
 
-== Export and Interaction ==
+== Export and Testing ==
 
 Once the limits, neutrals, and signs are found, it's time to export our sketch. Clicking on *Export*, NUKE exports a complete sketch, so you'll only need to select a folder in which to put a sketch and support code. 
 
 We now load the sketch inside the Arduino IDE, and download it to the robot. This sketch has a very simple _loop()_ function, which will take serial commands to walk the robot around. Once the sketch is loaded we can use the *Test Drive* tool within NUKE to control the robot. Test Drive uses the same protocol as the ArbotiX Commander.
 
-<font color="#FF0000"> TODO: how to interact with the engine </font>
+== Interacting with the IK Engine ==
+NUKE generates a full inverse kinematics solution and a gait engine for your robot. This is composed of 4 files: 
+ * _nuke.h_ - header file for IK and gait engine
+ * _nuke.cpp_ - contains the IK engine
+ * _gaits.h_ - contains the gait engine
+ * _something.pde_ - your sketch, the name of the file matches the name of the directory you chose to export to. This is where you'll put the robot's task-related code.
+
+The main loop of your program, in _something.pde_ will look like this:
+{{{
+void loop(){
+  // put your task code here
+  // make sure it doesn't take too long to execute each cycle
+
+  if(bioloid.interpolating == 0){
+    // last step is done, do the next
+    doIK();
+    bioloid.interpolateSetup(tranTime);
+  }
+  bioloid.interpolateStep();
+}
+}}}
+
+Your code will interact with the gait engine using several global variables, which can be set at any time, from anywhere in your code:
+ * _Xspeed_ - the forward speed to walk at, in millimeters/second. Forward is positive.
+ * _Yspeed_ - the sideways speed to walk at, in millimeters/second. Right is positive.
+ * _Rspeed_ - the speed to turn at, in radians/second. 
+
+The body IK engine also relies on several other variables: 
+ * _bodyPosX_, _bodyPosY_ - offset of the center of body in the air, in millimeters.
+ * _bodyRotX_, _bodyRotY_, _bodyRotZ_ - rotation of body about axis, in radians.
+
+_doIK()_ computes the position for each leg, taking into account the gait and body parameters. The interpolation part is documented under the BioloidController library. There is also a default location for each leg, when the gait and body engines output all zeros. This default location is found in _setupIK()_. 
