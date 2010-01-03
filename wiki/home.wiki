@@ -6,9 +6,8 @@ The arbotiX robocontroller is an Arduino compatible microcontroller board, desig
 
 Support is typically handled through our [http://groups.google.com/group/robocontroller discussion forum]. You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. For more information, visit our website at http://www.vanadiumlabs.com/arbotix or Fergy's blog at http://www.showusyoursensors.com/
 
-== News ==
-
- * 11-30-09 - We're preparing for a beta release of PyPose 1.1 with NUKE! The first beta release should be out by mid-December. In preparation, a number of our wiki documents are being updated.
+== News == 
+ * 1-3-10 - A first beta release of PyPose V1.1 with NUKE has been released. This release supports 3DOF lizard-legged quads and hexapods. The next beta release will have 3DOF Mammal support. This release has been split into 2 parts: the arbotiX core, and the PyPose/NUKE software. This IS A BETA, so save frequently and please post issues to our [http://groups.google.com/group/robocontroller user group] 
  * 11-29-09 - PyPose V1.0c has been released. It includes several patches to the delta-T function under the Pose Editor. 
 
 == Hardware Specifications ==
