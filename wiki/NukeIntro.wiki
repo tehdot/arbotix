@@ -6,11 +6,17 @@
 
 The Nearly Universal Kinematics Engine (NUKE) is an easy to use PyPose tool that creates a customized Inverse Kinematics solution and gait engine for your ArbotiX-powered robot. It works for most popular configurations of quadrupeds and hexapods. 
 
+Most of this documentation overlaps with our introductory video:
+
+<wiki:video url="http://www.youtube.com/watch?v=biA7AhWRvpU"/>
+
+== How To Use NUKE == 
+
+Be sure to create a robot project, and specify the number of servos before working with NUKE. This can be done exactly the same way as it was in PyPose when you were just using poses and sequences. Next, select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of IK configuration and number of legs on your robot. 
+
 <img src="http://arbotix.googlecode.com/svn/wiki/nuke.png">
 
 _*Figure 1 - NUKE editor.*_
-
-Be sure to create a robot project, and specify the number of servos before working with NUKE. This can be done exactly the same way as it was in PyPose when you were just using poses and sequences. Next, select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of IK configuration and number of legs on your robot. 
 
 After selecting the type of IK and number of legs, you'll want to input the lengths of the robot's body and leg segments on the left side of the editor. Images to the side of the parameters  shows what to measure. <wiki:comment>Clicking on *Help* will bring up a dialog showing you what to measure, some of the measurements are dependent on the type of IK selected.</wiki:comment> The next step is to select the servo mapping (which servo ID corresponds to which servo in the robot) on the right side of the editor. 
 
@@ -36,6 +42,10 @@ At this time, no gait configuration is needed. NUKE automatically picks a defaul
 Once the limits, neutrals, and signs are found, it's time to export our sketch. Clicking on *Export*, NUKE exports a complete sketch, so you'll only need to select a folder in which to put a sketch and support code. 
 
 We now load the sketch inside the Arduino IDE, and download it to the robot. This sketch has a very simple _loop()_ function, which will take serial commands to walk the robot around. Once the sketch is loaded we can use the *Test Drive* tool within NUKE to control the robot. Test Drive uses the same protocol as the ArbotiX Commander.
+
+<img src="http://arbotix.googlecode.com/svn/wiki/commander.png">
+
+_*Figure 3 - ArbotiX Commander Test Drive screen.*_
 
 == Interacting with the IK Engine ==
 NUKE generates a full inverse kinematics solution and a gait engine for your robot. This is composed of 4 files: 
