@@ -68,4 +68,4 @@ The body IK engine also relies on several other variables:
  * _bodyPosX_, _bodyPosY_ - offset of the center of body in the air, in millimeters.
  * _bodyRotX_, _bodyRotY_, _bodyRotZ_ - rotation of body about axis, in radians.
 
-_doIK()_ computes the position for each leg, taking into account the gait and body parameters. The interpolation part is documented under the BioloidController library. There is also a default location for each leg, when the gait and body engines output all zeros. This default location is found in _setupIK()_. 
+_doIK()_ computes the position for each leg, taking into account the gait and body parameters. The interpolation part is documented under the BioloidController library. There is also a default location for each leg, known as the _default stance_, when the gait and body engines output all zeros. This default stance is found in the _setupIK()_ function of nuke.cpp. 
