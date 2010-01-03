@@ -6,7 +6,7 @@ The arbotiX robocontroller is an Arduino compatible microcontroller board, desig
 
 You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]
 
-Link to forum discussions???
+See also, our [http://groups.google.com/group/robocontroller discussion forum]
 
 == News ==
 
