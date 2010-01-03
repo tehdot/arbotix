@@ -4,17 +4,21 @@
 
 <font color="#FF0000"> NUKE is currently only available in V1.1 Beta releases. </font>
 
-The Nearly Universal Kinematics Engine (NUKE) will generate IK and Gait engines for most popular configurations of quadrupeds and hexapods. 
+The Nearly Universal Kinematics Engine (NUKE) will generate IK and Gait engines for most popular configurations of quadrupeds and hexapods. NUKE generates a complete, turn-key, sketch for your ArbotiX powered robot, that accomplishes the basic needs of walking robots. 
 
 <img src="http://arbotix.googlecode.com/svn/wiki/nuke.png">
 
-_*Figure 7 - Beta of NUKE editor.*_
+_*Figure 1 - Beta of NUKE editor.*_
 
-Be sure to create a robot model, and specify the number of servos before working with NUKE. Then select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of robot IK configuration and number of legs. 
+Be sure to create a robot model, and specify the number of servos before working with NUKE. This is done exactly the same way as it was in PyPose when you were just using poses and sequences. Then select *Tools|Nuke* to load the NUKE editor. Most of the editor will be disabled until you select the type of robot IK configuration and number of legs. 
 
-After selecting the type of IK and number of legs, you'll want to input the lengths of the robot's major features. Clicking on *Help* will bring up a dialog showing you what to measure, some of the measurements are dependent on the type of IK selected. The next step is to select the servo mapping (which ID corresponds to which servo in the robot). 
+After selecting the type of IK and number of legs, you'll want to input the lengths of the robot's major features. An image to the side of the parameters shows what to measure. <wiki:comment>Clicking on *Help* will bring up a dialog showing you what to measure, some of the measurements are dependent on the type of IK selected.</wiki:comment> The next step is to select the servo mapping (which ID corresponds to which servo in the robot). 
 
 We're now setup to capture the really important values. The first thing to capture is the minimum and maximum values of each servo, the points where the servo would collide with the body. Click the button for *Capture Min/Max* and PyPose will ask you to step through and move each servo to it's extremes. PyPose automatically will configure which end is a minimum and which is a maximum. *Be careful* with this step, make sure that you don't rotate the servo past it's 0-300 degree range, or your minimum and maximum values will be wrong. 
+
+<img src="http://arbotix.googlecode.com/svn/wiki/neutral.png">
+
+_*Figure 2 - Neutral capture dialog for 3DOF lizard-style legs.*_
 
 The next step is to capture the neutral position. This will vary a bit depending on the type of IK you are using, but when you click on *Capture Neutrals* a dialog will be presented with a picture showing where your robot's legs should be placed. This pose will be saved as _ik_neutral_, and can be edited inside the Pose Editor if needed. 
 
@@ -22,12 +26,15 @@ The last step in initial setup is the sign test. We need to make sure our IK eng
 
 == Gait Configuration ==
 
-<font color="#FF0000"> TODO: setup the gait engine and default foot placements </font>
+At this time, no gait configuration is needed. NUKE automatically picks a default stance that should be effective. For information about how to improve performance, particularly range of motion and speed of walking, see NukeTuning. 
 
-<font color="#FF0000"> TODO: testing the gait engine </font>
+<wiki:comment><font color="#FF0000"> TODO: setup the gait engine and default foot placements </font>
+<font color="#FF0000"> TODO: testing the gait engine </font></wiki:comment>
 
 == Export and Interaction ==
 
-<font color="#FF0000"> TODO: how to export your sketch </font>
+Once the limits, neutrals, and signs are found, it's time to export our sketch. Clicking on *Export*, NUKE exports a complete sketch, so you'll only need to select a folder in which to put a sketch and support code. 
+
+We now load the sketch inside the Arduino IDE, and download it to the robot. This sketch has a very simple _loop()_ function, which will take serial commands to walk the robot around. Once the sketch is loaded we can use the *Test Drive* tool within NUKE to control the robot. Test Drive uses the same protocol as the ArbotiX Commander.
 
 <font color="#FF0000"> TODO: how to interact with the engine </font>
