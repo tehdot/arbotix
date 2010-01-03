@@ -4,9 +4,7 @@
 
 The arbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, especially walkers that use Bioloid AX-12 servos. 
 
-You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]
-
-See also, our [http://groups.google.com/group/robocontroller discussion forum]
+Support is typically handled through our [http://groups.google.com/group/robocontroller discussion forum]. You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. For more information, visit our website at http://www.vanadiumlabs.com/arbotix or Fergy's blog at http://www.showusyoursensors.com/
 
 == News ==
 
