@@ -14,7 +14,7 @@ For versions 1.1 and beyond, we will use a 3 distribution method:
    * new examples: a rover with closed loop feedback
    * AX-S1 support macros - <font color="#FF0000">_in progress_</font>
 
- * PyPose V1.1 Beta 1 (January 2010)
+ * PyPose V1.1 Beta 1 (January 3, 2010)
    * First version of NUKE - the Nearly Universal Kinematics Engine
        # Full IK interface (limits, neutrals, mapping, params) - <font color="#FF0000">_in progress_</font>
        # Supports Lizard 3DOF, 4/6 legs - <font color="#009933">_done_</font>
@@ -22,7 +22,10 @@ For versions 1.1 and beyond, we will use a 3 distribution method:
  
  * PyPose V1.1 Beta 2 (January 2010)
    * Support for Mammal 3DOF - <font color="#FF0000">_in progress_</font>
-   * Surely, a few tweaks to the interface
+   * Re-ordered default servo mapping.
+   * Relax servos at the beginning of neutral/limit captures
+   * Re-arranged some buttons (test drive)
+   * Messages after finishing neutral capture
 
   * PyPose V1.2 (Early 2010)
     * Gait parser, geometric gait support
