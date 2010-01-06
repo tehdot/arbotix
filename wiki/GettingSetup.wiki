@@ -1,5 +1,7 @@
 #summary how to set stuff up
 
+<font color="#FF0000">For users of the V1.1 Beta: As of V1.1, we have split the download into two parts: arbotix-core and arbotix-pypose. The beta downloads are currently not listed on the front page, but can be downloaded from the *Downloads* tab.</font>
+
 This page details software and hardware setup. This will take a few steps, but then you'll be set up to use your ArbotiX:
  * *Install Arduino Software* - the IDE for creating code for our controller. 
  * *Install ArbotiX Distribution* - we'll also need to install some files to use the ArbotiX with the Arduino IDE.
