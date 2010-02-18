@@ -16,6 +16,9 @@ The lowest-level of the BioloidController library is composed of simple function
 #include <ax12.h>
 #include <BioloidController.h>
 
+// we always need to create an instance of the bioloid control, usually with baud = 1Mbps.
+BioloidController bioloid = BioloidController(1000000);
+
 int i;
 void setup(){
     i = 0;
