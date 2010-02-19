@@ -5,8 +5,8 @@ This page is geared towards developers and power-users. For general coverage of 
 = Improvement and Developments Outline =
 
  * ArbotiX/PyPose 1.1 (February 2010)
-   * First version of NUKE, with full support for Lizard IK
-   * BioloidController updates to allow RX servo control.
+   * First version of NUKE, with full support for Lizard IK - <font color="#00FF00">_done_</font>
+   * BioloidController updates to allow RX servo control. - <font color="#FF0000">_in progress_</font>
 
  * ArbotiX/PyPose 1.2 (March 2010)
    * AX-S1 support macros - <font color="#FF0000">_in progress_</font>
