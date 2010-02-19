@@ -64,6 +64,7 @@ Where _droid_ was the name of our robot (PyPose automatically converts it to upp
 
 We can now load these poses from FLASH memory, and send them out to the servos using a bioloid-bus !SyncWrite (which is much faster than setting the position of each servo individually). 
 
+<wiki:comment>
 {{{
 #include <ax12.h>
 #include <BioloidController.h>
@@ -77,12 +78,13 @@ void setup(){
     bioloid.loadPose(stand); // load a pose (named "stand") from FLASH into buffer
     bioloid.writeSyncPose(); // write the buffer to the servos
 }
+</wiki:comment>
 
-void loop(){}
+void loop(){}The above example probably made our _walking droid_ jump up in the air, maybe even falling over, since our servos move so fast.
 }}}
 
 = Interpolation Engine =
-The above example probably made our _walking droid_ jump up in the air, maybe even falling over, since our servos move so fast. An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The BioloidController library allows this to be done very easily:
+An important consideration is how fast should we move from one pose to another? If we move to fast, a walking robot will likely topple over. AX-12 servos are too fast to let them go directly to the new position, so if we want a gradual change, we will need to _interpolate_ between our current pose and our next pose. The BioloidController library allows this to be done very easily:
 
 {{{
 #include <ax12.h>
