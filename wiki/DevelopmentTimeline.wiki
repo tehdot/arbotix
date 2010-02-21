@@ -1,6 +1,8 @@
 #summary Development Timeline
 
-This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page.
+This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
+
+Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We've now moved to an Arduino-style release versioning, 0001, 0002, etc.
 
 = Improvement and Developments Outline =
 
@@ -16,7 +18,7 @@ This page is geared towards developers and power-users. For general coverage of 
 
 = Revision History =
  
- * Version 1.1a (?)
+ * Release 0012 (?)
    * Re-ordered default servo mapping.
    * Relax servos at the beginning of neutral/limit captures
    * Move test drive button down near export
@@ -24,33 +26,33 @@ This page is geared towards developers and power-users. For general coverage of 
    * Fixed issues with sequence export
    * Support for Arduino 0018
 
- * Version 1.1 Beta 1 (1-3-10)
+ * Release 0011 (1-3-10) (V1.1 Beta1)
    * First pass of NUKE IK interface (limits, neutrals, mapping, params)
    * Support for Lizard 3DOF, 4/6 legs
    * Released EncodersAB and Commander Libraries
 
- * Version 1.0c (11-29-09, r365)
+ * Release 0010 (11-29-09, r365) (V1.0c)
    * Fixed issues with Delta-T under Pose Editor
 
- * Version 1.0b (11-14-09, r351)
+ * Release 0009 (11-14-09, r351) (V1.0b)
    * Port drivers merged
    * Delta-T added to Pose Editor "set" command
    * Many libraries moved to [http://robocontroller.googlecode.com RoboControllerLib]
 
- * Version 1.0a (10-18-09, r329)
+ * Release 0008 (10-18-09, r329) (V1.0a)
    * Port detection overhauled for MacOSX users. 
    * Port errors are actually now detected (arbotix.py pushes errors higher).
    * Fixed blank transition error.
    * Fixed timeout issues. 
 
- * Release Candidate 1a (10/17/09)
+ * Release 0007 (10/17/09) (rc1a)
    * Fixed save/load bug
 
- * Release Candidate 1 (10/2/09)
+ * Release 0007 (10/2/09) (rc1)
    * Fixed error messages in multiple places, cleaned up portions of code
    * Repaired new project dialog. 
 
- * Beta 4a Release (9/28/09) 
+ * Release 0006 (9/28/09) (Beta4a)
    * updated libraries: pypose (for PyPose V0.97) was made much faster
    * PyPose Improvements: (V0.97)
      # "robot" is now "project" - <font color="#009933">_done_</font>
@@ -65,13 +67,13 @@ This page is geared towards developers and power-users. For general coverage of 
    * Updated examples:
      # droid (now includes droid.ppr)
 
- * Release 3b (9/18/09)
+ * Release 0005 (9/18/09) (Beta3b)
    * PyPose V0.93 - Live playback of sequences!
 
- * Release 3a (9/16/09)
+ * Release 0004 (9/16/09) (Beta3a)
    * Servo editors are now disabled until a pose is selected.
 
- * Beta 3 (9/15/09) 
+ * Release 0003 (9/15/09) (Beta3)
    * new libraries: Commander - <font color="#009933">_done_</font>
    * PyPose improvements: (V0.91)
      # Completely rewritten, using wxPython instead of !TkInter - <font color="#009933">_done_</font>
@@ -80,14 +82,14 @@ This page is geared towards developers and power-users. For general coverage of 
      # Sequence Engine - <font color="#009933">_done_</font>
    * updated examples: pypose - <font color="#009933">_done_</font>
 
- * Beta 2 Release (8/27/09)
+ * Release 0002 (8/27/09) (Beta2)
    * new libraries: Motors2, Srf05 -<font color="#009933">_done_</font>
    * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid - <font color="#009933">_done_</font>
    * PyPose improvements: (V0.89)
      # USBDynamixel driver - <font color="#009933">_done_</font> _(note: currently not usable without editing code)_
    * new examples: issy - <font color="#009933">_done_</font>
 
- * Beta 1 Release (8/8/09)
+ * Release 0001 (8/8/09)
    * new libraries: bioloid, sharpIR - <font color="#009933">_done_</font>
    * PyPose functionality: (V0.50)
      # create robot files, capture poses - <font color="#009933">_done_</font>
