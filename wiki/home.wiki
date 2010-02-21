@@ -7,7 +7,7 @@ The arbotiX robocontroller is an Arduino compatible microcontroller board, desig
 Support is typically handled through our [http://groups.google.com/group/robocontroller discussion forum]. You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. For more information, visit our website at http://www.vanadiumlabs.com/arbotix or Fergy's blog at http://www.showusyoursensors.com/
 
 == News == 
- * 2-21-10 - ArbotiX/PyPose r0012 is now out. This includes full NUKE support for 3DOF lizard robots, a new version of the Commander library, variable number of columns in the pose editor, and numerous other new features and bug fixes.
+ * 2-21-10 - ArbotiX/PyPose r0012 is now out. This includes Arduino 0018 support, full NUKE support for 3DOF lizard robots, a new version of the Commander library, variable number of columns in the pose editor, and numerous other new features and bug fixes.
 
 == Hardware Specifications ==
 The ArbotiX sports an 16Mhz ATMEGA644P, with 64k of flash ROM, and 4k of RAM. It has 2 serial ports, 1 dedicated to Bioloid servo controller, the other to the XBEE radio. A total of 32 I/O, 8 of which can function as analog inputs with servo style 3-pin headers (gnd, vcc, signal) on all 8 analog inputs, and 8 of the digital IO. The ArbotiX has dual 1A motor drivers, with combined motor/encoder header. ArbotiX is 2.8”x2.8” with mounting holes designed to match many Bioloid configurations.
