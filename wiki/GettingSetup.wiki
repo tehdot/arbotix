@@ -1,9 +1,5 @@
 #summary how to set stuff up
 
-<font color="#FF0000">Please note: we do not yet have support for Arduino 0018. It is in the works, for the time being, please use Arduino 0017.
-
-For users of the V1.1 Beta: As of V1.1, we have split the download into two parts: arbotix-core and arbotix-pypose. The beta downloads are currently not listed on the front page, but can be downloaded from the *Downloads* tab.</font>
-
 This page details software and hardware setup. This will take a few steps, but then you'll be set up to use your ArbotiX:
  * *Install Arduino Software* - the IDE for creating code for our controller. 
  * *Install ArbotiX Distribution* - we'll also need to install some files to use the ArbotiX with the Arduino IDE.
@@ -17,89 +13,24 @@ This page details software and hardware setup. This will take a few steps, but t
 Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. -- arduino.cc
 }}}
 The ArbotiX software is based on the [http://www.sanguino.cc Sanguino], the big brother of the [http://www.arduino.cc Arduino]. The first thing we need to do is to install the Arduino software:
- # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Guide/HomePage
+ # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Guide/HomePage to install Arduino 0018. 
 
 The rest of this document assumes familiarity with the Arduino environment. See [http://arduino.cc the Arduino documents] for details on using the Arduino IDE.
 
 = ArbotiX Software Setup =
-To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Download the latest *ArbotiX-Software* release from the front page (or download from SVN), extract the zip file, and copy the following files:
- # The *cores/arbotix* folder needs to go into *arduino-0017/hardware/cores/arbotix*
- # The *bootloaders/atmega644p* folder needs to go into *arduino-0017/hardware/bootloaders/atmega644p*
- # All the folders in *libraries* need to be copied into *arduino-0017/hardware/libraries*
+To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Download the latest *ArbotiX/PyPose* release from the front page (or download from SVN), extract the zip file, and do the following:
+ # Create a *hardware* folder in your Arduino sketchbook directory if it doesn't already exist
+ # Copy the *arbotix* folder from the release into the *hardware* folder of your sketchbook directory
+ # Copy the *libraries* folder from the release into your sketchbook directory.
     * These are just the special libraries for the ArbotiX, you'll also want to install the [http://robocontroller.googlecode.com robocontroller] library for even more functionality.
- # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook
+ # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook directory
 
-_Note to MacOSX Users: as of Arduino 0017, the release is distributed as an application, to access the folders control-click Arduino.app and select > show package contents. The corresponding files and folders are in the hierarchy. See also, video on front page of http://sanguino.cc _
+= Programmer Setup =
+If you plan to use an FTDI cable, you don't need to do this section. _Please Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
 
-= Programmer and Board Setup =
-The final step of setting up the ArbotiX Software is to append the appropriate ArbotiX configuration into the *arduino-0017/hardware/boards.txt* file. This configuration depends on what hardware will be used to load code onto the ArbotiX:  
+If you want to use the Pololu ISP, open the file *boards.txt* found in your _sketchbook/hardware/arbotix_ folder and follow the directions to change from the FTDI to ISP configuration. Under Linux, the newer Pololu ISP uses a new style of USB port, which appears as /dev/ttyACMx, which is not found by the Arduino environment. The easiest fix for this is to create a soft link from */dev/ttyS1 -> /dev/ttyACM0* assuming you have no ttyS1. 
 
-=== FTDI Breakout Board === 
-If using the *[http://www.trossenrobotics.com/p/FTDI-Basic-Breakout-5V.aspx Sparkfun FTDI breakout board]* we just need to copy the default settings into boards.txt. Append the following into your boards.txt file
-{{{
-arbotix.name=ArbotiX
-arbotix.upload.protocol=stk500
-arbotix.upload.maximum_size=63488
-arbotix.upload.speed=38400
-arbotix.bootloader.low_fuses=0xFF
-arbotix.bootloader.high_fuses=0xDC
-arbotix.bootloader.extended_fuses=0xFD
-arbotix.bootloader.path=atmega644p
-arbotix.bootloader.file=ATmegaBOOT_644P.hex
-arbotix.bootloader.unlock_bits=0x3F
-arbotix.bootloader.lock_bits=0x0F
-arbotix.build.mcu=atmega644p
-arbotix.build.f_cpu=16000000L
-arbotix.build.core=arbotix
-arbotix.verbose=false
-}}}
-
-_Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
-
-=== Pololu ISP ===
-If using the [http://www.trossenrobotics.com/p/Orangutan-USB-AVR-Programmer.aspx Pololu ISP] we need to add the following lines to boards.txt:
-{{{
-arbotix.name=ArbotiX
-arbotix.upload.using=avrispv2
-arbotix.upload.maximum_size=65536
-arbotix.bootloader.low_fuses=0xFF
-arbotix.bootloader.high_fuses=0xDC
-arbotix.bootloader.extended_fuses=0xFD
-arbotix.bootloader.path=atmega644p
-arbotix.bootloader.file=ATmegaBOOT_644P.hex
-arbotix.bootloader.unlock_bits=0x3F
-arbotix.bootloader.lock_bits=0x0F
-arbotix.build.mcu=atmega644p
-arbotix.build.f_cpu=16000000L
-arbotix.build.core=arbotix
-arbotix.verbose=false
-}}}
-and we'll also need to add the following lines of code to the *arduino-0017/hardware/programmers.txt:
-{{{
-avrispv2.name=AVRISP V2
-avrispv2.communication=serial
-avrispv2.protocol=stk500v2
-}}}
-Under Linux, the newer Pololu ISP uses a new style of USB port, which appears as /dev/ttyACMx, which is not found by the Arduino environment. The easiest fix for this is to create a soft link from */dev/ttyS1 -> /dev/ttyACM0* assuming you have no ttyS1. 
-
-=== USBTiny ISP===
-If using the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] we'll need to add the following into the boards.txt file:
-{{{
-arbotix.name=ArbotiX
-arbotix.upload.using=usbtinyisp
-arbotix.upload.maximum_size=65536
-arbotix.bootloader.low_fuses=0xFF
-arbotix.bootloader.high_fuses=0xDC
-arbotix.bootloader.extended_fuses=0xFD
-arbotix.bootloader.path=atmega644p
-arbotix.bootloader.file=ATmegaBOOT_644P.hex
-arbotix.bootloader.unlock_bits=0x3F
-arbotix.bootloader.lock_bits=0x0F
-arbotix.build.mcu=atmega644p
-arbotix.build.f_cpu=16000000L
-arbotix.build.core=arbotix
-arbotix.verbose=false
-}}}
+If you want to use the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] open the same *boards.txt* file and follow the directions, but change *avrispmkii* to *usbtinyisp*.
 
 === Wireless Downloading ===
 With a bootloader on the ArbotiX, you can do wireless downloading. The arbotiX bootloader runs at a 38400 baud rate, so your XBEE radios need to be set to 38400 for wireless downloading. You'll also have to manually push the RESET button. A tutorial on getting around the reset button push is here: http://www.ladyada.net/make/xbee/arduino.html 
