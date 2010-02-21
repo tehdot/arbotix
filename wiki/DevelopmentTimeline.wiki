@@ -5,9 +5,6 @@ This page is geared towards developers and power-users. For general coverage of 
 Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We've now moved to an Arduino-style release versioning, 0001, 0002, etc.
 
 = Improvement and Developments Outline =
-
-   * First version of NUKE, with full support for Lizard IK - <font color="#00FF00">_done_</font>
-   * Support for Arduino 0018 - <font color="#FF0000">_in progress_</font>
    * BioloidController updates to allow RX servo control. - <font color="#FF0000">_in progress_</font>
    * AX-S1 support macros - <font color="#FF0000">_in progress_</font>
    * Support for Mammal 3DOF - <font color="#FF0000">_in progress_</font>
@@ -18,7 +15,8 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Revision History =
  
- * Release 0012 (?)
+ * Release 0012 (2-21-2010)
+   * Full NUKE support for Lizard IK
    * Re-ordered default servo mapping.
    * Relax servos at the beginning of neutral/limit captures
    * Move test drive button down near export
