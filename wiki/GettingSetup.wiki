@@ -28,9 +28,22 @@ To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino
 = Programmer Setup =
 If you plan to use an FTDI cable, you don't need to do this section. _Please Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
 
-If you want to use the Pololu ISP, open the file *boards.txt* found in your _sketchbook/hardware/arbotix_ folder and follow the directions to change from the FTDI to ISP configuration. Under Linux, the newer Pololu ISP uses a new style of USB port, which appears as /dev/ttyACMx, which is not found by the Arduino environment. The easiest fix for this is to create a soft link from */dev/ttyS1 -> /dev/ttyACM0* assuming you have no ttyS1. 
+*Pololu ISP*
+If you want to use the Pololu ISP, open the file *boards.txt* found in your _sketchbook/hardware/arbotix_ folder and follow the directions to change from the FTDI to ISP configuration. You also need to create a file called *programmers.txt* in your _sketchbook/hardware/arbotix_ directory, and copy the following in:
+{{{
+avrispmkii.name=AVRISP mkII (ArbotiX)
+avrispmkii.communication=serial
+avrispmkii.protocol=stk500v2
+}}}
 
-If you want to use the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] open the same *boards.txt* file and follow the directions, but change *avrispmkii* to *usbtinyisp*.
+Under Linux, the newer Pololu ISP uses a new style of USB port, which appears as /dev/ttyACMx, which is not found by the Arduino environment. The easiest fix for this is to create a soft link from */dev/ttyS1 -> /dev/ttyACM0* assuming you have no ttyS1. 
+
+*USBTiny*
+If you want to use the [http://www.ladyada.net/make/usbtinyisp/ USBTinyISP] open the same *boards.txt* file and follow the directions, but change *avrispmkii* to *usbtinyisp*. You'll also need to add the following to your _sketchbook/hardware/arbotix/programmers.txt_ file:
+{{{
+usbtinyisp.name=USBtinyISP (ArbotiX)
+usbtinyisp.protocol=usbtiny
+}}}
 
 === Wireless Downloading ===
 With a bootloader on the ArbotiX, you can do wireless downloading. The arbotiX bootloader runs at a 38400 baud rate, so your XBEE radios need to be set to 38400 for wireless downloading. You'll also have to manually push the RESET button. A tutorial on getting around the reset button push is here: http://www.ladyada.net/make/xbee/arduino.html 
