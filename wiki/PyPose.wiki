@@ -109,16 +109,3 @@ Seq=myFirstSequence: pose1|1000, poseX|500, pose1|800
 }}}
 
 The communications protocol used by PyPose and the sketch on your arbotiX is essentially the same as the Bioloid bus itself. We have, however, defined additional registers, and an ID of 253 will command the arbotiX to act on these special registers, which allows things like pose and sequence upload and live playback.
-
-= PyPose/NUKE Roadmap =
-There are a number of features we want to add to PyPose, hopefully in the first half of 2010, most of which relate to NUKE:
- * *New IK Templates*: currently we have 3DOF Lizard, 3DOF Mammal. We'd like to add: 
-    # 4DOF Lizard.
-    # 4DOF Biped. _In Progress_
-    # 5DOF Biped.
- * *New Gaits*: We currently have a number of Ripple, Amble, and Tripod Gaits. We'd like to add: 
-    # Geometrically Stable Ripple. _In Progress_ 
-    # Possibly add support for planar tails to assist with stability.
- * *Gait Template Structure*: Currently, gaits are integrated into the templates, eventually we would like to support separate gait files. _In Progress_
- * *Finish the Servo Terminal*: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion. 
- * *Port Dialog Overhaul*: Make the "open port" dialog easier to use. Add ability to switch driver characteristics. 
