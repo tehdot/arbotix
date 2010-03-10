@@ -22,7 +22,13 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Revision History =
  
- * Release 0012 (2-21-2010)
+ * Release 0012 Patch 1 (3-10-2010, r457)
+   * FIXED: Southpaw error in Commander library. 
+   * FIXED: Capture/Set pose gives port error when a pose is not selected. (Issue #21)
+   * Added programmers.txt
+   * Beta of RX servo support 
+
+ * Release 0012 (2-21-2010, r443)
    * Full NUKE support for Lizard IK
    * Re-ordered default servo mapping.
    * Relax servos at the beginning of neutral/limit captures
