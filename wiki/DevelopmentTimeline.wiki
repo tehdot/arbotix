@@ -4,21 +4,35 @@ This page is geared towards developers and power-users. For general coverage of 
 
 Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We've now moved to an Arduino-style release versioning, 0001, 0002, etc.
 
-= Improvement and Developments Outline =
-   * BioloidController updates to allow RX servo control. - <font color="#0000FF">_Final Testing_</font>
-   * AX-S1 support macros - <font color="#FF0000">_in progress_</font>
-   * Support for Mammal 3DOF - <font color="#0000FF">_Final Testing_</font>
-   * new examples: a rover with closed loop feedback
+= Long Term Improvement and Developments Outline =
+   * Support for Mammal 3DOF
+   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
    * Port Dialog Overhaul: Make the "open port" dialog easier to use. Add ability to switch driver characteristics.
-   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion. 
+   * New Examples: a rover with closed loop feedback 
    * New IK Templates: currently we have 3DOF Lizard, 3DOF Mammal. We'd like to add: 
      # 4DOF Lizard.
-     # 4DOF Biped. - <font color="#FF0000">_in progress_</font>
+     # 4DOF Biped. - _currently experimental_
      # 5DOF Biped.
    * New Gaits: We currently have a number of Ripple, Amble, and Tripod Gaits. We'd like to add: 
-     # Geometrically Stable Ripple. - <font color="#FF0000">_in progress_</font>
+     # Geometrically Stable Ripple. - _currently experimental_
      # Possibly add support for planar tails to assist with stability.
-   * Gait Template Structure: Currently, gaits are integrated into the templates, eventually we would like to support separate gait files. - <font color="#FF0000">_in progress_</font>
+   * Gait Template Structure: Currently, gaits are integrated into the templates, eventually we would like to support separate gait files.
+
+= Development Plan =
+ 
+ * Release 0014 - This release will contain Mammal IK, and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (April/May 2010)
+   * 3DOF Mammal IK template for NUKE
+   * Finish Servo Terminal
+   * Port Dialog Overhaul
+
+ * Release 0013 - This release will contain numerous updates and bug fixes, as we roll out the RX-bridge, tested support for NUKE on hexapods, and a number of small tweaks to NUKE and related technologies. (End of March 2010)
+   * FIXED: Keyboard Accelerator issues (Issue 14)
+   * FIXED: Commander.py reversals from southpaw mods. 
+   * FIXED: Added LED blink routine previously removed from Commander Library to default NUKE sketch.
+   * FIXED: Multiple issues with hexapods and NUKE, has now been fully tested for 3DOF Lizard hexapods. 
+   * FIXED: .ppr should automatically be added to the name of the pose file - <font color="#FF0000">_in progress_</font> 
+   * AX-S1 driver macros (Issue 10) - <font color="#FF0000">_in progress_</font>
+   * BioloidController updates to allow RX servo control. - <font color="#0000FF">_Final Testing_</font> (Issue 19)
 
 = Revision History =
  
@@ -29,12 +43,12 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
    * Beta of RX servo support 
 
  * Release 0012 (2-21-2010, r443)
+   * FIXED: Issues with sequence export
    * Full NUKE support for Lizard IK
    * Re-ordered default servo mapping.
    * Relax servos at the beginning of neutral/limit captures
    * Move test drive button down near export
    * Messages after finishing neutral capture
-   * Fixed issues with sequence export
    * Support for Arduino 0018
 
  * Release 0011 (1-3-10) (V1.1 Beta1)
@@ -43,7 +57,7 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
    * Released EncodersAB and Commander Libraries
 
  * Release 0010 (11-29-09, r365) (V1.0c)
-   * Fixed issues with Delta-T under Pose Editor
+   * FIXED: Issues with Delta-T under Pose Editor
 
  * Release 0009 (11-14-09, r351) (V1.0b)
    * Port drivers merged
@@ -51,30 +65,30 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
    * Many libraries moved to [http://robocontroller.googlecode.com RoboControllerLib]
 
  * Release 0008 (10-18-09, r329) (V1.0a)
+   * FIXED: Port errors are actually now detected (arbotix.py pushes errors higher).
+   * FIXED: Blank transition error.
+   * FIXED: Timeout issues. 
    * Port detection overhauled for MacOSX users. 
-   * Port errors are actually now detected (arbotix.py pushes errors higher).
-   * Fixed blank transition error.
-   * Fixed timeout issues. 
 
  * Release 0007 (10/17/09) (rc1a)
-   * Fixed save/load bug
+   * FIXED: Save/load bug
 
  * Release 0007 (10/2/09) (rc1)
-   * Fixed error messages in multiple places, cleaned up portions of code
-   * Repaired new project dialog. 
+   * FIXED: Error messages in multiple places, cleaned up portions of code
+   * FIXED: New project dialog. 
 
  * Release 0006 (9/28/09) (Beta4a)
-   * updated libraries: pypose (for PyPose V0.97) was made much faster
+   * Updated libraries: pypose (for PyPose V0.97) was made much faster
    * PyPose Improvements: (V0.97)
-     # "robot" is now "project" - <font color="#009933">_done_</font>
-     # Fixed various issues with dialogs and borders under Windows - <font color="#009933">_done_</font>
-     # Reorganized tool structure - <font color="#009933">_done_</font>
-     # Added first pass of Terminal tool - <font color="#009933">_done_</font>
-     # Key shortcuts for pose operations - <font color="#009933">_done_</font>
-     # Dialog added to change pose names - <font color="#009933">_done_</font>
-     # Improved port management and error messages - <font color="#009933">_done_</font>
-     # Selection of serial ports (rather than having to enter them) - <font color="#009933">_done_</font>
-     # Includes all files we used to pull from Sanguino - <font color="#009933">_done_</font>
+     # "robot" is now "project"
+     # Fixed various issues with dialogs and borders under Windows
+     # Reorganized tool structure 
+     # Added first pass of Terminal tool
+     # Key shortcuts for pose operations
+     # Dialog added to change pose names
+     # Improved port management and error messages
+     # Selection of serial ports (rather than having to enter them)
+     # Includes all files we used to pull from Sanguino
    * Updated examples:
      # droid (now includes droid.ppr)
 
@@ -85,25 +99,25 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
    * Servo editors are now disabled until a pose is selected.
 
  * Release 0003 (9/15/09) (Beta3)
-   * new libraries: Commander - <font color="#009933">_done_</font>
+   * New libraries: Commander
    * PyPose improvements: (V0.91)
-     # Completely rewritten, using wxPython instead of !TkInter - <font color="#009933">_done_</font>
-     # Sequence creation - <font color="#009933">_done_</font>
-   * bioloid library improvements:
-     # Sequence Engine - <font color="#009933">_done_</font>
-   * updated examples: pypose - <font color="#009933">_done_</font>
+     # Completely rewritten, using wxPython instead of !TkInter
+     # Sequence creation
+   * Bioloid library improvements:
+     # Sequence Engine
+   * Updated examples: pypose
 
  * Release 0002 (8/27/09) (Beta2)
-   * new libraries: Motors2, Srf05 -<font color="#009933">_done_</font>
-   * renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid - <font color="#009933">_done_</font>
+   * New libraries: Motors2, Srf05
+   * Renamed libraries: sharpIR is now SharpIR, bioloid is now Bioloid
    * PyPose improvements: (V0.89)
-     # USBDynamixel driver - <font color="#009933">_done_</font> _(note: currently not usable without editing code)_
-   * new examples: issy - <font color="#009933">_done_</font>
+     # USBDynamixel driver _(note: currently not usable without editing code)_
+   * New examples: issy
 
  * Release 0001 (8/8/09)
-   * new libraries: bioloid, sharpIR - <font color="#009933">_done_</font>
+   * New libraries: bioloid, sharpIR
    * PyPose functionality: (V0.50)
-     # create robot files, capture poses - <font color="#009933">_done_</font>
-     # export to AVR - <font color="#009933">_done_</font>
-     # code and sketch to interact with arbotiX - <font color="#009933">_done_</font>
-   * new examples: droid, pypose -<font color="#009933">_done_</font>
+     # create robot files, capture poses
+     # export to AVR
+     # code and sketch to interact with arbotiX
+   * New examples: droid, pypose
