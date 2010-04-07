@@ -15,7 +15,7 @@
    # [NukeTuning NUKE: Gait Tuning]
  * OtherLibraries
    * Motors2
- * [rx RX Bridge Setup]
+ * [RxBridge RX Bridge Setup]
 
 === Examples === 
  * !IssyDunnYet
