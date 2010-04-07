@@ -58,6 +58,8 @@ See more at http://www.arduino.cc/en/Hacking/Programmer.
 = Connecting Power, Etc =
 Please see the downloadable ArbotiX manual for instructions and guidance in connecting external devices and power to the board. Although all boards ship with the _pypose_ sketch already installed, we recommend always upgrading to the newest version, in case changes have been made since your board was produced. 
 
+See the [RxBridge RX-Bridge] page for details on setting up an RX Bridge.
+
 = Upload PyPose Sketch = 
 Now, let's test our Arduino installation and programmer. Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose", and can be found in the examples folder of the arbotiX distribution. It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose.
 
