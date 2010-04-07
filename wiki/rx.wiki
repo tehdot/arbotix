@@ -1,9 +1,9 @@
 #summary RX Bridge Setup
-<img src="http://www.trossenrobotics.com/images/psimages/RXBridge-on-arbotix-300.jpg" align="right"/>
 = Introduction =
 The RX Bridge is an ArbotiX add-on board that enables control of DX/RX/EX series servos. 
 
 = Setup = 
+<img src="http://www.trossenrobotics.com/images/psimages/RXBridge-on-arbotix-300.jpg" align="right"/>
  # Remove jumper J1 from your ArbotiX to decouple the rx and tx lines of the serial port.
  # Plug the RX-Bbridge into the ArbotiX. The outer 3-pin header plugs into the row of pins marked S1, which previously were jumpered with J1
  # Use the standoff to connect the RX-Bridge securely
