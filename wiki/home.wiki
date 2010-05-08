@@ -2,9 +2,9 @@
 
 <img src="http://www.trossenrobotics.com/store/i/is.aspx?path=/images/PImages/arbotix.jpg" align="right"/>
 
-The arbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, especially walkers that use Bioloid AX-12 servos. 
+The ArbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, especially walkers that use Bioloid AX-12 servos. 
 
-Support is typically handled through our [http://groups.google.com/group/robocontroller discussion forum]. You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. For more information, visit our website at http://www.vanadiumlabs.com/arbotix or Fergy's blog at http://www.showusyoursensors.com/
+Support is typically handled through our [http://groups.google.com/group/robocontroller discussion forum]. You can purchase an ArbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. For more information, visit our website at http://www.vanadiumlabs.com/arbotix or Fergy's blog at http://www.showusyoursensors.com/
 
 == News == 
  * 5-3-10 - ArbotiX/PyPose/NUKE 0013 is now out. This fixes several bugs found in the hexapod NUKE code, introduces support for the RX bridge, and has some other minor fixes and improvements. 
@@ -15,10 +15,10 @@ Support is typically handled through our [http://groups.google.com/group/robocon
 The ArbotiX sports an 16Mhz ATMEGA644P, with 64k of flash ROM, and 4k of RAM. It has 2 serial ports, 1 dedicated to Bioloid servo controller, the other to the XBEE radio. A total of 32 I/O, 8 of which can function as analog inputs with servo style 3-pin headers (gnd, vcc, signal) on all 8 analog inputs, and 8 of the digital IO. The ArbotiX has dual 1A motor drivers, with combined motor/encoder header. ArbotiX is 2.8”x2.8” with mounting holes designed to match many Bioloid configurations.
 
 == Software ==
-A number of software programs have been designed to make working with your arbotiX quite easy: 
+A number of software programs have been designed to make working with your ArbotiX quite easy: 
     * BioloidController - this is a Bioloid bus library for use with the Arduino/Sanguino environment. It allows easy manipulation of poses, the storage of poses in FLASH, and full interaction with AX-12 servos.
-    * PyPose - this is the stock pose & capture software. Written in Python, uses pySerial to communicate with an arbotiX board running the pypose sketch. After you have done pose and capture, !PyPose can automatically create a C header file with the poses ready to load with the Bioloid Library. 
-    * OtherLibraries - there are several other, smaller, libraries that have been made to make using the arbotiX extremely easy. 
+    * PyPose - this is the stock pose & capture software. Written in Python, uses pySerial to communicate with an ArbotiX board running the pypose sketch. After you have done pose and capture, !PyPose can automatically create a C header file with the poses ready to load with the Bioloid Library. 
+    * OtherLibraries - there are several other, smaller, libraries that have been made to make using the ArbotiX extremely easy. 
 
 == Sample Programs ==
 Each sample program is an Arduino sketch, held in it's own directory within the _Sketches_ directory of the release. Current examples include: 
@@ -36,4 +36,4 @@ A `*` denotes examples coming soon.
 _note: eventually, most of these examples will have their own page describing the example._
 
 == Licensing ==
-All of the arbotiX libraries, robocontroller libraries, and Arduino extensions are licensed under the GNU Lesser General Public License v2.1. PyPose, and any other desktop software included (such as !PyMech), is released under the GNU General Public License v2.  
+All of the ArbotiX libraries, robocontroller libraries, and Arduino extensions are licensed under the GNU Lesser General Public License v2.1. PyPose, and any other desktop software included (such as !PyMech), is released under the GNU General Public License v2.  
