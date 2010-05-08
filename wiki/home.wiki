@@ -7,6 +7,8 @@ The arbotiX robocontroller is an Arduino compatible microcontroller board, desig
 Support is typically handled through our [http://groups.google.com/group/robocontroller discussion forum]. You can purchase an arbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. For more information, visit our website at http://www.vanadiumlabs.com/arbotix or Fergy's blog at http://www.showusyoursensors.com/
 
 == News == 
+ * 5-3-10 - ArbotiX/PyPose/NUKE 0013 is now out. This fixes several bugs found in the hexapod NUKE code, introduces support for the RX bridge, and has some other minor fixes and improvements. 
+ * 3-10-10 - ArbotiX/PyPose 0012, Patch 1 is out. This a bug fix only release, fixing bugs in the Commander library, error messages in the Capture/Set of the Pose Editor, and adding a programmers.txt file for installation. Also includes Beta of RX servo support.
  * 2-21-10 - ArbotiX/PyPose 0012 is now out. This includes Arduino 0018 support, full NUKE support for 3DOF lizard robots, a new version of the Commander library, variable number of columns in the pose editor, and numerous other new features and bug fixes.
 
 == Hardware Specifications ==
