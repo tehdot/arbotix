@@ -115,6 +115,8 @@ Optionally, you may also define:
 Under development in 0014/SVN-LATEST is a new gait file format. Gait files (.gait) contain the following:
 
 {{{
+REQUIRES: leg 4 6
+REQUIRES: ik lizard3 mammal3
 GAIT:MY_GAIT_NAME 
 gaitGen = &NewGaitGen;
 gaitSetup = &DefaultGaitSetup;
@@ -135,4 +137,8 @@ SETUP: NewGaitSetup, This is a new setup function
 GLOBAL: variableIneed
 }}}
 
+The first line is a requirements statement, that this gait is only for 4 or 6 legged robots. The second line is an additional statement that this gait is only to be used for the mammal3 or lizard3 IK specifications.
+
 Where MY_GAIT_NAME would be something like AMBLE_SMOOTH. This is followed by the actual gait generation code. We then have defined a GENERATOR, which has a name, and a description (which will be used as a comment), followed by the body of the function.
+
+This file format will be used to generate the _gaits.h_ file automatically. 
