@@ -111,3 +111,28 @@ Optionally, you may also define:
 = Other Hacking =
 
 <font color="#FF0000"> TODO: add what values mean, out of range issues, etc </font>
+
+Under development in 0014/SVN-LATEST is a new gait file format. Gait files (.gait) contain the following:
+
+{{{
+GAIT:MY_GAIT_NAME 
+gaitGen = &NewGaitGen;
+gaitSetup = &DefaultGaitSetup;
+gaitLegNo[RIGHT_FRONT] = 0;
+gaitLegNo[LEFT_MIDDLE] = 0;
+gaitLegNo[RIGHT_REAR] = 0;
+gaitLegNo[LEFT_REAR] = 2;
+gaitLegNo[LEFT_FRONT] = 2;
+gaitLegNo[RIGHT_REAR] = 2;
+pushSteps = 2;	
+stepsInCycle = 4;     
+GENERATOR: NewGaitGen, This is a new gait generator
+if( MOVING ){ 
+  ...
+}
+SETUP: NewGaitSetup, This is a new setup function
+...
+GLOBAL: variableIneed
+}}}
+
+Where MY_GAIT_NAME would be something like AMBLE_SMOOTH. This is followed by the actual gait generation code. We then have defined a GENERATOR, which has a name, and a description (which will be used as a comment), followed by the body of the function.
