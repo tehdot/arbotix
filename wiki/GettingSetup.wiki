@@ -18,12 +18,14 @@ The ArbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
 The rest of this document assumes familiarity with the Arduino environment. See [http://arduino.cc the Arduino documents] for details on using the Arduino IDE.
 
 = ArbotiX Software Setup =
-To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Download the latest *ArbotiX/PyPose* release from the front page (or download from SVN), extract the zip file, and do the following:
+To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Most users will want to download the latest *ArbotiX/PyPose* release from the front page, extract the zip file, and do the following:
  # Create a *hardware* folder in your Arduino sketchbook directory if it doesn't already exist
  # Copy the *arbotix* folder from the release into the *hardware* folder of your sketchbook directory
  # Copy the *libraries* folder from the release into your sketchbook directory.
     * These are just the special libraries for the ArbotiX, you'll also want to install the [http://robocontroller.googlecode.com robocontroller] library for even more functionality.
  # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook directory
+
+Alternatively you can checkout the absolute latest, bleeding edge source from our SVN repository, and then locate the files correctly as described above. 
 
 = Programmer Setup =
 If you plan to use an FTDI cable, you don't need to do this section. _Please Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
