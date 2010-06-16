@@ -25,6 +25,8 @@ To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino
     * These are just the special libraries for the ArbotiX, you'll also want to install the [http://robocontroller.googlecode.com robocontroller] library for even more functionality.
  # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook directory
 
+_ NOTE: Some users have reported problems with installing files into their sketchbook. If the instructions above are not working, try installing the libraries and hardware/arbotix folders into your arduino-0018 folder. _
+
 Alternatively you can checkout the absolute latest, bleeding edge source from our SVN repository, and then locate the files correctly as described above. 
 
 = Programmer Setup =
