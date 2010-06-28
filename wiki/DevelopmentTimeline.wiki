@@ -20,12 +20,13 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Development Plan =
  
- * Release 0014 - This release will contain Mammal IK, and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (April/May 2010)
+ * Release 0014 - This release will contain Mammal IK, and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (Summer 2010)
    * 3DOF Mammal IK template for NUKE
    * Finish Servo Terminal
    * Port Dialog Overhaul
    * FIXED: .ppr should automatically be added to the name of the pose file - <font color="#FF0000">_in progress_</font> 
    * AX-S1 driver macros (Issue 10) - <font color="#FF0000">_in progress_</font>
+   * Added live update to pose editor.
 
 = Revision History =
 
