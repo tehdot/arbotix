@@ -2,17 +2,11 @@
 
 This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
 
-Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We've now moved to an Arduino-style release versioning, 0001, 0002, etc.
+Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We then moved to an Arduino-style release versioning, 0001, 0002, etc, but releases slowed down. We'll be moving back to Vx.x with our V2.0 release later this summer. 
 
 = Long Term Improvement and Developments Outline =
-   * Support for Mammal 3DOF
-   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
    * Port Dialog Overhaul: Make the "open port" dialog easier to use. Add ability to switch driver characteristics.
    * New Examples: a rover with closed loop feedback 
-   * New IK Templates: currently we have 3DOF Lizard, 3DOF Mammal. We'd like to add: 
-     # 4DOF Lizard.
-     # 4DOF Biped. - _currently experimental_
-     # 5DOF Biped.
    * New Gaits: We currently have a number of Ripple, Amble, and Tripod Gaits. We'd like to add: 
      # Geometrically Stable Ripple. - _currently experimental_
      # Possibly add support for planar tails to assist with stability.
@@ -20,10 +14,13 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Development Plan =
  
- * Release 0014 - This release will contain Mammal IK, and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (Summer 2010)
-   * 3DOF Mammal IK template for NUKE
-   * Finish Servo Terminal
+ * Release 2.0 - This release will contain Mammal IK, and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (Summer 2010)
+   * New IK Templates:
+     # 3DOF Mammal IK template for NUKE
+     # 4/5/6 DOF Bipeds.
+   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
    * Port Dialog Overhaul
+   * ROS support. 
    * FIXED: .ppr should automatically be added to the name of the pose file - <font color="#FF0000">_in progress_</font> 
    * AX-S1 driver macros (Issue 10) - <font color="#FF0000">_in progress_</font>
    * Added live update to pose editor.
