@@ -52,12 +52,11 @@ A number of gaits are included, which can be selected using the _SelectGait()_ f
 
  * _Ripple_ gaits move only one leg at a time:
    * RIPPLE - the simplest, default gait. 8 steps per cycle (12 for a hexapod). Each leg is raised, and lowered, in order. 
-   * RIPPLE_LEFT - 8 steps per cycle ripple gait, but leg order is optimized for left turns.
-   * RIPPLE_RIGHT - 8 steps per cycle ripple gait, but leg order is optimized for right turns.
-   * FAST_RIPPLE - 4 steps per cycle, 6 for a hexapod. As a leg lowers, another is already rising. Can be faster than RIPPLE, but may be very jerky or unsteady.  
-   * ROMPLE - 12 steps per cycle (18 for hexapods), advanced leg path, shaped like an inverted U, good for uneven terrain. 
- * _Amble_ gaits move two alternate legs at a time (For quadrupeds only):
+   * SMOOTH_RIPPLE - similar but with as twice as many steps as a RIPPLE. Makes better foot paths.
+   * FAST_RIPPLE - 4 steps per cycle, 6 for a hexapod. As a leg lowers, another is already rising. Can be faster than RIPPLE, but may be very jerky or unsteady. 
+ * _Amble_ gaits move two alternate legs at a time:
    * AMBLE - 4 steps per cycle, each pair of legs is raised and moved forward in one step, then dropped in the next step. 
+   * SMOOTH_AMBLE - similar to an AMBLE, but with twice as many steps per cycle. 
  * _Tripod_ gaits move three legs at a time (For hexapods only):
    * TRIPOD - 4 steps per cycle, like an AMBLE, but using 3 legs in a group. 
  * _Geometric_ gaits are the most stable for quadrupeds, but may be slower (For quadrupeds only):
@@ -112,7 +111,7 @@ Optionally, you may also define:
 
 <font color="#FF0000"> TODO: add what values mean, out of range issues, etc </font>
 
-Under development in 0014/SVN-LATEST is a new gait file format. Gait files (.gait) contain the following:
+Under development in V2.0/SVN-LATEST is a new gait file format. Gait files (.gait) contain the following:
 
 {{{
 REQUIRES: leg 4 6
