@@ -12,7 +12,7 @@
  * !PyPose
    # [PyPose PyPose: Introduction]
    # [NukeIntro NUKE: Introduction]
-   # [NukeTuning NUKE: Gait Tuning]
+   # [NukeTuning NUKE: Gaits]
  * OtherLibraries
    * Motors2
  * [RxBridge RX Bridge Setup]
