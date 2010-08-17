@@ -2,7 +2,7 @@
 
 This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
 
-Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We then moved to an Arduino-style release versioning, 0001, 0002, etc, but releases slowed down. We'll be moving back to Vx.x with our V2.0 release later this summer. 
+Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We then moved to an Arduino-style release versioning, 0001, 0002, etc, but releases slowed down. We'll be moving back to Vx.x with our V2.0 release later this year.
 
 = Long Term Improvement and Developments Outline =
    * Port Dialog Overhaul: Make the "open port" dialog easier to use. Add ability to switch driver characteristics.
@@ -14,16 +14,17 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Development Plan =
  
- * Release 2.0 - This release will contain Mammal IK, and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (Summer 2010)
-   * New IK Templates:
-     # 3DOF Mammal IK template for NUKE
-     # 4/5/6 DOF Bipeds.
-   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
-   * Port Dialog Overhaul
+ * Release 0014 - This release will contain Mammal IK. (Summer 2010)
+   * New IK Templates: 3DOF Mammal IK.
    * ROS support. 
    * FIXED: .ppr should automatically be added to the name of the pose file - <font color="#FF0000">_in progress_</font> 
    * AX-S1 driver macros (Issue 10) - <font color="#FF0000">_in progress_</font>
    * Added live update to pose editor.
+
+ * Release 0015 - This release will contain Biped IK and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (Early Fall 2010)
+   * New IK Templates: 4/5/6 DOF Bipeds.
+   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
+   * Port Dialog Overhaul
 
 = Revision History =
 
