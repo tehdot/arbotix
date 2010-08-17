@@ -18,6 +18,7 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
    * New IK Templates: 3DOF Mammal IK.
    * ROS support. 
    * FIXED: .ppr should automatically be added to the name of the pose file - <font color="#FF0000">_in progress_</font> 
+   * FIXED: software commander walk/look joystick reversal. 
    * AX-S1 driver macros (Issue 10) - <font color="#FF0000">_in progress_</font>
    * Added live update to pose editor.
 
