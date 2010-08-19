@@ -6,7 +6,7 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Long Term Improvement and Developments Outline =
    * Port Dialog Overhaul: Make the "open port" dialog easier to use. Add ability to switch driver characteristics.
-   * New Examples: a rover with closed loop feedback 
+   * New Examples: a rover with closed loop feedback. Updated Issy (2DOF) using commander library. A biped example using poses and simple walk engine?
    * New Gaits: We currently have a number of Ripple, Amble, and Tripod Gaits. We'd like to add: 
      # Geometrically Stable Ripple. - _currently experimental_
      # Possibly add support for planar tails to assist with stability.
