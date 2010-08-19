@@ -24,7 +24,9 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
  * Release 0015 - This release will contain Biped IK and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (Early Fall 2010)
    * New IK Templates: 4/5/6 DOF Bipeds.
    * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
-   * Port Dialog Overhaul
+   * Port Dialog Overhaul.
+   * Automatically highlight new pose when using "add".
+   * Allow renaming of sequences.
 
 = Revision History =
 
