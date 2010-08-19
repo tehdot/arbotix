@@ -15,6 +15,7 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 = Development Plan =
  
  * Release 0014 - This release will contain Mammal IK. (Summer 2010)
+   * Major rewrite of the NUKE tool to support new templates.
    * New IK Templates: 3DOF Mammal IK.
    * FIXED: .ppr should automatically be added to the name of the pose file
    * FIXED: software commander walk/look joystick reversal. 
