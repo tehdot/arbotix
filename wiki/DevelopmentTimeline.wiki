@@ -33,7 +33,7 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Revision History =
 
- * Release 0013 - This release will contain numerous updates and bug fixes, as we roll out the RX-bridge, tested support for NUKE on hexapods, and a number of small tweaks to NUKE and related technologies. (May 2010)
+ * Release 0013 (5-3-2010, r481) - This release contains numerous updates and bug fixes, as we roll out the RX-bridge, tested support for NUKE on hexapods, and a number of small tweaks to NUKE and related technologies. (May 2010)
    * FIXED: Keyboard Accelerator issues (Issue 14)
    * FIXED: Commander.py reversals from southpaw mods. 
    * FIXED: Added LED blink routine previously removed from Commander Library to default NUKE sketch.
