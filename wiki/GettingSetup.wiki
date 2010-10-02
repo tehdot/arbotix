@@ -30,6 +30,8 @@ _ NOTE: Some users have reported problems with installing files into their sketc
 Alternatively you can checkout the absolute latest, bleeding edge source from our SVN repository, and then locate the files correctly as described above. 
 
 = Programmer Setup =
+_NOTE: An ISP (in-system programmer) is only used to upload code! It does not act as a serial port (i.e. for Serial.println()). You must use an FTDI cable or XBEE pair for serial data transmission_
+
 If you plan to use an FTDI cable, you don't need to do this section. _Please Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
 
 *Pololu ISP*
