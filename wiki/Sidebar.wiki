@@ -15,6 +15,7 @@
    # [NukeTuning NUKE: Gaits]
  * OtherLibraries
    * Motors2
+ * [CodeBook Code Book]
  * [RxBridge RX Bridge Setup]
 
 === Examples === 
