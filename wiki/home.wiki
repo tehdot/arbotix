@@ -4,9 +4,6 @@
 
 The ArbotiX robocontroller is an Arduino compatible microcontroller board, designed to control small-to-medium sized robots, especially walkers that use Bioloid AX-12 servos. 
 
-== News == 
- * 5-3-10 - ArbotiX/PyPose/NUKE 0013 is now out. This fixes several bugs found in the hexapod NUKE code, introduces support for the RX bridge, and has some other minor fixes and improvements. 
-
 == Documentation ==
 Please read the GettingSetup page to get setup with the ArbotiX.
 
