@@ -1,0 +1,22 @@
+#summary a number of code examples for the arbotix
+
+<wiki:toc max_depth="1" />
+
+= Voltage Monitoring =
+It's a good idea to monitor the battery voltage, especially with LiPO chemistries. NOTE: Monitoring of batteries in software is no replacement for hardware-based monitoring. 
+
+A simple check at startup can be implemented, which stops the robot from starting up. This piece of code could be inserted into the beginning of the setup() function, and will stop the robot from starting up if the voltage is less than 10V. It requires that an AX-12 servo is connected, and set to ID 1:
+{{{
+  // wait, then check the voltage (LiPO safety)
+  delay (1000);
+  float voltage = (ax12GetRegister (1, AX_PRESENT_VOLTAGE, 1)) / 10.0;
+  Serial.print ("System Voltage: ");
+  Serial.print (voltage);
+  Serial.println (" volts.");
+  if (voltage < 10.0)
+    while(1);
+}}}
+
+A more complete example can be found in [http://code.google.com/p/arbotix/source/browse/trunk/sketches/VoltTempMonitoring.pde sketches/VoltTempMonitoring.pde]
+
+= Tips For The =
