@@ -17,7 +17,9 @@ There are also a number of example programs (which can be found in the _Sketches
     * Droid - is an example of how to use this software with the Walking Droid found in the Bioloid Beginner kit. A video should be posted shortly. 
     * !PyPose - is the pass through program for interacting with PyPose.
 
-Additionally, we have created a CodeBook with some commonly requested pieces of code. Support is typically handled through the [http://forums.trossenrobotics.com Trossen Robotics Community] Forum. You can purchase an ArbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. 
+Additionally, we have created a CodeBook with some commonly requested pieces of code. The ArbotiX can also be used with ROS, see the [http://vanadium-ros-pkg.googlecode.com vanadium-ros-pkg] repository for details.
+
+Support is typically handled through the [http://forums.trossenrobotics.com Trossen Robotics Community] Forum. You can purchase an ArbotiX from [http://www.trossenrobotics.com/p/arbotix-robot-controller.aspx Trossen Robotics]. 
 
 == Licensing ==
 All of the ArbotiX libraries, robocontroller libraries, and Arduino extensions are licensed under the GNU Lesser General Public License v2.1. PyPose, and any other desktop software included (such as !PyMech), is released under the GNU General Public License v2.  
