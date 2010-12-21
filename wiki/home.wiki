@@ -8,6 +8,8 @@ The ArbotiX robocontroller is an Arduino compatible microcontroller board, desig
  * 5-3-10 - ArbotiX/PyPose/NUKE 0013 is now out. This fixes several bugs found in the hexapod NUKE code, introduces support for the RX bridge, and has some other minor fixes and improvements. 
 
 == Documentation ==
+Please read the GettingStarted page to get setup with the ArbotiX.
+
 The ArbotiX project consists of a number of software programs and libraries:
     * PyPose - this is the stock pose & capture software. Written in Python, uses pySerial to communicate with an ArbotiX board running the pypose sketch. After you have done pose and capture, !PyPose can automatically create a C header file with the poses ready to load with the Bioloid Library. 
     * BioloidController - this is a Bioloid bus library for use with the Arduino/Sanguino environment. It allows easy manipulation of poses, the storage of poses in FLASH, and full interaction with AX-12 servos.
