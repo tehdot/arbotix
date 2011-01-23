@@ -17,6 +17,8 @@ The ArbotiX software is based on the [http://www.sanguino.cc Sanguino], the big 
 
 The rest of this document assumes familiarity with the Arduino environment. See [http://arduino.cc the Arduino documents] for details on using the Arduino IDE.
 
+_ NOTE: If you install Arduino using apt-get on an Ubuntu Linux machine, you will have to edit your boards.txt file, see [http://forums.trossenrobotics.com/showthread.php?p=45593#post45593 this thread at TRC] for details. _
+
 = ArbotiX Software Setup =
 To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Most users will want to download the latest *ArbotiX/PyPose* release from the front page, extract the zip file, and do the following:
  # Create a *hardware* folder in your Arduino sketchbook directory if it doesn't already exist
