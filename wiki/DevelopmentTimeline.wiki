@@ -29,7 +29,7 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Revision History =
 
- * Release 0014 (2-16-2011, r550) - 
+ * Release 0014 (2-16-2011, r550) - This release contains several updates and bug fixes.
    * Updated to new BioloidController library
    * FIXED: software commander walk/look joystick reversal. 
    * AX-S1 driver macros (Issue 10)
