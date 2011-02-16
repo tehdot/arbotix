@@ -14,17 +14,13 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
 
 = Development Plan =
  
- * Release 0014 - This release will contain Mammal IK. (September 2010)
+ * Release 0015 - This release will contain Mammal IK. (Spring 2011)
    * Major rewrite of the NUKE tool to support new templates.
    * New IK Templates: 3DOF Mammal IK.
    * NUKE now correctly uses a RH coordinate system.
    * FIXED: .ppr should automatically be added to the name of the pose file
-   * FIXED: software commander walk/look joystick reversal. 
-   * AX-S1 driver macros (Issue 10)
-   * Added live update to pose editor.
-   * Update internal core to 0019 spec.
 
- * Release 0015 - This release will contain Biped IK and final implementations of several key tools in PyPose: the servo terminal, and the port dialog. (Fall 2010)
+ * Release 0016 - This release will contain Biped IK and final implementations of several key tools in PyPose: the servo terminal, and the port dialog.
    * New IK Templates: 4/5/6 DOF Bipeds.
    * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
    * Port Dialog Overhaul.
@@ -32,6 +28,12 @@ Note: We originally used a V1.1 type release number -- but this gets complex wit
    * Allow renaming of sequences.
 
 = Revision History =
+
+ * Release 0014 (2-16-2011, r550) - 
+   * Updated to new BioloidController library
+   * FIXED: software commander walk/look joystick reversal. 
+   * AX-S1 driver macros (Issue 10)
+   * Update internal core to 0019 spec.
 
  * Release 0013 (5-3-2010, r481) - This release contains numerous updates and bug fixes, as we roll out the RX-bridge, tested support for NUKE on hexapods, and a number of small tweaks to NUKE and related technologies. (May 2010)
    * FIXED: Keyboard Accelerator issues (Issue 14)
