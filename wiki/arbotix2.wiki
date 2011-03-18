@@ -1,10 +1,10 @@
 #summary ArbotiX2 Prototype Usage Notes
 #labels beta
 
-= ArbotiX2 Beta Program Notes =
+= !ArbotiX2 Beta Program Notes =
 
 == Arduino Updates ==
-To use the ArbotiX2, you need to update your install just a bit. Please download [http://code.google.com/p/arbotix/downloads/detail?name=arbotix2-beta.zip&can=2&q= the updated libraries and ros firmware]. 
+To use the !ArbotiX2, you need to update your install just a bit. Please download [http://code.google.com/p/arbotix/downloads/detail?name=arbotix2-beta.zip&can=2&q= the updated libraries and ros firmware]. 
 
 Copy each library folder to your sketchbook/libraries folder. Copy the ros firmware folder to your sketchbook. 
 
