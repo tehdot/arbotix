@@ -33,6 +33,8 @@ Prototypes shipped without a regulator installed. You may choose to:
 
 Feedback about the option to get a board sans regulator is currently being sought. 
 
+RX and AX busses are powered separately, you need attach power to both terminal blocks if using RX (note: grounds ARE tied together). 
+
 == NUKE ==
 To use exported NUKE code (or really, anything using the bioloid controller library) you will need to do the following. To initialize which servos are on the AX or RX bus, add the following code to your setup: 
 {{{
