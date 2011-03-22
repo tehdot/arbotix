@@ -6,7 +6,7 @@
 == Arduino Updates ==
 To use the !ArbotiX2, you need to update your install just a bit. Please download [http://code.google.com/p/arbotix/downloads/detail?name=arbotix2-beta.zip&can=2&q= the updated libraries and ros firmware]. 
 
-Copy each library folder to your sketchbook/libraries folder. Copy the ros firmware folder to your sketchbook. 
+Please make sure you have installed the robocontroller libraries, then copy each library folder to your sketchbook/libraries folder (this will replace some of the libraries from the arbotix and robocontroller distributions with newer versions). Copy the ros firmware folder to your sketchbook. 
 
 To use the arbotix2 with pypose or ROS, compile and upload the ros firmware using Arduino IDE (yes, while it is called "ros", it's actually a newer more awesome pypose sketch). 
 
