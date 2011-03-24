@@ -71,3 +71,4 @@ void loop(){
 
 = Other Code Examples =
  * [http://forums.trossenrobotics.com/showpost.php?p=44430&postcount=20 Control a robot with plain text over XBEE]
+ * [http://forums.trossenrobotics.com/showpost.php?p=44687&postcount=54 Using poses with the Commander library]
