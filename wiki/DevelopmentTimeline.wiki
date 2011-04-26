@@ -2,30 +2,30 @@
 
 This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
 
+<wiki:comment>
 Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We then moved to an Arduino-style release versioning, 0001, 0002, etc, but releases slowed down. We'll be moving back to Vx.x with our V2.0 release later this year.
+</wiki:comment>
 
-= Long Term Improvement and Developments Outline =
+= Development Plans =
+ * Release 0015 - "Save the Bipeds" (Summer 2011). This release backports much of the pose editor development branch improvements to the main release:
+   * .ppr should automatically be added to the name of a pose file
+   * Each servo slider has torque on/off selection
+   * Live Update (checkable option under config)
+   * Add direct value entry box (checkable option under config)
+   * Automatically highlight new pose when using "add".
+   * Allow renaming of sequences.
+   * Checkable option to torque on after capture?
+   * NUKE now correctly uses a RH coordinate system.
+
+ * Long term plans:
    * Port Dialog Overhaul: Make the "open port" dialog easier to use. Add ability to switch driver characteristics.
+   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
    * New Examples: a rover with closed loop feedback. Updated Issy (2DOF) using commander library. A biped example using poses and simple walk engine?
+   * Nuke templates; 3DOF Mammal IK, 4/5/6 DOF Bipeds. 
    * New Gaits: We currently have a number of Ripple, Amble, and Tripod Gaits. We'd like to add: 
      # Geometrically Stable Ripple. - _currently experimental_
      # Possibly add support for planar tails to assist with stability.
    * Gait Template Structure: Currently, gaits are integrated into the templates, eventually we would like to support separate gait files.
-
-= Development Plan =
- 
- * Release 0015 - This release will contain Mammal IK. (Spring 2011)
-   * Major rewrite of the NUKE tool to support new templates.
-   * New IK Templates: 3DOF Mammal IK.
-   * NUKE now correctly uses a RH coordinate system.
-   * FIXED: .ppr should automatically be added to the name of the pose file
-
- * Release 0016 - This release will contain Biped IK and final implementations of several key tools in PyPose: the servo terminal, and the port dialog.
-   * New IK Templates: 4/5/6 DOF Bipeds.
-   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
-   * Port Dialog Overhaul.
-   * Automatically highlight new pose when using "add".
-   * Allow renaming of sequences.
 
 = Revision History =
 
