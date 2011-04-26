@@ -2,10 +2,6 @@
 
 This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
 
-<wiki:comment>
-Note: We originally used a V1.1 type release number -- but this gets complex with so many releases. We then moved to an Arduino-style release versioning, 0001, 0002, etc, but releases slowed down. We'll be moving back to Vx.x with our V2.0 release later this year.
-</wiki:comment>
-
 = Development Plans =
  * Release 0015 - "Save the Bipeds" (Summer 2011). This release backports much of the pose editor development branch improvements to the main release:
    * .ppr should automatically be added to the name of a pose file
