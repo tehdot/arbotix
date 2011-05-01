@@ -15,6 +15,9 @@ Each of the libraries in the above download are backwards compatible with other 
  * Edit encodersAB.h to comment out "#define ARBOTIX2" if using with an original arbotix
  * Edit ax12.h (in bioloid library) to comment out "#define ARBOTIX2" and select your other board type.
 
+== PyPose Notes ==
+To use PyPose with the ArbotiX2, you must install the ROS firmware (not the original PyPose sketch firmware, since that doesn't understand how to communicate with RX servos). Note that the ROS sketch now defaults to a baud rate of 115200, not 38400. Either edit the sketch before upload, or edit the line inside PyPose.py
+
 == ROS Notes ==
 The PC-side code from 0.4.1 release will work, but you need to use the updated firmware and libraries from above. 
 
