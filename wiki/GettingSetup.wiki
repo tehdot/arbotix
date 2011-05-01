@@ -10,7 +10,8 @@ This page details software and hardware setup. This will take a few steps, but t
 
 = Arduino Software Setup =
 {{{
-Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. -- arduino.cc
+Arduino is an open-source electronics prototyping platform based on flexible,
+easy-to-use hardware and software. -- arduino.cc
 }}}
 The ArbotiX software is based on the [http://www.sanguino.cc Sanguino], the big brother of the [http://www.arduino.cc Arduino]. The first thing we need to do is to install the Arduino software:
  # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Guide/HomePage to install Arduino 0018. 
