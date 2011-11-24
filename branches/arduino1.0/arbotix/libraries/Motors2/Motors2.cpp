@@ -25,7 +25,7 @@
 #define M2_rPWM		OCR2A // TODO: m2_timer
 
 /* Constructor: sets up microprocessor for PWM control of motors */
-Motors2::Motors2(){
+void Motors2::init(){
     /* change clock back to no divider */
     TCCR2B &= ~(1<<CS22);
     TCCR2B &= ~(1<<CS21);
