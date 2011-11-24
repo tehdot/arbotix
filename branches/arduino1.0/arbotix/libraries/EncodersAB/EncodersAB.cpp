@@ -25,6 +25,7 @@ EncodersAB::EncodersAB() : left(0), right(0) {};
 
 EncodersAB Encoders = EncodersAB(); 
 
+unsigned char lastx;
 void EncodersAB::Begin(){
   #if defined(__AVR_ATmega168__) // mini/arduino
 	attachInterrupt(0, leftCounter, RISING);
@@ -79,8 +80,7 @@ ISR(PCINT2_vect){
         Encoders.right--;
     }
 }
-#else 
-unsigned char lastx;
+#else
 ISR(PCINT2_vect){
     unsigned char x = PINC;
     if((lastx&0x10) != (x&0x10)){
