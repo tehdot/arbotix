@@ -81,14 +81,14 @@ void loop(){
     if(digitalRead(BUT_RT) == LOW) buttons += 64;
     if(digitalRead(BUT_LT) == LOW) buttons += 128;
  
-    Serial.print(0xff,BYTE);
-    Serial.print((unsigned char) right_V,BYTE);
-    Serial.print((unsigned char) right_H,BYTE);
-    Serial.print((unsigned char) left_V,BYTE);
-    Serial.print((unsigned char) left_H,BYTE);
-    Serial.print(buttons,BYTE);  // buttons
-    Serial.print(0,BYTE);        // extra
-    Serial.print((unsigned char)(255 - (right_V+right_H+left_V+left_H+buttons)%256),BYTE);
+    Serial.write(0xff);
+    Serial.write((unsigned char) right_V);
+    Serial.write((unsigned char) right_H);
+    Serial.write((unsigned char) left_V);
+    Serial.write((unsigned char) left_H);
+    Serial.write(buttons);                  // buttons
+    Serial.write((unsigned char) 0);        // extra
+    Serial.write((unsigned char)(255 - (right_V+right_H+left_V+left_H+buttons)%256));
     
     if(i > 10){
       digitalWrite(10,HIGH-digitalRead(10));
@@ -99,6 +99,7 @@ void loop(){
 }
 
 /* Revisions 
+ *  V1.2 - Nov 25, 2011 - Updated for Arduino 1.0
  *  V1.1 - Feb 19, 2010 - Replaced Walk/Look with Right/Left 
  *         (since apparently, I used something called "southpaw")
  *  V1.0 - Feb 10, 2010 - Firmware Finalized
