@@ -20,8 +20,6 @@
 #ifndef Encoders_h
 #define Encoders_h
 
-//#define ARBOTIX2
-
 class EncodersAB
 {
   public:
