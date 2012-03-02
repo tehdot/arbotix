@@ -2,6 +2,11 @@
 
 This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
 
+= Change List for 1.0 =
+ * Upgrade to use variants, no more editing of ax12.h, etc.
+ * Analog pins are no longer reversed, A0 is now D24, not D31.
+ * Error levels are defined in ax12.h
+
 = Development Plans =
  * Release 0015 - "Save the Bipeds" (Summer 2011). This release backports much of the pose editor development branch improvements to the main release:
    * .ppr should automatically be added to the name of a pose file
