@@ -27,6 +27,7 @@
    * Known Issues:
      * The screen may not resize correctly at times, it is recommended that you switch to a different tool and then back to the desired tool if the screen does not show some controls.
      * On some systems, ports may not be recognized, on Windows this especially means COMx where x > 20. It is recommended to use the serial command inside the Servo Terminal.
+     * NUKE data saved with previous versions of PyPose may become garbled, in particular, check your servo ID mapping.
 
  * Release 0014 (2-16-2011, r550) - This release contains several updates and bug fixes.
    * Updated to new BioloidController library
