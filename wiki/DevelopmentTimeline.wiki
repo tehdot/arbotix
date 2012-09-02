@@ -2,33 +2,25 @@
 
 This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
 
-= Change List for 1.0 =
- * Upgrade to use variants, no more editing of ax12.h, etc.
- * Analog pins are no longer reversed, A0 is now D24, not D31.
- * Error levels are defined in ax12.h
-
-= Development Plans =
- * Release 0015 - "Save the Bipeds" (Summer 2011). This release backports much of the pose editor development branch improvements to the main release:
-   * .ppr should automatically be added to the name of a pose file
-   * Each servo slider has torque on/off selection
-   * Live Update (checkable option under config)
-   * Add direct value entry box (checkable option under config)
-   * Automatically highlight new pose when using "add".
-   * Allow renaming of sequences.
-   * Checkable option to torque on after capture?
-   * NUKE now correctly uses a RH coordinate system.
-
- * Long term plans:
-   * Port Dialog Overhaul: Make the "open port" dialog easier to use. Add ability to switch driver characteristics.
-   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
-   * New Examples: a rover with closed loop feedback. Updated Issy (2DOF) using commander library. A biped example using poses and simple walk engine?
-   * Nuke templates; 3DOF Mammal IK, 4/5/6 DOF Bipeds. 
-   * New Gaits: We currently have a number of Ripple, Amble, and Tripod Gaits. We'd like to add: 
-     # Geometrically Stable Ripple. - _currently experimental_
-     # Possibly add support for planar tails to assist with stability.
-   * Gait Template Structure: Currently, gaits are integrated into the templates, eventually we would like to support separate gait files.
-
 = Revision History =
+
+ * Release 0015 (9-02-2012, r???) - This release targets Arduino 1.0.1 and contains a number of bug fixes and improvments:
+   * Arduino/Core:
+     * All code compatible with Arduino 1.0.1
+     * Upgraded boards.txt to use variants.
+     * Analog pins are no longer reversed when using as digital pins, A0 is no D24, A1 is D25 ... A7 is D31.
+   * PyPose:
+     * Added Live Update mode which updates servos as sliders are dragged(enabled from config menu).
+     * Added enable check boxes to relax individual joints.
+   * Library Changes/Improvements:
+     * !BioloidController:
+       * Enabled pull up on serial rx pin, greatly reduces dropped packets on Bioloid bus.
+       * New GetPosition(id) macro defined in ax12.h
+       * Error levels are now defined in ax12.h
+       * Added ax12GetLastError() to ax12.h to allow users to determine error level.
+       * Variants are defined such that we no longer need to edit ax12.h to specify board type.
+     * Motors2:
+       * Merged in BigMotors library, usage is defined by board variant selected.
 
  * Release 0014 (2-16-2011, r550) - This release contains several updates and bug fixes.
    * Updated to new BioloidController library
@@ -128,3 +120,20 @@ This page is geared towards developers and power-users. For general coverage of 
      # export to AVR
      # code and sketch to interact with arbotiX
    * New examples: droid, pypose
+
+= Development Plans =
+   * .ppr should automatically be added to the name of a pose file
+   * Each servo slider has torque on/off selection
+   * Add direct value entry box (checkable option under config)
+   * Automatically highlight new pose when using "add".
+   * Allow renaming of sequences.
+   * Checkable option to torque on after capture?
+   * Make NUKE correctly use a RH coordinate system.
+   * Port Dialog Overhaul: Make the "open port" dialog easier to use. Add ability to switch driver characteristics.
+   * Finish the Servo Terminal: Specifically, add the ability to fiddle with registers in a meaningful and easy fashion.
+   * New Examples: a rover with closed loop feedback. Updated Issy (2DOF) using commander library. A biped example using poses and simple walk engine?
+   * Nuke templates; 3DOF Mammal IK, 4/5/6 DOF Bipeds. 
+   * New Gaits: We currently have a number of Ripple, Amble, and Tripod Gaits. We'd like to add: 
+     # Geometrically Stable Ripple. - _currently experimental_
+     # Possibly add support for planar tails to assist with stability.
+   * Gait Template Structure: Currently, gaits are integrated into the templates, eventually we would like to support separate gait files.
