@@ -2,8 +2,6 @@
 
 = NUKE - The Nearly Universal Kinematics Engine = 
 
-<font color="#FF0000"> NUKE is currently only available in V1.1 Beta releases. </font>
-
 The Nearly Universal Kinematics Engine (NUKE) is an easy to use PyPose tool that creates a customized Inverse Kinematics solution and gait engine for your ArbotiX-powered robot. It works for most popular configurations of quadrupeds and hexapods. 
 
 Most of this documentation overlaps with our introductory video:
