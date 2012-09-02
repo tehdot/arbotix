@@ -23,6 +23,9 @@ This page is geared towards developers and power-users. For general coverage of 
        * Variants are defined such that we no longer need to edit ax12.h to specify board type.
      * Motors2:
        * Merged in BigMotors library, usage is defined by board variant selected.
+   * Distribution Change:
+     * !RoboControllerLib is now part of ArbotiX release.
+     * PyPose will be released separately from ArbotiX.
 
  * Release 0014 (2-16-2011, r550) - This release contains several updates and bug fixes.
    * Updated to new BioloidController library
