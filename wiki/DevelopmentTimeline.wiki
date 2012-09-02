@@ -17,7 +17,7 @@ This page is geared towards developers and power-users. For general coverage of 
    * Library Changes/Improvements:
      * !BioloidController:
        * Enabled pull up on serial rx pin, greatly reduces dropped packets on Bioloid bus.
-       * New GetPosition(id) macro defined in ax12.h
+       * New GetPosition(id) macro defined in ax12.h (Issue #23)
        * Error levels are now defined in ax12.h
        * Added ax12GetLastError() to ax12.h to allow users to determine error level.
        * Variants are defined such that we no longer need to edit ax12.h to specify board type.
