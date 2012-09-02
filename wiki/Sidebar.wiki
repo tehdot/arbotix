@@ -26,4 +26,4 @@
  * !DiffDrive
 
 == Other ==
- * [DevelopmentTimeline Developer's Notes]
+ * [DevelopmentTimeline Release Notes]
