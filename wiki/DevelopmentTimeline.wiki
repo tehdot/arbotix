@@ -1,7 +1,5 @@
 #summary Development Timeline
 
-This page is geared towards developers and power-users. For general coverage of releases, see the ArbotixReleases page. 
-
 = Revision History =
 
  * Release 0015 (9-02-2012, r???) - This release targets Arduino 1.0.1 and contains a number of bug fixes and improvments:
@@ -26,6 +24,9 @@ This page is geared towards developers and power-users. For general coverage of 
    * Distribution Change:
      * !RoboControllerLib is now part of ArbotiX release.
      * PyPose will be released separately from ArbotiX.
+   * Known Issues:
+     * The screen may not resize correctly at times, it is recommended that you switch to a different tool and then back to the desired tool if the screen does not show some controls.
+     * On some systems, ports may not be recognized, on Windows this especially means COMx where x > 20. It is recommended to use the serial command inside the Servo Terminal.
 
  * Release 0014 (2-16-2011, r550) - This release contains several updates and bug fixes.
    * Updated to new BioloidController library
