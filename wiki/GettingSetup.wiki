@@ -14,21 +14,14 @@ Arduino is an open-source electronics prototyping platform based on flexible,
 easy-to-use hardware and software. -- arduino.cc
 }}}
 The ArbotiX software is based on the [http://www.sanguino.cc Sanguino], the big brother of the [http://www.arduino.cc Arduino]. The first thing we need to do is to install the Arduino software:
- # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Guide/HomePage to install Arduino 0018. 
+ # Install the Arduino framework: follow the instructions at http://arduino.cc/en/Main/Software to install Arduino 1.0 or higher. 
 
 The rest of this document assumes familiarity with the Arduino environment. See [http://arduino.cc the Arduino documents] for details on using the Arduino IDE.
 
-_ NOTE: If you install Arduino using apt-get on an Ubuntu Linux machine, you will have to edit your boards.txt file, see [http://forums.trossenrobotics.com/showthread.php?p=45593#post45593 this thread at TRC] for details. _
-
 = ArbotiX Software Setup =
-To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino folder. Most users will want to download the latest *ArbotiX/PyPose* release from the front page, extract the zip file, and do the following:
- # Create a *hardware* folder in your Arduino sketchbook directory if it doesn't already exist
- # Copy the *arbotix* folder from the release into the *hardware* folder of your sketchbook directory
- # Copy the *libraries* folder from the release into your sketchbook directory.
-    * These are just the special libraries for the ArbotiX, you'll also want to install the [http://robocontroller.googlecode.com robocontroller] library for even more functionality.
- # You may also want to copy the folders in *sketches*, especially _pypose_, into your sketchbook directory
+To use the ArbotiX with the Arduino IDE we need to add some files to our Arduino sketchbook folder. 
 
-_ NOTE: Some users have reported problems with installing files into their sketchbook. If the instructions above are not working, try installing the libraries and hardware/arbotix folders into your arduino-0018 folder. _
+Most users will want to download the latest *ArbotiX/PyPose* release from the front page, extract the zip file, and copy the contents of the *arbotix* folder into the sketchbook. This includes the *hardware* folder, *libraries* folder and a number of example sketches.
 
 Alternatively you can checkout the absolute latest, bleeding edge source from our SVN repository, and then locate the files correctly as described above. 
 
@@ -70,9 +63,9 @@ Please see the downloadable ArbotiX manual for instructions and guidance in conn
 See the [RxBridge RX-Bridge] page for details on setting up an RX Bridge.
 
 = Upload PyPose Sketch = 
-Now, let's test our Arduino installation and programmer. Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the arbotiX. This sketch is called "pypose", and can be found in the examples folder of the arbotiX distribution. It provides a pass through from the arbotiX to the Bioloid bus, by speaking the correct protocol with PyPose.
+Now, let's test our Arduino installation and programmer. Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the ArbotiX. The "pypose" sketch provides a pass through from the ArbotiX to the Bioloid bus, by speaking the correct protocol with PyPose.
 
-Copy the *sketches/pypose* folder into your sketchbook, and open the sketch. Restart the Arduino IDE if it was already open. From the *Tools -> Board* menu, select *ArbotiX* board to make sure all went well above. Connect your board via either the ISP or FTDI cable, select the correct port, open the *pypose* sketch, and download it. While we ship each board with a version of pypose installed, it may not be the latest (in fact, it almost never is, since by the time the board gets to you, we've made PyPose better!)
+Open the Arduino IDE, from *File -> Open* select the PyPose sketch. From the *Tools -> Board* menu, select *ArbotiX* board to make sure all went well above. Connect your board via either the ISP or FTDI cable, select the correct port, and download it. While we ship each board with a version of pypose installed, it may not be the latest.
 
 Any time you load your own code onto the board, it will overwrite the pypose sketch, so you'll have to upload it before using pypose again.
 
