@@ -11,4 +11,5 @@ The RX Bridge is an ArbotiX add-on board that enables control of DX/RX/EX series
 
 = Software =
 Before uploading code, simply select *ArbotiX w/ RX Shield* as your board type.
+
 That's it! You're now setup to use RX servos just like you used to use AX servos with your ArbotiX.
