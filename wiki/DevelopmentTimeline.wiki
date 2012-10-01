@@ -2,7 +2,7 @@
 
 = Revision History =
 
- * Release 0015 (9-02-2012, r???) - This release targets Arduino 1.0.1 and contains a number of bug fixes and improvments:
+ * Release 0015 (10-1-2012, r650) - This release targets Arduino 1.0.1 and contains a number of bug fixes and improvments:
    * Arduino/Core:
      * All code compatible with Arduino 1.0.1
      * Upgraded boards.txt to use variants.
