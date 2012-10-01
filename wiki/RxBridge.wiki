@@ -10,19 +10,5 @@ The RX Bridge is an ArbotiX add-on board that enables control of DX/RX/EX series
  # Use the standoff to connect the RX-Bridge securely
 
 = Software =
-To enable support for the RX servos, we need to edit our BioloidController library just a bit. Open ax12.h, found in the Bioloid folder of your Arduino Libraries folder, and uncomment the line near the top that says _#define ARBOTIX_WITH_RX:
-
-{{{
-#ifndef ax12_h
-#define ax12_h
-
-// Select the appropriate board for configuration
-//#define ARBOTIX
-#define ARBOTIX_WITH_RX
-
-#define AX12_MAX_SERVOS             18
-}}}
-
-That's it! You're now setup to use RX servos just like you used to use AX servos with your ArbotiX. 
-
-_Note: EX servos have a 12-bit range, not a 10-bit range, PyPose 0014 does not yet have support for a 12-bit range_
+Before uploading code, simply select *ArbotiX w/ RX Shield* as your board type.
+That's it! You're now setup to use RX servos just like you used to use AX servos with your ArbotiX.
