@@ -32,7 +32,7 @@ See the [RxBridge RX-Bridge] page for details on setting up an RX Bridge.
 = Upload PyPose Sketch = 
 Now, let's test our Arduino installation and programmer. Before PyPose can interact with our robot, we need to download a program (or a _sketch_ as the Arduino environment calls them) onto the ArbotiX. The "pypose" sketch provides a pass through from the ArbotiX to the Bioloid bus, by speaking the correct protocol with PyPose.
 
-Open the Arduino IDE, from *File -> Open* select the PyPose sketch. From the *Tools -> Board* menu, select *ArbotiX* board to make sure all went well above. Connect your board via either the ISP or FTDI cable, select the correct port, and *Upload* it. While we ship each board with a version of pypose installed, it may not be the latest.
+Open the Arduino IDE, from *File -> Open* select the PyPose sketch. From the *Tools -> Board* menu, select *ArbotiX* board to make sure all went well above. Connect your board via either the ISP or FTDI cable, select the correct port, and *Upload* it. While we ship each board with a version of pypose installed, it may not be the latest. _Please Note: An FTDI cable should not be connected at the same time as an XBEE radio is in the board. Always remove the XBEE radio before connecting an FTDI cable_
 
 Any time you load your own code onto the board, it will overwrite the pypose sketch, so you'll have to upload it before using pypose again.
 
